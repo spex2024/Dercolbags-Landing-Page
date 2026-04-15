@@ -104,7 +104,7 @@ export default function CommunityImpactPage() {
               <span className="h-0.5 w-16 bg-emerald-500" />
             </div>
             
-            <h1 className="font-heading text-6xl font-black leading-[0.85] tracking-tighter text-zinc-950 dark:text-white md:text-8xl lg:text-9xl uppercase">
+            <h1 className="font-heading text-4xl sm:text-5xl font-black leading-[0.85] tracking-tighter text-zinc-950 dark:text-white md:text-8xl lg:text-9xl uppercase">
               Impact <br />
               <span className="text-emerald-600 font-medium italic">Infrastructure.</span>
             </h1>
@@ -137,7 +137,7 @@ export default function CommunityImpactPage() {
           <div className="flex flex-col lg:flex-row gap-24 items-start">
              <div className="lg:w-1/2">
                 <span className="font-mono text-[10px] uppercase tracking-[0.5em] text-emerald-600 dark:text-emerald-400 font-bold mb-6 block leading-none">The Systemic Friction</span>
-                <h2 className="text-6xl md:text-7xl lg:text-8xl font-black tracking-tighter text-zinc-950 dark:text-white leading-[0.85] uppercase mb-12">Why Correct <br /> <span className="text-emerald-600">Now.</span></h2>
+                <h2 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tighter text-zinc-950 dark:text-white leading-[0.85] uppercase mb-12">Why Correct <br /> <span className="text-emerald-600">Now.</span></h2>
                 
                 <div className="aspect-[16/10] relative rounded-2xl overflow-hidden mt-20 border border-zinc-100 dark:border-white/5 shadow-2xl">
                     <Image 
@@ -187,7 +187,7 @@ export default function CommunityImpactPage() {
 
         <div className="container mx-auto">
            <div className="max-w-4xl mb-32">
-             <h2 className="text-6xl md:text-7xl lg:text-8xl font-black tracking-tighter text-zinc-950 dark:text-white leading-[0.85] uppercase">
+             <h2 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tighter text-zinc-950 dark:text-white leading-[0.85] uppercase">
                 The Integrated <br />
                 <span className="text-emerald-600">Circuit.</span>
              </h2>
@@ -233,7 +233,7 @@ export default function CommunityImpactPage() {
                   transition={{ delay: i * 0.15 }}
                   className="relative group"
                 >
-                  <div className="font-heading text-6xl md:text-8xl lg:text-9xl font-black leading-none tracking-tighter text-white uppercase overflow-hidden">
+                  <div className="font-heading text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-black leading-none tracking-tighter text-white uppercase overflow-hidden">
                     <AnimatedCounter value={metric.value} />
                   </div>
                   <div className="mt-8">
@@ -253,7 +253,7 @@ export default function CommunityImpactPage() {
          <div className="container mx-auto px-6">
             <div className="flex flex-col lg:flex-row gap-32 items-start mb-40">
                <div className="lg:w-1/2">
-                  <h2 className="text-7xl lg:text-8xl font-black tracking-tighter text-zinc-950 dark:text-white leading-[0.8] uppercase mb-12">The Dual <br /> <span className="text-emerald-600 font-medium italic">Impact.</span></h2>
+                  <h2 className="text-4xl sm:text-7xl lg:text-8xl font-black tracking-tighter text-zinc-950 dark:text-white leading-[0.8] uppercase mb-12">The Dual <br /> <span className="text-emerald-600 font-medium italic">Impact.</span></h2>
                   <p className="text-2xl text-zinc-600 dark:text-zinc-400 font-light leading-relaxed max-w-xl italic">
                     Architecting simultaneous growth for community livelihoods and business industrialization.
                   </p>
@@ -289,7 +289,7 @@ export default function CommunityImpactPage() {
       <section className="py-40 bg-white dark:bg-black overflow-hidden px-6">
         <div className="container mx-auto">
           <div className="flex flex-col lg:flex-row gap-12 items-end mb-32">
-             <h2 className="text-6xl md:text-7xl lg:text-8xl font-black tracking-tighter text-zinc-950 dark:text-white leading-[0.85] uppercase">Roadmap <br /> <span className="text-emerald-600 underline decoration-1 underline-offset-[20px]">2030.</span></h2>
+             <h2 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tighter text-zinc-950 dark:text-white leading-[0.85] uppercase">Roadmap <br /> <span className="text-emerald-600 underline decoration-1 underline-offset-[20px]">2030.</span></h2>
              <div className="py-8 border-l border-zinc-200 dark:border-white/10 pl-12 max-w-xs">
                 <p className="text-xl text-zinc-500 dark:text-zinc-400 font-light italic leading-none tracking-tighter uppercase">Building the continent's definitive circular node network.</p>
              </div>
@@ -318,7 +318,7 @@ export default function CommunityImpactPage() {
         <div className="container mx-auto">
            <div className="relative group overflow-hidden">
              <div className="relative z-10 py-32 border-y border-zinc-100 dark:border-white/10 text-center">
-                <h2 className="text-6xl md:text-8xl lg:text-9xl font-black tracking-tighter leading-[0.85] mb-20 text-zinc-950 dark:text-white uppercase italic">
+                <h2 className="text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-black tracking-tighter leading-[0.85] mb-20 text-zinc-950 dark:text-white uppercase italic">
                    Join the <br />
                    <span className="text-emerald-500 font-medium tracking-tight">Impact.</span>
                 </h2>

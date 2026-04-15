@@ -36,7 +36,7 @@ export function Solutions() {
             className="mb-20 max-w-5xl"
           >
             <h2 className="mb-4 text-sm font-bold uppercase tracking-widest text-emerald-600 dark:text-emerald-400">Our Solution</h2>
-            <h3 className="font-heading text-5xl font-black leading-[0.95] tracking-tighter text-zinc-900 dark:text-white md:text-7xl">
+            <h3 className="font-heading text-4xl sm:text-5xl font-black leading-[0.95] tracking-tighter text-zinc-900 dark:text-white md:text-7xl">
               Engineering a <span className="text-emerald-600 uppercase">Circular</span> <br />
               Packaging Ecosystem.
             </h3>
