@@ -1,8 +1,15 @@
-import { Geist, Geist_Mono, IBM_Plex_Sans, Roboto_Slab } from "next/font/google"
+import { Geist_Mono, IBM_Plex_Sans, Roboto_Slab } from "next/font/google"
 
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import { cn } from "@/lib/utils";
+import { Navbar } from "@/components/navbar"
+import { Footer } from "@/components/footer"
+import { AiChatbot } from "@/components/ai-chatbot"
+import { NewsletterModal } from "@/components/newsletter-modal"
+import { FloatingPathsBackground } from "@/components/ui/floating-paths"
+
+import { Preloader } from "@/components/preloader"
 
 const robotoSlabHeading = Roboto_Slab({subsets:['latin'],variable:'--font-heading'});
 
@@ -22,10 +29,22 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={cn("antialiased", fontMono.variable, "font-sans", ibmPlexSans.variable, robotoSlabHeading.variable)}
+      className={cn("antialiased font-sans", fontMono.variable, ibmPlexSans.variable, robotoSlabHeading.variable)}
     >
-      <body>
-        <ThemeProvider>{children}</ThemeProvider>
+      <body className="flex flex-col min-h-screen">
+        <ThemeProvider>
+          <Preloader />
+          <FloatingPathsBackground position={-1} className="fixed inset-0 z-0 pointer-events-none" />
+          <AiChatbot />
+          <NewsletterModal />
+          <Navbar />
+          <main className="relative z-10 flex-grow">
+            {children}
+          </main>
+          <div className="pb-bottom-nav md:pb-0">
+            <Footer />
+          </div>
+        </ThemeProvider>
       </body>
     </html>
   )

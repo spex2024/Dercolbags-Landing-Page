@@ -1,0 +1,263 @@
+"use client"
+
+import * as React from "react"
+import { motion, AnimatePresence } from "framer-motion"
+import { X, Mail, Leaf, Sparkles, ArrowRight, CheckCircle } from "lucide-react"
+
+const STORAGE_KEY = "dercolbags_newsletter_last_seen_at"
+const COOLDOWN_MS = 60 * 60 * 1000 // 1 hour
+const smoothEase = [0.22, 1, 0.36, 1] as const
+const revealEase = [0.16, 1, 0.3, 1] as const
+const exitEase = [0.4, 0, 1, 1] as const
+
+function shouldShowModal(): boolean {
+  if (typeof window === "undefined") return false
+  const raw = localStorage.getItem(STORAGE_KEY)
+  if (!raw) return true // first visit
+  const dismissedAt = parseInt(raw, 10)
+  if (isNaN(dismissedAt)) return true
+  return Date.now() - dismissedAt >= COOLDOWN_MS
+}
+
+function markSeen() {
+  localStorage.setItem(STORAGE_KEY, String(Date.now()))
+}
+
+export function NewsletterModal() {
+  const [isOpen, setIsOpen] = React.useState(false)
+  const [email, setEmail] = React.useState("")
+  const [submitted, setSubmitted] = React.useState(false)
+  const [loading, setLoading] = React.useState(false)
+
+  // Delay opening so the page has time to render first
+  React.useEffect(() => {
+    const timer = setTimeout(() => {
+      if (shouldShowModal()) {
+        markSeen()
+        setIsOpen(true)
+      }
+    }, 2200)
+    return () => clearTimeout(timer)
+  }, [])
+
+  const handleClose = React.useCallback(() => {
+    setIsOpen(false)
+  }, [])
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    if (!email.trim()) return
+    setLoading(true)
+    // Simulate API call
+    await new Promise((res) => setTimeout(res, 1100))
+    setLoading(false)
+    setSubmitted(true)
+    setTimeout(() => {
+      setIsOpen(false)
+    }, 2200)
+  }
+
+  // Backdrop variants
+  const backdropVariants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { duration: 0.4 } },
+    exit: { opacity: 0, transition: { duration: 0.35 } },
+  }
+
+  // Modal panel variants — slides up from bottom, slight scale
+  const panelVariants = {
+    hidden: { opacity: 0, y: 60, scale: 0.95 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: {
+        duration: 0.54,
+        ease: smoothEase,
+        delay: 0.04,
+      },
+    },
+    exit: {
+      opacity: 0,
+      y: 24,
+      scale: 0.985,
+      transition: { duration: 0.26, ease: exitEase },
+    },
+  }
+
+  // Stagger children
+  const contentVariants = {
+    hidden: {},
+    visible: {
+      transition: { staggerChildren: 0.09, delayChildren: 0.18 },
+    },
+  }
+  const childVariants = {
+    hidden: { opacity: 0, y: 18 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: revealEase } },
+  }
+
+  return (
+    <AnimatePresence>
+      {isOpen && (
+        <motion.div
+          className="fixed inset-0 z-[9999] flex items-end sm:items-center justify-center p-4 sm:p-6"
+          variants={backdropVariants}
+          initial="hidden"
+          animate="visible"
+          exit="exit"
+        >
+          {/* Backdrop blur overlay */}
+          <motion.div
+            className="absolute inset-0 bg-zinc-900/60 backdrop-blur-sm"
+            onClick={handleClose}
+          />
+
+          {/* Modal Panel */}
+          <motion.div
+            className="relative z-10 w-full max-w-lg overflow-hidden rounded-3xl shadow-[0_32px_80px_-8px_rgba(0,0,0,0.4)] border border-white/10"
+            variants={panelVariants}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+          >
+            {/* Gradient background */}
+            <div className="absolute inset-0 bg-gradient-to-br from-emerald-950 via-zinc-900 to-zinc-950" />
+            <motion.div
+              aria-hidden="true"
+              className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-emerald-300/80 to-transparent"
+              initial={{ opacity: 0, scaleX: 0.4 }}
+              animate={{ opacity: 1, scaleX: 1 }}
+              transition={{ duration: 0.6, delay: 0.18, ease: smoothEase }}
+            />
+            
+            {/* Decorative glow orbs */}
+            <motion.div
+              aria-hidden="true"
+              className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-emerald-500/20 blur-3xl pointer-events-none"
+              animate={{ scale: [1, 1.08, 1], opacity: [0.18, 0.28, 0.18] }}
+              transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+            />
+            <motion.div
+              aria-hidden="true"
+              className="absolute -bottom-20 -left-20 w-56 h-56 rounded-full bg-emerald-400/10 blur-3xl pointer-events-none"
+              animate={{ scale: [1.02, 0.96, 1.02], opacity: [0.08, 0.16, 0.08] }}
+              transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
+            />
+
+            {/* Close button */}
+            <button
+              onClick={handleClose}
+              className="absolute top-4 right-4 z-20 p-2 rounded-full bg-white/10 hover:bg-white/20 text-white/70 hover:text-white transition-all duration-200 hover:rotate-90"
+              aria-label="Close newsletter popup"
+            >
+              <X className="w-4 h-4" />
+            </button>
+
+            {/* Content */}
+            <div className="relative z-10 p-8 sm:p-10">
+              <AnimatePresence mode="wait">
+                {submitted ? (
+                  <motion.div
+                    key="success"
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1, transition: { duration: 0.45, ease: smoothEase } }}
+                    exit={{ opacity: 0 }}
+                    className="flex flex-col items-center gap-5 py-6 text-center"
+                  >
+                    <motion.div
+                      initial={{ scale: 0.7, opacity: 0 }}
+                      animate={{ scale: 1, opacity: 1, transition: { duration: 0.5, delay: 0.08, ease: smoothEase } }}
+                    >
+                      <CheckCircle className="w-16 h-16 text-emerald-400" />
+                    </motion.div>
+                    <div>
+                      <h3 className="text-2xl font-heading font-bold text-white mb-2">You&apos;re in!</h3>
+                      <p className="text-emerald-300/80 text-sm">
+                        Welcome to the DercolBags community. Expect inspiring updates soon.
+                      </p>
+                    </div>
+                  </motion.div>
+                ) : (
+                  <motion.div
+                    key="form"
+                    variants={contentVariants}
+                    initial="hidden"
+                    animate="visible"
+                    exit={{ opacity: 0 }}
+                  >
+                    {/* Icon badge */}
+                    <motion.div variants={childVariants} className="flex items-center gap-2 mb-6">
+                      <div className="flex items-center justify-center w-10 h-10 rounded-2xl bg-emerald-500/20 border border-emerald-500/30">
+                        <Leaf className="w-5 h-5 text-emerald-400" />
+                      </div>
+                      <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20">
+                        <Sparkles className="w-3 h-3 text-emerald-400" />
+                        <span className="text-[11px] font-semibold tracking-widest text-emerald-400 uppercase">Exclusive Updates</span>
+                      </div>
+                    </motion.div>
+
+                    {/* Headline */}
+                    <motion.h2 variants={childVariants} className="text-3xl sm:text-4xl font-heading font-black tracking-tight text-white leading-tight mb-3">
+                      Shape the Future of{" "}
+                      <span className="text-emerald-400 italic">Eco Packaging</span>
+                    </motion.h2>
+
+                    <motion.p variants={childVariants} className="text-zinc-400 text-sm leading-relaxed mb-8">
+                      Join thousands of businesses getting early access to sustainable packaging innovations, 
+                      industry insights, and exclusive DercolBags offers.
+                    </motion.p>
+
+                    {/* Form */}
+                    <motion.form variants={childVariants} onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3">
+                      <div className="relative flex-grow">
+                        <Mail className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-500 pointer-events-none" />
+                        <input
+                          type="email"
+                          value={email}
+                          onChange={(e) => setEmail(e.target.value)}
+                          placeholder="your@email.com"
+                          required
+                          className="w-full pl-10 pr-4 py-3 rounded-xl bg-white/8 border border-white/12 text-white text-sm placeholder:text-zinc-500 focus:outline-none focus:ring-2 focus:ring-emerald-500/50 focus:border-emerald-500/50 transition-all"
+                          style={{ background: "rgba(255,255,255,0.06)" }}
+                        />
+                      </div>
+                      <button
+                        type="submit"
+                        disabled={loading}
+                        className="relative flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-white font-semibold text-sm tracking-wide transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-emerald-500/30 active:translate-y-0 disabled:opacity-70 disabled:cursor-not-allowed whitespace-nowrap overflow-hidden group"
+                      >
+                        <span className="relative z-10 flex items-center gap-2">
+                          {loading ? (
+                            <>
+                              <motion.div
+                                className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full"
+                                animate={{ rotate: 360 }}
+                                transition={{ repeat: Infinity, duration: 0.8, ease: "linear" }}
+                              />
+                              Subscribing...
+                            </>
+                          ) : (
+                            <>
+                              Subscribe
+                              <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5" />
+                            </>
+                          )}
+                        </span>
+                      </button>
+                    </motion.form>
+
+                    {/* Fine print */}
+                    <motion.p variants={childVariants} className="mt-4 text-[11px] text-zinc-600 text-center">
+                      No spam, ever. Unsubscribe in one click.
+                    </motion.p>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+          </motion.div>
+        </motion.div>
+      )}
+    </AnimatePresence>
+  )
+}
