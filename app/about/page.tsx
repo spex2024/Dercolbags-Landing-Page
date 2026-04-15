@@ -5,7 +5,7 @@ import * as React from "react"
 import { motion, useInView, animate } from "framer-motion"
 import Image from "next/image"
 import Link from "next/link"
-import { ArrowRight, Recycle, ShoppingBag, Heart, Target, Eye, Shield, CheckCircle, BriefcaseBusiness, Globe, Send } from "lucide-react"
+import { ArrowRight, Recycle, ShoppingBag, Heart, Target, Eye, Shield, CheckCircle } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { FloatingPathsBackground } from "@/components/ui/floating-paths"
@@ -57,6 +57,13 @@ const values = [
 
 const ecosystem = [
   {
+    title: "Community Recovery",
+    description: "Driving economic mobility through circular waste recovery systems.",
+    image: "/images/community-impact.png",
+    icon: Heart,
+    href: "/community",
+  },
+  {
     title: "WatPak Digital",
     description: "The operating system for circular packaging and waste recovery.",
     image: "/images/wastepack.png",
@@ -64,18 +71,11 @@ const ecosystem = [
     href: "/watpak",
   },
   {
-    title: "Eco-Store",
-    description: "Premium, sustainable packaging options for growing businesses.",
+    title: "Local Manufacturers",
+    description: "Premium, sustainable packaging produced locally for African SMEs.",
     image: "/images/store.png",
     icon: ShoppingBag,
     href: "/store",
-  },
-  {
-    title: "Community Hub",
-    description: "Driving economic mobility through circular waste systems.",
-    image: "/images/community-impact.png",
-    icon: Heart,
-    href: "/community",
   },
 ]
 
@@ -105,28 +105,28 @@ const team = [
     description: "Architecting the technical infrastructure and strategic expansion of Africa's leading sustainable packaging ecosystem.",
     image: "/images/team_derrick.png",
     featured: true,
-    socials: { linkedin: "#", twitter: "#", facebook: "#" }
+    socials: { linkedin: "#", twitter: "#", facebook: "#", instagram: "#" }
   },
   {
     id: "OPS-002",
     name: "Bevelyn Dartey",
     role: "Chief Operating Officer",
     image: "/images/team_bevelyn.png",
-    socials: { linkedin: "#", twitter: "#", facebook: "#" }
+    socials: { linkedin: "#", twitter: "#", facebook: "#", instagram: "#" }
   },
   {
     id: "FIN-003",
     name: "Abednego Tetteh",
     role: "Head of Finance",
     image: "/images/team_abednego.png",
-    socials: { linkedin: "#", twitter: "#", facebook: "#" }
+    socials: { linkedin: "#", twitter: "#", facebook: "#", instagram: "#" }
   },
   {
     id: "TEC-004",
     name: "Enoch Ekow Enu",
     role: "Product Lead",
     image: "/images/team_enoch.png",
-    socials: { linkedin: "#", twitter: "#", facebook: "#" }
+    socials: { linkedin: "#", twitter: "#", facebook: "#", instagram: "#" }
   },
   {
     id: "DES-005",
@@ -134,7 +134,7 @@ const team = [
     role: "Creative Designer",
     description: "Focused on combining design and storytelling in a way that not only captures attention but also creates real connection. Whether it's through visuals, reflective writing, or digital content, the goal is to help our customers see differently, think deeper, and grow stronger.",
     image: "/images/team_richard.png",
-    socials: { linkedin: "#", twitter: "#", facebook: "#" }
+    socials: { linkedin: "#", twitter: "#", facebook: "#", instagram: "#" }
   },
 ]
 
@@ -534,21 +534,26 @@ export default function AboutPage() {
 
                       {/* Social Links */}
                       <div className="flex items-center gap-4 mt-8">
-                        {member.socials?.linkedin && (
-                          <Link href={member.socials.linkedin} className="text-white/60 hover:text-emerald-400 transition-colors">
-                            <BriefcaseBusiness className="w-5 h-5" />
-                          </Link>
-                        )}
-                        {member.socials?.twitter && (
-                          <Link href={member.socials.twitter} className="text-white/60 hover:text-emerald-400 transition-colors">
-                            <Send className="w-5 h-5" />
-                          </Link>
-                        )}
-                        {member.socials?.facebook && (
-                          <Link href={member.socials.facebook} className="text-white/60 hover:text-emerald-400 transition-colors">
-                            <Globe className="w-5 h-5" />
-                          </Link>
-                        )}
+                        {[
+                          { name: 'linkedin', path: "M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" },
+                          { name: 'twitter', path: "M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932 6.064-6.932zm-1.292 19.49h2.039L6.486 3.24H4.298l13.311 17.403z" },
+                          { name: 'instagram', path: "M12 0c-3.263 0-3.67.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c3.403 0 6.162 2.759 6.162 6.162s-2.759 6.163-6.162 6.163-6.162-2.759-6.162-6.163 2.759-6.162 6.162-6.162zm0 10.162c2.209 0 4-1.79 4-4 0-2.209-1.791-4-4-4s-4 1.791-4 4c0 2.21 1.791 4 4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" },
+                          { name: 'facebook', path: "M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" },
+                        ].map((social) => {
+                          const href = member.socials?.[social.name as keyof typeof member.socials];
+                          if (!href) return null;
+                          return (
+                            <Link 
+                              key={social.name} 
+                              href={href} 
+                              className="text-white/60 hover:text-emerald-400 transition-colors"
+                            >
+                              <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                                <path d={social.path} />
+                              </svg>
+                            </Link>
+                          );
+                        })}
                       </div>
                     </div>
                   </div>

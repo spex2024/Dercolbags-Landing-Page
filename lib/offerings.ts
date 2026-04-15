@@ -20,6 +20,29 @@ export type Offering = {
 
 export const offerings: Offering[] = [
   {
+    slug: "community",
+    title: "Waste Recovery Programme",
+    eyebrow: "Community Impact",
+    description: "Community programs that turn household and industrial waste into raw materials.",
+    details:
+      "Our recovery programs engage local communities to systematically collect and process plastic and fiber waste. This turns environmental hazards into valuable raw materials for our manufacturing ecosystem.",
+    image: "/images/community_impact.png",
+    icon: Heart,
+    location: "Community Nodes",
+    hours: "Active Recovery: Daily",
+    tags: ["Social Impact", "Environment", "Recovery"],
+    learnMoreHref: "/community",
+    ctaLabel: "Explore Impact",
+    heroTitle: "Community Waste Recovery Programme",
+    heroBody:
+      "We build community infrastructure that incentivizes waste collection, empowering thousands of individuals to participate in the circular economy.",
+    featureList: [
+      "Localized waste-recovery centers and collection nodes",
+      "Incentivized programs for informal waste pickers",
+      "Closing the loop on household and industrial waste",
+    ],
+  },
+  {
     slug: "watpak",
     title: "WatPak Digital",
     eyebrow: "Technology Platform",
@@ -44,7 +67,7 @@ export const offerings: Offering[] = [
   },
   {
     slug: "store",
-    title: "Local Manufacturing",
+    title: "Local Manufacturers",
     eyebrow: "Production Hub",
     description: "Cutting import costs and lead times by up to 30% through on-site production.",
     details:
@@ -63,29 +86,6 @@ export const offerings: Offering[] = [
       "30% reduction in lead times compared to imports",
       "Custom branded packaging solutions for growing SMEs",
       "Local job creation and industrial capacity building",
-    ],
-  },
-  {
-    slug: "community",
-    title: "Waste-Recovery",
-    eyebrow: "Community Impact",
-    description: "Community programs that turn household and industrial waste into raw materials.",
-    details:
-      "Our recovery programs engage local communities to systematically collect and process plastic and fiber waste. This turns environmental hazards into valuable raw materials for our manufacturing ecosystem.",
-    image: "/images/community_impact.png",
-    icon: Heart,
-    location: "Community Nodes",
-    hours: "Active Recovery: Daily",
-    tags: ["Social Impact", "Environment", "Recovery"],
-    learnMoreHref: "/community",
-    ctaLabel: "Explore Impact",
-    heroTitle: "Turning Waste into Economic Opportunity",
-    heroBody:
-      "We build community infrastructure that incentivizes waste collection, empowering thousands of individuals to participate in the circular economy.",
-    featureList: [
-      "Localized waste-recovery centers and collection nodes",
-      "Incentivized programs for informal waste pickers",
-      "Closing the loop on household and industrial waste",
     ],
   },
 ]
