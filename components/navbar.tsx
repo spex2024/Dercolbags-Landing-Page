@@ -24,6 +24,7 @@ import { cn } from "@/lib/utils"
 const navLinks = [
   { name: "Home", href: "/" },
   { name: "About", href: "/about" },
+  { name: "Store", href: "/store" },
   { name: "Community & Impact", href: "/community-impact" },
   { name: "Contact", href: "/contact" },
 ]
@@ -38,6 +39,7 @@ const socialLinks = [
 const bottomNavItems = [
   { name: "Home", href: "/", icon: Home },
   { name: "About", href: "/about", icon: Info },
+  { name: "Store", href: "/store", icon: ShoppingBag },
   { name: "Community", href: "/community-impact", icon: Users },
   { name: "Contact", href: "/contact", icon: Mail },
 ]

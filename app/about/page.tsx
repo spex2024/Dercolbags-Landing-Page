@@ -509,7 +509,7 @@ export default function AboutPage() {
                   </div>
 
                   <div className="transform transition-transform duration-500 group-hover:-translate-y-4">
-                    <h3 className="font-heading text-4xl md:text-5xl font-black text-white leading-none tracking-tighter uppercase shadow-zinc-950/50 drop-shadow-sm">
+                    <h3 className="font-heading text-3xl md:text-4xl font-black text-white leading-none tracking-tighter uppercase shadow-zinc-950/50 drop-shadow-sm">
                       {member.name.split(' ').map((word, idx) => (
                          <span key={idx} className="block">{word}</span>
                       ))}
