@@ -165,19 +165,16 @@ export function Footer() {
             <p className="text-xs font-bold tracking-widest text-zinc-400 uppercase mb-4 dark:text-zinc-500">Solutions</p>
             <ul className="flex flex-col gap-2.5">
               {[
-                "Custom Packaging",
-                "Eco-Friendly Bags",
-                "Kraft Paper Solutions",
-                "Bulk & B2B Orders",
-                "Biodegradable Range",
+                { name: "Store", href: "/store" },
+                { name: "Watpak", href: "/watpak" },
               ].map((item) => (
-                <li key={item}>
+                <li key={item.name}>
                   <Link
-                    href="#"
+                    href={item.href}
                     className="text-sm text-zinc-600 hover:text-emerald-600 transition-colors duration-150 flex items-center gap-1.5 group dark:text-zinc-300 dark:hover:text-emerald-400"
                   >
                     <span className="w-1 h-1 rounded-full bg-zinc-300 group-hover:bg-emerald-500 transition-colors dark:bg-zinc-600 dark:group-hover:bg-emerald-400" />
-                    {item}
+                    {item.name}
                   </Link>
                 </li>
               ))}

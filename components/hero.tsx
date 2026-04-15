@@ -1,8 +1,9 @@
 "use client"
 
 import * as React from "react"
+import Link from "next/link"
 import { motion } from "framer-motion"
-import { ArrowRight, Play, Pause, Volume2, VolumeX, Plus, Minus, RotateCcw, RotateCw } from "lucide-react"
+import { Play, Pause, Volume2, VolumeX, Plus, Minus, RotateCcw, RotateCw, ShoppingBag, Recycle } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 
@@ -171,30 +172,53 @@ export function Hero() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
             {/* Left Column: Headline */}
             <motion.div variants={itemVariants}>
-              <h1 className="text-4xl sm:text-5xl md:text-8xl lg:text-9xl font-heading font-black tracking-tighter leading-[0.9] text-zinc-950 dark:text-white">
-                DercolBags <br />
-                <span className="text-emerald-600 italic dark:text-emerald-400">Packaging</span>
+              <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-heading font-black tracking-tighter leading-[0.9] text-zinc-950 dark:text-white uppercase">
+                Engineering Africa's <br />
+                <span className="text-emerald-600 italic dark:text-emerald-400">Circular</span> Future.
               </h1>
-              <p className="mt-6 text-2xl md:text-3xl text-zinc-600 font-medium tracking-tight dark:text-zinc-300">
-                Company Ltd.
-              </p>
+              <div className="flex items-center gap-3 mt-8">
+                <span className="inline-flex items-center gap-2 rounded-full bg-emerald-50 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.2em] text-emerald-700 dark:bg-emerald-500/10 dark:text-emerald-400 border border-emerald-100 dark:border-emerald-500/20">
+                  <span className="relative flex h-2 w-2">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                  </span>
+                  Mission: Protocol 01
+                </span>
+                <span className="text-[10px] font-mono font-bold uppercase tracking-[0.3em] text-zinc-400 dark:text-zinc-500">
+                  Empowering Entrepreneurs for a Cleaner Environment
+                </span>
+              </div>
             </motion.div>
 
             {/* Right Column: Description + Buttons */}
             <motion.div variants={itemVariants} className="flex flex-col gap-8 lg:pt-4">
               <p className="text-lg md:text-xl text-zinc-600 leading-relaxed max-w-xl dark:text-zinc-300">
-                Easily adapt to changes and scale your operations with our flexible, 
-                eco-conscious packaging solutions designed to support your business growth 
-                and environmental impact.
+                Driving Africa’s circular economy, empowering communities, and 
+                redefining how packaging supports climate resilience, economic 
+                growth, and social equity.
               </p>
               
               <div className="flex flex-wrap gap-4">
                 <Button 
+                  asChild
                   size="lg" 
                   className="rounded-full bg-emerald-600 hover:bg-emerald-700 text-white px-8 h-12 shadow-lg shadow-emerald-600/20 transition-all hover:-translate-y-0.5 dark:bg-emerald-500 dark:hover:bg-emerald-400 dark:shadow-emerald-500/20"
                 >
-                  Explore Solutions
-                  <ArrowRight className="ml-2 w-4 h-4" />
+                  <Link href="/store" className="flex items-center gap-2">
+                    Visit Store
+                    <ShoppingBag className="w-4 h-4 ml-1" />
+                  </Link>
+                </Button>
+                <Button 
+                  asChild
+                  variant="outline"
+                  size="lg" 
+                  className="rounded-full border-zinc-200 text-zinc-900 px-8 h-12 transition-all hover:-translate-y-0.5 hover:bg-zinc-50 dark:border-white/12 dark:text-white dark:hover:bg-white/8"
+                >
+                  <Link href="/watpak" className="flex items-center gap-2">
+                    Watpak
+                    <Recycle className="w-4 h-4 ml-1" />
+                  </Link>
                 </Button>
               </div>
             </motion.div>
