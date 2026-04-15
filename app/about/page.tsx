@@ -5,7 +5,7 @@ import * as React from "react"
 import { motion, useInView, animate } from "framer-motion"
 import Image from "next/image"
 import Link from "next/link"
-import { ArrowRight, Recycle, ShoppingBag, Heart, Target, Eye, Shield, CheckCircle } from "lucide-react"
+import { ArrowRight, Recycle, ShoppingBag, Heart, Target, Eye, Shield, CheckCircle, BriefcaseBusiness, Globe, Send } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { FloatingPathsBackground } from "@/components/ui/floating-paths"
@@ -105,24 +105,28 @@ const team = [
     description: "Architecting the technical infrastructure and strategic expansion of Africa's leading sustainable packaging ecosystem.",
     image: "/images/team_derrick.png",
     featured: true,
+    socials: { linkedin: "#", twitter: "#", facebook: "#" }
   },
   {
     id: "OPS-002",
     name: "Bevelyn Dartey",
     role: "Chief Operating Officer",
     image: "/images/team_bevelyn.png",
+    socials: { linkedin: "#", twitter: "#", facebook: "#" }
   },
   {
     id: "FIN-003",
     name: "Abednego Tetteh",
     role: "Head of Finance",
     image: "/images/team_abednego.png",
+    socials: { linkedin: "#", twitter: "#", facebook: "#" }
   },
   {
     id: "TEC-004",
     name: "Enoch Ekow Enu",
     role: "Product Lead",
     image: "/images/team_enoch.png",
+    socials: { linkedin: "#", twitter: "#", facebook: "#" }
   },
   {
     id: "DES-005",
@@ -130,6 +134,7 @@ const team = [
     role: "Creative Designer",
     description: "Focused on combining design and storytelling in a way that not only captures attention but also creates real connection. Whether it's through visuals, reflective writing, or digital content, the goal is to help our customers see differently, think deeper, and grow stronger.",
     image: "/images/team_richard.png",
+    socials: { linkedin: "#", twitter: "#", facebook: "#" }
   },
 ]
 
@@ -525,6 +530,25 @@ export default function AboutPage() {
                         <p className="text-zinc-100 text-sm font-light leading-relaxed max-w-[240px] border-l border-emerald-500/50 pl-6">
                           {member.description || "Leading the infrastructure development for high-performance sustainable ecosystems."}
                         </p>
+                      </div>
+
+                      {/* Social Links */}
+                      <div className="flex items-center gap-4 mt-8">
+                        {member.socials?.linkedin && (
+                          <Link href={member.socials.linkedin} className="text-white/60 hover:text-emerald-400 transition-colors">
+                            <BriefcaseBusiness className="w-5 h-5" />
+                          </Link>
+                        )}
+                        {member.socials?.twitter && (
+                          <Link href={member.socials.twitter} className="text-white/60 hover:text-emerald-400 transition-colors">
+                            <Send className="w-5 h-5" />
+                          </Link>
+                        )}
+                        {member.socials?.facebook && (
+                          <Link href={member.socials.facebook} className="text-white/60 hover:text-emerald-400 transition-colors">
+                            <Globe className="w-5 h-5" />
+                          </Link>
+                        )}
                       </div>
                     </div>
                   </div>
