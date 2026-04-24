@@ -36,13 +36,13 @@ export function Solutions() {
             className="mb-20 max-w-5xl"
           >
             <div className="h-1 w-12 bg-emerald-500 mb-8" />
-            <h3 className="font-heading text-4xl sm:text-5xl font-black leading-[0.95] tracking-tighter text-zinc-900 dark:text-white md:text-7xl uppercase">
-              Engineering a <br />
-              <span className="text-emerald-600">Circular Future.</span>
+            <h3 className="text-4xl sm:text-5xl font-black leading-[0.95] tracking-tighter text-zinc-900 dark:text-white md:text-7xl uppercase">
+              Here Is<br />
+              <span className="text-emerald-500">Your Solution.</span>
             </h3>
             
             <p className="mt-10 text-xl text-zinc-600 dark:text-zinc-400 font-light leading-relaxed max-w-2xl">
-              We replace single-use plastics with locally manufactured recycled packaging, connecting businesses to a cleaner circular economy via our <strong>Watapak</strong> platform.
+              DercolBags gives you premium eco-friendly packaging that makes your products look better, sell faster, and create less waste. Simple.
             </p>
           </motion.div>
 

@@ -58,7 +58,7 @@ const mainStats = [
 
 export default function CommunityImpactPage() {
   return (
-    <div className="bg-white dark:bg-[#030712] selection:bg-emerald-500 selection:text-white font-sans overflow-x-hidden pt-20">
+    <div className="bg-white dark:bg-[#030712] selection:bg-emerald-500 selection:text-white font-sans overflow-x-hidden">
       
       {/* 1. ELEGANT HERO */}
       <section className="relative min-h-[70vh] flex items-center justify-center px-6 border-b border-zinc-100 dark:border-white/5 overflow-hidden">

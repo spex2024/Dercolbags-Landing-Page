@@ -3,7 +3,7 @@
 import * as React from "react"
 import Link from "next/link"
 import { motion, Variants } from "framer-motion"
-import { Play, Pause, Volume2, VolumeX, ShoppingBag, Recycle } from "lucide-react"
+import { Play, Pause, Volume2, VolumeX, ShoppingBag, Recycle, Users } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 
@@ -63,49 +63,62 @@ export function Hero() {
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="grid lg:grid-cols-[1.1fr_0.9fr] gap-24 items-start mb-24 lg:mb-32"
+          className="grid lg:grid-cols-2 gap-8 items-start mb-24 lg:mb-32"
         >
-          {/* Left: Headline */}
-          <div className="max-w-xl">
+          {/* Left: Hook + Empathy */}
+          <div className="max-w-2xl">
             <motion.div variants={itemVariants} className="h-1 w-12 bg-emerald-500 mb-10" />
             <motion.h1 
               variants={itemVariants}
-              className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tighter text-zinc-950 dark:text-white leading-[0.85] uppercase"
+              className="text-5xl md:text-6xl lg:text-7xl font-black tracking-tighter text-zinc-950 dark:text-white leading-[1.05] uppercase"
             >
-              CONNECTING <br />
-              BUSINESSES TO <br />
-              <span className="text-emerald-600 italic">SUSTAINABLE</span> <br />
-              <span className="text-emerald-600 italic">PACKAGING</span>
+              IS YOUR PACKAGING<br />
+              <span className="text-emerald-500">COSTING YOU SALES?</span>
             </motion.h1>
+            <motion.p 
+              variants={itemVariants}
+              className="mt-10 text-lg md:text-xl text-zinc-700 dark:text-zinc-200 font-medium border-l-2 border-emerald-500 pl-4"
+            >
+              We understand how this feels.
+            </motion.p>
           </div>
 
-          {/* Right: Description & CTA */}
-          <div className="lg:pt-16">
-            <motion.div variants={itemVariants} className="space-y-6">
-              <p className="text-sm md:text-lg lg:text-xl text-zinc-500 dark:text-zinc-400 font-light leading-snug italic max-w-lg">
-                Sustainable packaging and Climate Tech Firm empowering African Women Entrepreneurs and SMEs to replace single-use plastics. We help Food and Agro-processors add market value for domestic and export trade.
+          {/* Right: Solution + Value */}
+          <div className="lg:pt-16 lg:pl-8 lg:pr-6">
+            <motion.div variants={itemVariants} className="space-y-8">
+              <p className="text-base md:text-lg lg:text-xl text-zinc-700 dark:text-zinc-200 font-normal leading-relaxed max-w-lg">
+                DercolBags provides premium eco-friendly packaging that helps your products{" "}
+                <span className="text-emerald-600 dark:text-emerald-400 font-black">sell faster.</span>
               </p>
 
-              <div className="flex flex-wrap gap-4 pt-2">
+              <div className="flex flex-wrap gap-x-6 gap-y-3 pt-2">
+                {["Look better.", "Gain trust.", "Sell more.", "Reduce waste."].map((item) => (
+                  <div key={item} className="flex items-center gap-2">
+                    <span className="h-2 w-2 rounded-full bg-emerald-500 flex-shrink-0" />
+                    <span className="text-sm font-black uppercase tracking-widest text-zinc-950 dark:text-white">{item}</span>
+                  </div>
+                ))}
+              </div>
+
+              <div className="flex flex-col gap-3 pt-2 max-w-xs">
                 <Button 
                   asChild
                   size="lg" 
-                  className="rounded-none bg-zinc-950 hover:bg-emerald-600 text-white px-10 h-14 transition-all font-black text-sm uppercase tracking-tighter"
+                  className="w-full rounded-none bg-zinc-950 hover:bg-emerald-600 text-white h-12 transition-all font-black text-xs uppercase tracking-widest"
                 >
-                  <Link href="/store" className="flex items-center gap-2">
-                    Visit Store
-                    <ShoppingBag className="w-4 h-4 ml-1" />
+                  <Link href="/store" className="flex items-center justify-center gap-2">
+                    <ShoppingBag className="w-4 h-4" />
+                    Upgrade Your Packaging
                   </Link>
                 </Button>
                 <Button 
                   asChild
-                  variant="outline"
-                  size="lg" 
-                  className="rounded-none border-zinc-200 text-zinc-900 px-10 h-14 transition-all hover:bg-zinc-50 dark:border-white/10 dark:text-white dark:hover:bg-white/5 font-black text-sm uppercase tracking-tighter"
+                  size="lg"
+                  className="w-full rounded-none bg-emerald-600 hover:bg-emerald-700 text-white h-12 transition-all font-black text-xs uppercase tracking-widest"
                 >
-                  <Link href="/watapak" className="flex items-center gap-2">
-                    Watapak
-                    <Recycle className="w-4 h-4 ml-1" />
+                  <Link href="/watapak" className="flex items-center justify-center gap-2">
+                    <Recycle className="w-4 h-4" />
+                    Get Paid for Your Waste
                   </Link>
                 </Button>
               </div>

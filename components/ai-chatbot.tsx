@@ -105,8 +105,8 @@ export function AiChatbot() {
                     <Bot className="h-5 w-5 text-zinc-900 dark:text-white" />
                   </div>
                   <div>
-                    <p className="font-heading text-lg font-black tracking-tighter uppercase">AI Terminal</p>
-                    <p className="text-[10px] font-bold uppercase tracking-widest text-emerald-600 dark:text-emerald-400">Status: Operational</p>
+                    <p className="font-heading text-lg font-black tracking-tighter uppercase">DercolBags AI</p>
+                    <p className="text-[10px] font-bold uppercase tracking-widest text-emerald-600 dark:text-emerald-400">Status: Online</p>
                   </div>
                 </div>
 
@@ -222,8 +222,8 @@ export function AiChatbot() {
               <MessageCircleMore className="h-6 w-6 md:h-5 md:w-5" />
             </span>
             <span className="relative pr-2 text-left hidden md:block">
-              <span className="block text-sm font-black uppercase tracking-tighter">AI Terminal</span>
-              <span className="block text-[10px] font-bold uppercase tracking-widest text-zinc-500 dark:text-zinc-400">Log inquiry</span>
+              <span className="block text-sm font-black uppercase tracking-tighter">DercolBags AI</span>
+              <span className="block text-[10px] font-bold uppercase tracking-widest text-zinc-500 dark:text-zinc-400">Ask a question</span>
             </span>
           </motion.button>
         )}

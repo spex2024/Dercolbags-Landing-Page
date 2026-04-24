@@ -38,8 +38,8 @@ interface NavLink {
 const navLinks: NavLink[] = [
   { name: "Home", href: "/" },
   { name: "About", href: "/about" },
-  { name: "Products & Services", href: "/solutions" },
-  { name: "Community & Impact", href: "/community-impact" },
+  { name: "Solutions", href: "/solutions" },
+  { name: "Community", href: "/community-impact" },
   { name: "Contact", href: "/contact" },
 ]
 
@@ -123,7 +123,7 @@ export function Navbar() {
             : "bg-transparent"
         )}
       >
-        <div className="mx-auto flex max-w-7xl items-center justify-between gap-4">
+        <div className={cn("mx-auto flex items-center justify-between gap-4", isScrolled ? "max-w-screen-2xl" : "max-w-7xl")}>
           <Link
             href="/"
             className="relative h-20 w-80 transition-all hover:opacity-80"
@@ -138,7 +138,7 @@ export function Navbar() {
           </Link>
 
           {/* Desktop nav links */}
-          <nav className="hidden items-center gap-8 md:flex">
+          <nav className="hidden flex-1 items-center justify-center gap-8 md:flex">
             {navLinks.map((link) => {
               const isActive = pathname === link.href || (link.href !== "/" && pathname.startsWith(link.href))
               
@@ -169,8 +169,6 @@ export function Navbar() {
 
           {/* Desktop right controls */}
           <div className="hidden items-center gap-3 md:flex">
-            <ThemeToggle />
-
             <AnimatePresence>
               {isScrolled && (
                 <motion.div 
@@ -182,31 +180,60 @@ export function Navbar() {
                   <Button
                     asChild
                     size="sm"
-                    className="h-9 rounded-none bg-zinc-900 px-5 text-[10px] font-black uppercase tracking-widest text-white hover:bg-emerald-500 dark:bg-emerald-500 dark:hover:bg-emerald-400 border-none"
+                    className="h-8 rounded-none bg-zinc-900 px-3 text-[9px] font-black uppercase tracking-widest text-white hover:bg-emerald-500 dark:bg-emerald-500 dark:hover:bg-emerald-400 border-none"
                   >
-                    <Link href="/store" className="flex items-center gap-2">
-                      <ShoppingBag className="h-3.5 w-3.5" />
-                      Visit Store
+                    <Link href="/store" className="flex items-center gap-1.5">
+                      <ShoppingBag className="h-3 w-3 flex-shrink-0" />
+                      <span className="hidden xl:inline">Upgrade Your Packaging</span>
                     </Link>
                   </Button>
                   <Button
                     asChild
-                    variant="outline"
                     size="sm"
-                    className="h-9 rounded-none px-5 text-[10px] font-black uppercase tracking-widest border border-emerald-600 text-emerald-600 hover:bg-emerald-50 dark:border-emerald-500/30 dark:text-emerald-400 dark:hover:bg-emerald-500/10"
+                    className="h-8 rounded-none bg-emerald-600 px-3 text-[9px] font-black uppercase tracking-widest text-white hover:bg-emerald-700 border-none"
                   >
-                    <Link href="/watapak" className="flex items-center gap-2">
-                      <Recycle className="h-3.5 w-3.5" />
-                      Visit Watapak
+                    <Link href="/watapak" className="flex items-center gap-1.5">
+                      <Recycle className="h-3 w-3 flex-shrink-0" />
+                      <span className="hidden xl:inline">Get Paid for Waste</span>
                     </Link>
                   </Button>
                 </motion.div>
               )}
             </AnimatePresence>
+            <ThemeToggle />
           </div>
 
-          {/* Mobile: theme toggle only (bottom nav replaces hamburger) */}
-          <div className="flex items-center md:hidden">
+          {/* Mobile right controls (theme toggle + sticky buttons) */}
+          <div className="flex items-center gap-2 md:hidden">
+            <AnimatePresence>
+              {isScrolled && (
+                <motion.div 
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: 20 }}
+                  className="flex items-center gap-1.5"
+                >
+                  <Button
+                    asChild
+                    size="sm"
+                    className="h-8 w-8 px-0 rounded-none bg-zinc-900 text-white hover:bg-emerald-500 dark:bg-emerald-500 dark:hover:bg-emerald-400 border-none"
+                  >
+                    <Link href="/store" aria-label="Upgrade Your Packaging">
+                      <ShoppingBag className="h-3.5 w-3.5" />
+                    </Link>
+                  </Button>
+                  <Button
+                    asChild
+                    size="sm"
+                    className="h-8 w-8 px-0 rounded-none bg-emerald-600 text-white hover:bg-emerald-700 border-none"
+                  >
+                    <Link href="/watapak" aria-label="Get Paid for Waste">
+                      <Recycle className="h-3.5 w-3.5" />
+                    </Link>
+                  </Button>
+                </motion.div>
+              )}
+            </AnimatePresence>
             <ThemeToggle />
           </div>
         </div>
