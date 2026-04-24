@@ -70,7 +70,7 @@ export function Hero() {
             <motion.div variants={itemVariants} className="h-1 w-12 bg-emerald-500 mb-10" />
             <motion.h1 
               variants={itemVariants}
-              className="text-4xl md:text-5xl lg:text-7xl font-black tracking-tighter text-zinc-950 dark:text-white leading-[0.85] uppercase"
+              className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tighter text-zinc-950 dark:text-white leading-[0.85] uppercase"
             >
               CONNECTING <br />
               BUSINESSES TO <br />
