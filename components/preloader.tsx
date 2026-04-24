@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react"
 import { AnimatePresence, motion } from "framer-motion"
+import Image from "next/image"
 
 export function Preloader() {
   const [isLoading, setIsLoading] = useState(true)
@@ -36,12 +37,15 @@ export function Preloader() {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              className="flex items-center gap-3"
+              className="relative h-24 w-80 mb-4"
             >
-              <span className="h-1 w-1 bg-emerald-500 rounded-full animate-pulse" />
-              <span className="font-mono text-xs md:text-sm font-black uppercase tracking-[0.4em] text-zinc-900 dark:text-white text-center">
-                DercolBags Packaging Company Ltd.
-              </span>
+              <Image
+                src="https://res.cloudinary.com/ddwet1dzj/image/upload/v1777042366/dercolbags/DERCOLBAGS_LOGO_tolkgw.png"
+                alt="DercolBags Logo"
+                fill
+                className="object-contain"
+                priority
+              />
             </motion.div>
 
             {/* Industrial Progress Bar Container */}

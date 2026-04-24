@@ -1,7 +1,7 @@
 import { Heart, Recycle, ShoppingBag, type LucideIcon } from "lucide-react"
 
 export type Offering = {
-  slug: "watpak" | "store" | "community"
+  slug: "watapak" | "store" | "community"
   title: string
   eyebrow: string
   description: string
@@ -21,12 +21,12 @@ export type Offering = {
 export const offerings: Offering[] = [
   {
     slug: "community",
-    title: "Waste Recovery Programme",
+    title: "Community Waste Recovery Programme",
     eyebrow: "Community Impact",
-    description: "Community programs that turn household and industrial waste into raw materials.",
+    description: "Community waste-recovery programs that turn waste into raw materials.",
     details:
-      "Our recovery programs engage local communities to systematically collect and process plastic and fiber waste. This turns environmental hazards into valuable raw materials for our manufacturing ecosystem.",
-    image: "/images/community_impact.png",
+      "Our community waste-recovery programs turn household and industrial waste into high-quality raw materials, creating a sustainable foundation for circular manufacturing.",
+    image: "/images/community_waste_pickers.png",
     icon: Heart,
     location: "Community Nodes",
     hours: "Active Recovery: Daily",
@@ -43,48 +43,48 @@ export const offerings: Offering[] = [
     ],
   },
   {
-    slug: "watpak",
-    title: "WatPak Digital",
+    slug: "watapak",
+    title: "Watapak",
     eyebrow: "Technology Platform",
-    description: "A platform connecting pickers, recyclers, and SMEs in one seamless ecosystem.",
+    description: "A waste-to-packaging digital platform connecting waste pickers, recyclers, manufacturers, and businesses in one ecosystem.",
     details:
-      "WatPak is our proprietary waste-to-packaging digital platform. It creates supply chain visibility by connecting informal waste collectors, professional recyclers, and eco-conscious manufacturers in a single, data-driven circular network.",
-    image: "/images/wastepack.png",
+      "Watapak is a waste-to-packaging digital platform that connects waste pickers, recyclers, manufacturers, and businesses in one seamless ecosystem, ensuring end-to-end traceability and circularity.",
+    image: "https://res.cloudinary.com/ddwet1dzj/image/upload/v1777040954/dercolbags/Y_-_BB.jpg_jensat.jpg",
     icon: Recycle,
     location: "Ecosystem Hub",
     hours: "24/7 Digital Operations",
     tags: ["Web app", "Supply Chain", "Connectivity"],
-    learnMoreHref: "/watpak",
+    learnMoreHref: "/watapak",
     ctaLabel: "Open Platform",
     heroTitle: "Digital Infrastructure for Circularity",
     heroBody:
-      "WatPak connects the entire value chain—from the person collecting waste on the street to the SME receiving sustainable packaging—ensuring every metric ton is accounted for.",
+      "Watapak connects the entire value chain—from the person collecting waste on the street to the business receiving sustainable packaging—ensuring every metric ton is accounted for.",
     featureList: [
       "Real-time connectivity between waste pickers and recyclers",
       "End-to-end traceability of recycled raw materials",
-      "Unified supply chain visibility for businesses and SMEs",
+      "Unified supply chain visibility for all partner businesses",
     ],
   },
   {
     slug: "store",
     title: "Local Manufacturers",
     eyebrow: "Production Hub",
-    description: "Cutting import costs and lead times by up to 30% through on-site production.",
+    description: "We produce sustainable packaging locally, reducing import dependency, delivery time, and cost by up to 30% compared to imported alternatives.",
     details:
-      "By maintaining local manufacturing facilities, we eliminate the friction of international logistics. This allows us to deliver high-quality, recycled fiber packaging faster and more affordably than imported alternatives.",
-    image: "/images/store.png",
+      "Our local manufacturing hubs convert processed fiber into premium packaging, eliminating international logistical friction while supporting regional industrial growth.",
+    image: "https://res.cloudinary.com/ddwet1dzj/image/upload/v1777037145/dercolbags/DERCOL_WEBSITEEEEE.jpg_rixtgf.jpg",
     icon: ShoppingBag,
-    location: "Accra // Lagos",
+    location: "Accra",
     hours: "Production: 24h Cycles",
     tags: ["Manufacturing", "Supply Chain", "Efficiency"],
     learnMoreHref: "/store",
-    ctaLabel: "View Production",
+    ctaLabel: "Visit Store",
     heroTitle: "Locally Engineered, Globally Sustainable",
     heroBody:
       "Our manufacturing plants convert processed waste into premium packaging, drastically reducing the carbon footprint and cost structure of our partners.",
     featureList: [
       "30% reduction in lead times compared to imports",
-      "Custom branded packaging solutions for growing SMEs",
+      "Custom branded packaging solutions for growing businesses",
       "Local job creation and industrial capacity building",
     ],
   },

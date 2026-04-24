@@ -1,4 +1,5 @@
 import { Geist_Mono, IBM_Plex_Sans, Roboto_Slab } from "next/font/google"
+import Image from "next/image"
 
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
@@ -12,6 +13,16 @@ import { FloatingPathsBackground } from "@/components/ui/floating-paths"
 import { Preloader } from "@/components/preloader"
 
 const robotoSlabHeading = Roboto_Slab({subsets:['latin'],variable:'--font-heading'});
+
+export const metadata = {
+  title: "DercolBags | Sustainable Packaging Architects",
+  description: "DercolBags is a sustainable packaging and Climate Tech Firm empowering African businesses.",
+  icons: {
+    icon: "https://res.cloudinary.com/ddwet1dzj/image/upload/v1777043740/dercolbags/favicon-32x32_vuryfb.png",
+    shortcut: "https://res.cloudinary.com/ddwet1dzj/image/upload/v1777043740/dercolbags/favicon-32x32_vuryfb.png",
+    apple: "https://res.cloudinary.com/ddwet1dzj/image/upload/v1777043740/dercolbags/favicon-32x32_vuryfb.png",
+  }
+}
 
 const ibmPlexSans = IBM_Plex_Sans({subsets:['latin'],variable:'--font-sans'})
 
@@ -38,7 +49,7 @@ export default function RootLayout({
           <AiChatbot />
           <NewsletterModal />
           <Navbar />
-          <main className="relative z-10 flex-grow">
+          <main className="relative flex-grow">
             {children}
           </main>
           <div className="pb-bottom-nav md:pb-0">

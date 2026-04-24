@@ -2,7 +2,7 @@
 
 import * as React from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { X, Mail, Leaf, Sparkles, ArrowRight, CheckCircle } from "lucide-react"
+import { X, Mail, Leaf, ArrowRight, CheckCircle } from "lucide-react"
 
 const STORAGE_KEY = "dercolbags_newsletter_last_seen_at"
 const COOLDOWN_MS = 60 * 60 * 1000 // 1 hour
@@ -64,7 +64,7 @@ export function NewsletterModal() {
     exit: { opacity: 0, transition: { duration: 0.35 } },
   }
 
-  // Modal panel variants — slides up from bottom, slight scale
+  // Modal panel variants
   const panelVariants = {
     hidden: { opacity: 0, y: 60, scale: 0.95 },
     visible: {
@@ -115,14 +115,14 @@ export function NewsletterModal() {
 
           {/* Modal Panel */}
           <motion.div
-            className="relative z-10 w-full max-w-lg overflow-hidden rounded-3xl shadow-[0_32px_80px_-8px_rgba(0,0,0,0.3)] dark:shadow-[0_32px_80px_-8px_rgba(0,0,0,0.6)] border border-zinc-200 dark:border-white/10 bg-white dark:bg-[#030712]"
+            className="relative z-10 w-full max-w-lg overflow-hidden rounded-none border border-zinc-200 dark:border-white/10 bg-white dark:bg-[#030712] shadow-none"
             variants={panelVariants}
             initial="hidden"
             animate="visible"
             exit="exit"
           >
-            {/* Conditional gradient background for dark mode only */}
-            <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/5 via-transparent to-transparent dark:from-emerald-950 dark:via-zinc-900 dark:to-zinc-950" />
+            {/* Grid background */}
+            <div className="absolute inset-0 bg-grid opacity-10 pointer-events-none" />
             
             <motion.div
               aria-hidden="true"
@@ -132,24 +132,10 @@ export function NewsletterModal() {
               transition={{ duration: 0.6, delay: 0.18, ease: smoothEase }}
             />
             
-            {/* Decorative glow orbs */}
-            <motion.div
-              aria-hidden="true"
-              className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-emerald-500/10 dark:bg-emerald-500/20 blur-3xl pointer-events-none"
-              animate={{ scale: [1, 1.08, 1], opacity: [0.12, 0.22, 0.12] }}
-              transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-            />
-            <motion.div
-              aria-hidden="true"
-              className="absolute -bottom-20 -left-20 w-56 h-56 rounded-full bg-emerald-400/5 dark:bg-emerald-400/10 blur-3xl pointer-events-none"
-              animate={{ scale: [1.02, 0.96, 1.02], opacity: [0.05, 0.12, 0.05] }}
-              transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
-            />
-
             {/* Close button */}
             <button
               onClick={handleClose}
-              className="absolute top-4 right-4 z-20 p-2 rounded-full bg-zinc-100 hover:bg-zinc-200 dark:bg-white/10 dark:hover:bg-white/20 text-zinc-500 hover:text-zinc-900 dark:text-white/70 dark:hover:text-white transition-all duration-200 hover:rotate-90"
+              className="absolute top-4 right-4 z-20 p-2 rounded-none bg-zinc-100 hover:bg-zinc-200 dark:bg-white/10 dark:hover:bg-white/20 text-zinc-500 hover:text-zinc-900 dark:text-white/70 dark:hover:text-white transition-all duration-200"
               aria-label="Close newsletter popup"
             >
               <X className="w-4 h-4" />
@@ -173,9 +159,9 @@ export function NewsletterModal() {
                       <CheckCircle className="w-16 h-16 text-emerald-500 dark:text-emerald-400" />
                     </motion.div>
                     <div>
-                      <h3 className="text-2xl font-heading font-bold text-zinc-950 dark:text-white mb-2">You&apos;re in!</h3>
-                      <p className="text-emerald-600 dark:text-emerald-300/80 text-sm">
-                        Welcome to the DercolBags community. Expect inspiring updates soon.
+                      <h3 className="text-2xl font-heading font-black tracking-tighter uppercase text-zinc-950 dark:text-white mb-2">You&apos;re in!</h3>
+                      <p className="text-emerald-600 dark:text-emerald-300/80 text-sm font-bold uppercase tracking-tighter">
+                        Welcome to the community.
                       </p>
                     </div>
                   </motion.div>
@@ -189,22 +175,18 @@ export function NewsletterModal() {
                   >
                     {/* Icon badge */}
                     <motion.div variants={childVariants} className="flex items-center gap-2 mb-6">
-                      <div className="flex items-center justify-center w-10 h-10 rounded-2xl bg-emerald-500/10 dark:bg-emerald-500/20 border border-emerald-500/20 dark:border-emerald-500/30">
+                      <div className="flex items-center justify-center w-10 h-10 rounded-none bg-emerald-500/10 dark:bg-emerald-500/20 border border-emerald-500/20 dark:border-emerald-500/30">
                         <Leaf className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />
-                      </div>
-                      <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/5 dark:bg-emerald-500/10 border border-emerald-500/10 dark:border-emerald-500/20">
-                        <Sparkles className="w-3 h-3 text-emerald-600 dark:text-emerald-400" />
-                        <span className="text-[11px] font-semibold tracking-widest text-emerald-600 dark:text-emerald-400 uppercase">Exclusive Updates</span>
                       </div>
                     </motion.div>
 
                     {/* Headline */}
-                    <motion.h2 variants={childVariants} className="text-3xl sm:text-4xl font-heading font-black tracking-tight text-zinc-950 dark:text-white leading-tight mb-3">
+                    <motion.h2 variants={childVariants} className="text-3xl sm:text-4xl font-heading font-black tracking-tight text-zinc-950 dark:text-white leading-tight mb-3 uppercase">
                       Shape the Future of{" "}
                       <span className="text-emerald-600 dark:text-emerald-400 italic">Eco Packaging</span>
                     </motion.h2>
 
-                    <motion.p variants={childVariants} className="text-zinc-600 dark:text-zinc-400 text-sm leading-relaxed mb-8">
+                    <motion.p variants={childVariants} className="text-zinc-600 dark:text-zinc-400 text-sm leading-relaxed mb-8 italic">
                       Join thousands of businesses getting early access to sustainable packaging innovations, 
                       industry insights, and exclusive DercolBags offers.
                     </motion.p>
@@ -219,19 +201,19 @@ export function NewsletterModal() {
                           onChange={(e) => setEmail(e.target.value)}
                           placeholder="your@email.com"
                           required
-                          className="w-full pl-10 pr-4 py-3 rounded-xl bg-zinc-50 dark:bg-white/5 border border-zinc-200 dark:border-white/10 text-zinc-950 dark:text-white text-sm placeholder:text-zinc-400 dark:placeholder:text-zinc-500 focus:outline-none focus:ring-2 focus:ring-emerald-500/20 dark:focus:ring-emerald-500/50 focus:border-emerald-500/50 transition-all"
+                          className="w-full pl-10 pr-4 py-3 rounded-none bg-zinc-50 dark:bg-white/5 border border-zinc-200 dark:border-white/10 text-zinc-950 dark:text-white text-sm placeholder:text-zinc-400 dark:placeholder:text-zinc-500 focus:outline-none focus:border-emerald-500/50 transition-all"
                         />
                       </div>
                       <button
                         type="submit"
                         disabled={loading}
-                        className="relative flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-white font-semibold text-sm tracking-wide transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-emerald-500/30 active:translate-y-0 disabled:opacity-70 disabled:cursor-not-allowed whitespace-nowrap overflow-hidden group border-none"
+                        className="relative flex items-center justify-center gap-2 px-6 py-3 rounded-none bg-zinc-950 hover:bg-emerald-600 text-white font-black text-sm uppercase tracking-tighter transition-all duration-200 disabled:opacity-70 disabled:cursor-not-allowed whitespace-nowrap overflow-hidden group border-none"
                       >
                         <span className="relative z-10 flex items-center gap-2">
                           {loading ? (
                             <>
                               <motion.div
-                                className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full"
+                                className="w-4 h-4 border-2 border-white/30 border-t-white rounded-none"
                                 animate={{ rotate: 360 }}
                                 transition={{ repeat: Infinity, duration: 0.8, ease: "linear" }}
                               />
@@ -248,7 +230,7 @@ export function NewsletterModal() {
                     </motion.form>
 
                     {/* Fine print */}
-                    <motion.p variants={childVariants} className="mt-4 text-[11px] text-zinc-400 dark:text-zinc-600 text-center">
+                    <motion.p variants={childVariants} className="mt-4 text-[11px] text-zinc-400 dark:text-zinc-600 text-center uppercase font-bold tracking-tighter">
                       No spam, ever. Unsubscribe in one click.
                     </motion.p>
                   </motion.div>

@@ -5,7 +5,7 @@ import * as React from "react"
 import { motion, useInView, animate } from "framer-motion"
 import Image from "next/image"
 import Link from "next/link"
-import { ArrowRight, Recycle, ShoppingBag, Heart, Target, Eye, Shield, CheckCircle } from "lucide-react"
+import { ArrowRight, ArrowUpRight, Recycle, ShoppingBag, Heart, Target, Eye, Shield, CheckCircle } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { FloatingPathsBackground } from "@/components/ui/floating-paths"
@@ -46,34 +46,34 @@ const values = [
   {
     icon: Target,
     title: "Practical Innovation",
-    description: "Designing tools like WatPak to solve real-world industrial friction.",
+    description: "Designing tools like Watapak to solve real-world industrial friction.",
   },
   {
     icon: Heart,
     title: "Community Impact",
-    description: "Empowering local livelihoods and supporting the growth of African SMEs.",
+    description: "Empowering local livelihoods and supporting the growth of African businesses.",
   },
 ]
 
 const ecosystem = [
   {
-    title: "Community Recovery",
-    description: "Driving economic mobility through circular waste recovery systems.",
-    image: "/images/community-impact.png",
+    title: "01 Community Waste Recovery Program",
+    description: "Community waste-recovery programs that turn waste into raw materials.",
+    image: "/images/community_waste_pickers.png",
     icon: Heart,
     href: "/community",
   },
   {
-    title: "WatPak Digital",
-    description: "The operating system for circular packaging and waste recovery.",
-    image: "/images/wastepack.png",
+    title: "02 Watapak Platform",
+    description: "A waste-to-packaging digital platform connecting waste pickers, recyclers, manufacturers, and businesses in one ecosystem.",
+    image: "https://res.cloudinary.com/ddwet1dzj/image/upload/v1777040954/dercolbags/Y_-_BB.jpg_jensat.jpg",
     icon: Recycle,
-    href: "/watpak",
+    href: "/watapak",
   },
   {
-    title: "Local Manufacturers",
-    description: "Premium, sustainable packaging produced locally for African SMEs.",
-    image: "/images/store.png",
+    title: "03 Local Manufacturing Hub",
+    description: "Reducing import dependency, delivery time, and cost by up to 30% compared to imported alternatives.",
+    image: "https://res.cloudinary.com/ddwet1dzj/image/upload/v1777037145/dercolbags/DERCOL_WEBSITEEEEE.jpg_rixtgf.jpg",
     icon: ShoppingBag,
     href: "/store",
   },
@@ -83,17 +83,17 @@ const history = [
   {
     year: "2021",
     title: "Foundation",
-    description: "DercolBags established in Ghana with a clear mission to dismantle Africa’s reliance on single-use plastics.",
+    description: "DercolBags established in Ghana to address Africa’s growing dependence on single-use plastic packaging.",
   },
   {
-    year: "2022",
-    title: "Scaling Impact",
-    description: "Expanded beyond physical packaging into a wider ecosystem that includes digital tools and community support.",
+    year: "2024",
+    title: "Traction & Impact",
+    description: "Serving 610+ businesses and eliminating 16,000 MT of plastic waste across West Africa.",
   },
   {
-    year: "Today",
-    title: "Connected Future",
-    description: "Leading the shift towards a data-driven circular economy across the continent.",
+    year: "2030",
+    title: "Regional Hub",
+    description: "Aiming to serve 3,000+ B2B clients and create 15,000+ green jobs across the continent.",
   },
 ]
 
@@ -105,28 +105,48 @@ const team = [
     description: "Architecting the technical infrastructure and strategic expansion of Africa's leading sustainable packaging ecosystem.",
     image: "/images/team_derrick.png",
     featured: true,
-    socials: { linkedin: "#", twitter: "#", facebook: "#", instagram: "#" }
+    socials: { 
+      linkedin: "https://www.linkedin.com/company/dercolbagspackaging/", 
+      twitter: "https://x.com/DercolBags", 
+      facebook: "https://www.facebook.com/DercolBags/", 
+      instagram: "https://www.instagram.com/dercolbags/" 
+    }
   },
   {
     id: "OPS-002",
     name: "Bevelyn Dartey",
     role: "Chief Operating Officer",
     image: "/images/team_bevelyn.png",
-    socials: { linkedin: "#", twitter: "#", facebook: "#", instagram: "#" }
+    socials: { 
+      linkedin: "https://www.linkedin.com/company/dercolbagspackaging/", 
+      twitter: "https://x.com/DercolBags", 
+      facebook: "https://www.facebook.com/DercolBags/", 
+      instagram: "https://www.instagram.com/dercolbags/" 
+    }
   },
   {
     id: "FIN-003",
     name: "Abednego Tetteh",
     role: "Head of Finance",
     image: "/images/team_abednego.png",
-    socials: { linkedin: "#", twitter: "#", facebook: "#", instagram: "#" }
+    socials: { 
+      linkedin: "https://www.linkedin.com/company/dercolbagspackaging/", 
+      twitter: "https://x.com/DercolBags", 
+      facebook: "https://www.facebook.com/DercolBags/", 
+      instagram: "https://www.instagram.com/dercolbags/" 
+    }
   },
   {
     id: "TEC-004",
     name: "Enoch Ekow Enu",
     role: "Product Lead",
     image: "/images/team_enoch.png",
-    socials: { linkedin: "#", twitter: "#", facebook: "#", instagram: "#" }
+    socials: { 
+      linkedin: "https://www.linkedin.com/company/dercolbagspackaging/", 
+      twitter: "https://x.com/DercolBags", 
+      facebook: "https://www.facebook.com/DercolBags/", 
+      instagram: "https://www.instagram.com/dercolbags/" 
+    }
   },
   {
     id: "DES-005",
@@ -134,19 +154,23 @@ const team = [
     role: "Creative Designer",
     description: "Focused on combining design and storytelling in a way that not only captures attention but also creates real connection. Whether it's through visuals, reflective writing, or digital content, the goal is to help our customers see differently, think deeper, and grow stronger.",
     image: "/images/team_richard.png",
-    socials: { linkedin: "#", twitter: "#", facebook: "#", instagram: "#" }
+    socials: { 
+      linkedin: "https://www.linkedin.com/company/dercolbagspackaging/", 
+      twitter: "https://x.com/DercolBags", 
+      facebook: "https://www.facebook.com/DercolBags/", 
+      instagram: "https://www.instagram.com/dercolbags/" 
+    }
   },
 ]
 
 const impacts = [
-  { label: "Businesses Served", value: "610+", subtext: "SMEs Empowered" },
+  { label: "Businesses Served", value: "610+", subtext: "Across West Africa" },
   { label: "Plastic Eliminated", value: "16,000+", subtext: "Metric Tons" },
   { label: "CO2 Prevented", value: "38,400+", subtext: "Metric Tons" },
-  { label: "Women-Driven", value: "70%", subtext: "Workforce Representation" },
+  { label: "People Reached", value: "5M+", subtext: "Through Engagement" },
 ]
 
 export default function AboutPage() {
-  const [activeValue, setActiveValue] = React.useState(0)
 
   return (
     <div className="bg-white dark:bg-[#030712]">
@@ -179,22 +203,21 @@ export default function AboutPage() {
               className="lg:pt-20"
             >
               <p className="text-xl leading-relaxed text-zinc-600 dark:text-zinc-400 md:text-2xl max-w-xl font-light tracking-tight">
-                At DercolBags, we understand that sustainability is more than just a word—it's the <span className="text-zinc-900 dark:text-white font-medium">cornerstone of our continent's future</span>. With our commitment to local innovation and African craftsmanship, we are dedicated to guiding your eco-conscious journey.
+                DercolBags is a sustainable packaging and <span className="text-zinc-900 dark:text-white font-medium">Climate Tech Firm</span>, founded in 2021 to dismantle Africa’s dependence on single-use plastics.
+              </p>
+              <p className="mt-6 text-lg text-zinc-500 dark:text-zinc-400 leading-relaxed max-w-xl">
+                We design, manufacture, and distribute affordable, high-quality, eco-friendly packaging solutions for businesses across food services, agro-processing, manufacturing, retail, and e-commerce.
               </p>
               
               <div className="mt-12 flex items-center gap-8">
-                <Button asChild variant="outline" size="lg" className="group h-14 rounded-xl border-zinc-200 dark:border-white/10 px-8 text-lg font-bold hover:bg-zinc-50 dark:hover:bg-white/5 transition-all">
+                <Button asChild variant="outline" size="lg" className="group h-14 rounded-none border-zinc-200 dark:border-white/10 px-8 text-lg font-black uppercase tracking-tighter hover:bg-zinc-50 dark:hover:bg-white/5 transition-all">
                   <Link href="/contact" className="flex items-center gap-3">
                     Talk to Us
                     <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
                   </Link>
                 </Button>
                 <div className="hidden md:block">
-                  <div className="text-[10px] font-mono text-zinc-400 uppercase tracking-widest">System Status</div>
-                  <div className="flex items-center gap-2 mt-1">
-                    <div className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
-                    <span className="text-xs font-bold text-zinc-900 dark:text-white">OPERATIONAL</span>
-                  </div>
+                  {/* Status indicator removed */}
                 </div>
               </div>
             </motion.div>
@@ -206,10 +229,10 @@ export default function AboutPage() {
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="col-span-12 md:col-span-5 aspect-[4/3] relative rounded-2xl overflow-hidden"
+              className="col-span-12 md:col-span-5 aspect-[4/3] relative rounded-none overflow-hidden"
             >
               <Image
-                src="/images/community_impact.png"
+                src="/images/community_waste_pickers.png"
                 alt="Our Community"
                 fill
                 className="object-cover"
@@ -219,10 +242,10 @@ export default function AboutPage() {
               initial={{ opacity: 0, y: 60 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
-              className="col-span-12 md:col-span-7 aspect-[16/10] relative rounded-2xl overflow-hidden"
+              className="col-span-12 md:col-span-7 aspect-[16/10] relative rounded-none overflow-hidden"
             >
               <Image
-                src="/images/packaging-ecosystem.png"
+                src="https://res.cloudinary.com/ddwet1dzj/image/upload/v1777037145/dercolbags/DERCOL_WEBSITEEEEE.jpg_rixtgf.jpg"
                 alt="Sustainable Future"
                 fill
                 className="object-cover"
@@ -232,21 +255,73 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Large Statement Section */}
-      <section className="py-24 overflow-hidden">
+      {/* The Problem Section */}
+      <section className="py-24 overflow-hidden bg-zinc-50/50 dark:bg-black/50">
         <div className="container mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="max-w-5xl"
-          >
-            <h2 className="font-heading text-3xl md:text-5xl lg:text-6xl leading-[1.15] tracking-tight text-zinc-950 dark:text-white">
-              <span className="text-emerald-600 font-bold">Transparency, integrity, and professionalism</span>{' '}
-              <span className="font-light">are the pillars of our business philosophy. We prioritize clear communication and honest advice, ensuring that you're empowered to make informed decisions throughout your sustainability journey.</span>
-            </h2>
-          </motion.div>
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
+              <span className="font-mono text-[10px] font-bold uppercase tracking-[0.3em] text-emerald-600 dark:text-emerald-400 mb-4 block">The Challenge</span>
+              <h2 className="text-5xl md:text-7xl font-black tracking-tighter text-zinc-900 dark:text-white leading-[0.9] uppercase mb-8">
+                80% of packaging is <br />
+                <span className="text-emerald-600">Single-Use Plastic.</span>
+              </h2>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="space-y-6"
+            >
+              <p className="text-xl text-zinc-600 dark:text-zinc-400 font-light leading-relaxed">
+                By 2050, Africa will reach 2.5 billion people. Yet today, 19 million MT of plastic waste is generated annually—60% linked to food packaging. 
+              </p>
+              <div className="grid grid-cols-2 gap-8 pt-8 border-t border-zinc-200 dark:border-white/10">
+                <div>
+                  <div className="text-3xl font-bold text-zinc-900 dark:text-white">10%</div>
+                  <div className="text-xs uppercase tracking-widest text-zinc-500 mt-2">Revenue spent on plastic by businesses</div>
+                </div>
+                <div>
+                  <div className="text-3xl font-bold text-zinc-900 dark:text-white">&lt;10%</div>
+                  <div className="text-xs uppercase tracking-widest text-zinc-500 mt-2">Plastic waste actually recycled</div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Large Statement Section - Vision & Mission */}
+      <section className="py-24 overflow-hidden border-y border-zinc-100 dark:border-white/5">
+        <div className="container mx-auto px-6">
+          <div className="grid md:grid-cols-2 gap-px bg-zinc-100 dark:bg-white/10 border border-zinc-100 dark:border-white/10">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="p-12 lg:p-16 bg-emerald-600 text-white"
+            >
+              <span className="font-mono text-[10px] uppercase tracking-[0.4em] opacity-70">Vision</span>
+              <h3 className="mt-8 text-3xl md:text-5xl font-black leading-tight tracking-tighter uppercase">
+                To become the leading brand in sustainable and smart packaging across Africa.
+              </h3>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="p-12 lg:p-16 bg-zinc-900 text-white dark:bg-black"
+            >
+              <span className="font-mono text-[10px] uppercase tracking-[0.4em] opacity-70">Mission</span>
+              <h3 className="mt-8 text-3xl md:text-5xl font-black leading-tight tracking-tighter uppercase">
+                Empowering entrepreneurs to replace single-use plastic for a cleaner Environment.
+              </h3>
+            </motion.div>
+          </div>
         </div>
       </section>
 
@@ -265,81 +340,50 @@ export default function AboutPage() {
                 <span className="text-emerald-600">US.</span>
               </h3>
             </div>
-            <div className="hidden lg:block h-px flex-1 mx-12 bg-zinc-200 dark:bg-white/10" />
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-16">
-            <div className="space-y-4">
-              {ecosystem.map((item, i) => (
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {ecosystem.map((item, i) => {
+              const Icon = item.icon
+              return (
                 <motion.div
                   key={item.title}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1 }}
-                  onClick={() => setActiveValue(i)}
-                  className={`group relative flex gap-8 p-10 rounded-3xl transition-all duration-500 cursor-pointer overflow-hidden ${
-                    activeValue === i 
-                      ? "bg-white dark:bg-zinc-900" 
-                      : "hover:bg-zinc-100/50 dark:hover:bg-white/5"
-                  }`}
+                  className="group relative p-12 bg-zinc-50 dark:bg-white/5 border border-zinc-100 dark:border-white/5 transition-all duration-500"
                 >
-                  {activeValue === i && (
-                    <motion.div 
-                      layoutId="indicator"
-                      className="absolute left-0 top-0 bottom-0 w-1 bg-emerald-500"
-                    />
-                  )}
-                  
-                  <span className={`font-mono text-3xl font-black transition-colors duration-500 ${
-                    activeValue === i ? "text-emerald-500" : "text-zinc-200 dark:text-zinc-800"
-                  }`}>
-                    0{i + 1}
-                  </span>
-                  
-                  <div className="flex-1">
-                    <h4 className={`text-2xl font-bold transition-colors ${
-                      activeValue === i ? "text-zinc-900 dark:text-white" : "text-zinc-400 dark:text-zinc-600"
-                    }`}>
-                      {item.title}
-                    </h4>
-                    {activeValue === i && (
-                      <motion.div
-                        initial={{ opacity: 0, height: 0 }}
-                        animate={{ opacity: 1, height: "auto" }}
-                        transition={{ duration: 0.5 }}
-                      >
-                        <p className="mt-6 text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed font-light">
-                          {item.description}
-                        </p>
-                      </motion.div>
-                    )}
+                  <div className="flex flex-col gap-8">
+                    <div className="flex items-center justify-between">
+                      <span className="font-mono text-3xl font-black text-zinc-200 dark:text-zinc-800">
+                        0{i + 1}
+                      </span>
+                      <div className="h-12 w-12 flex items-center justify-center bg-white dark:bg-zinc-900 border border-zinc-100 dark:border-white/5 text-emerald-500">
+                        <Icon className="h-6 w-6" />
+                      </div>
+                    </div>
+                    
+                    <div>
+                      <h4 className="text-2xl font-black uppercase tracking-tighter text-zinc-900 dark:text-white mb-6">
+                        {item.title}
+                      </h4>
+                      <p className="text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed font-light italic">
+                        {item.description}
+                      </p>
+                    </div>
+
+                    <Link 
+                      href={item.href}
+                      className="inline-flex items-center gap-2 text-xs font-black uppercase tracking-widest text-emerald-500 hover:text-emerald-600 transition-colors"
+                    >
+                      Protocol Details
+                      <ArrowUpRight className="h-3 w-3" />
+                    </Link>
                   </div>
                 </motion.div>
-              ))}
-            </div>
-
-            <div className="relative rounded-[2.5rem] overflow-hidden group">
-              <motion.div
-                key={activeValue}
-                initial={{ scale: 1.1, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                transition={{ duration: 1 }}
-                className="h-full w-full"
-              >
-                <Image
-                  src={ecosystem[activeValue].image}
-                  alt={ecosystem[activeValue].title}
-                  fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-              </motion.div>
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-              <div className="absolute bottom-10 left-10 right-10">
-                 <div className="font-mono text-[10px] uppercase tracking-widest text-emerald-400 mb-2">Technical Module</div>
-                 <h4 className="text-3xl font-bold text-white uppercase tracking-tighter">{ecosystem[activeValue].title}</h4>
-              </div>
-            </div>
+              )
+            })}
           </div>
         </div>
       </section>
@@ -361,7 +405,7 @@ export default function AboutPage() {
                   <AnimatedCounter value={stat.value} />
                 </div>
                 <div className="mt-6 flex items-center gap-3">
-                   <div className="h-1 w-1 rounded-full bg-emerald-500" />
+                   <div className="h-1 w-1 rounded-none bg-emerald-500" />
                    <div className="text-zinc-500 dark:text-zinc-400 font-bold uppercase tracking-[0.4em] text-[10px]">
                     {stat.label}
                   </div>
@@ -375,27 +419,27 @@ export default function AboutPage() {
       {/* Core Infrastructure (Vision / Mission) */}
       <section className="py-24 bg-zinc-50 dark:bg-black/40 border-b border-zinc-100 dark:border-white/5 overflow-hidden">
         <div className="container mx-auto px-6">
-          <div className="grid gap-px bg-zinc-200 dark:bg-white/10 overflow-hidden rounded-[2.5rem] border border-zinc-200 dark:border-white/10">
+          <div className="grid gap-px bg-zinc-200 dark:bg-white/10 overflow-hidden rounded-none border border-zinc-200 dark:border-white/10">
             {/* Vision */}
             <motion.div
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
-              className="group relative bg-white dark:bg-[#030712] p-12 lg:p-16 hover:bg-zinc-50 dark:hover:bg-zinc-900/50 transition-colors"
+              className="group relative bg-white dark:bg-[#030712] p-12 lg:p-20 hover:bg-zinc-50 dark:hover:bg-zinc-900/50 transition-colors"
             >
               <div className="flex flex-col lg:flex-row gap-12 lg:items-center">
                 <div className="flex-1">
                   <div className="flex items-center gap-3 mb-6">
-                    <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-emerald-500/10 text-emerald-500">
-                      <Eye className="h-4 w-4" />
+                    <div className="flex h-8 w-8 items-center justify-center rounded-none bg-emerald-500/10 text-emerald-500">
+                      <Shield className="h-4 w-4" />
                     </div>
-                    <span className="font-mono text-[10px] font-bold uppercase tracking-[0.3em] text-emerald-600 dark:text-emerald-400">Strategic Vision</span>
+                    <span className="font-mono text-[10px] font-bold uppercase tracking-[0.3em] text-emerald-600 dark:text-emerald-400">Current Scaling</span>
                   </div>
-                  <h4 className="text-4xl md:text-5xl font-black text-zinc-900 dark:text-white leading-tight tracking-tighter uppercase">Architecting the definitive brand for sustainable packaging in Africa.</h4>
+                  <h4 className="text-4xl md:text-6xl font-black text-zinc-900 dark:text-white leading-[0.9] tracking-tighter uppercase">Architecting the future of circular distribution.</h4>
                 </div>
                 <div className="lg:max-w-md">
-                  <p className="text-lg text-zinc-600 dark:text-zinc-400 font-light leading-relaxed">
-                    Accelerating the value of African products and the lives of those who create them through modular industrial intelligence.
+                  <p className="text-xl text-zinc-600 dark:text-zinc-400 font-light leading-relaxed italic border-l border-emerald-500/30 pl-8">
+                    We are currently investing in distribution trucks, e-bikes, and advanced machinery to scale our waste-recovery infrastructure and the Watapak digital platform.
                   </p>
                 </div>
               </div>
@@ -407,21 +451,21 @@ export default function AboutPage() {
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="group relative bg-white dark:bg-[#030712] p-12 lg:p-16 hover:bg-zinc-50 dark:hover:bg-zinc-900/50 transition-colors"
+              className="group relative bg-white dark:bg-[#030712] p-12 lg:p-20 hover:bg-zinc-50 dark:hover:bg-zinc-900/50 transition-colors"
             >
               <div className="flex flex-col lg:flex-row gap-12 lg:items-center">
                 <div className="flex-1">
                   <div className="flex items-center gap-3 mb-6">
-                    <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-emerald-500/10 text-emerald-500">
+                    <div className="flex h-8 w-8 items-center justify-center rounded-none bg-emerald-500/10 text-emerald-500">
                       <Target className="h-4 w-4" />
                     </div>
                     <span className="font-mono text-[10px] font-bold uppercase tracking-[0.3em] text-emerald-600 dark:text-emerald-400">Core Mission</span>
                   </div>
-                  <h4 className="text-4xl md:text-5xl font-black text-zinc-900 dark:text-white leading-tight tracking-tighter uppercase">Securing a cleaner future for the next generation of entrepreneurs.</h4>
+                  <h4 className="text-4xl md:text-6xl font-black text-zinc-900 dark:text-white leading-[0.9] tracking-tighter uppercase">Connecting every business to sustainable packaging.</h4>
                 </div>
                 <div className="lg:max-w-md">
-                  <p className="text-lg text-zinc-600 dark:text-zinc-400 font-light leading-relaxed">
-                    Empowering every SME to replace single-use plastic with high-quality eco-friendly alternatives through our connected platform.
+                  <p className="text-xl text-zinc-600 dark:text-zinc-400 font-light leading-relaxed italic border-l border-emerald-500/30 pl-8">
+                    Empowering every business to replace single-use plastic with high-quality eco-friendly alternatives through our connected platform.
                   </p>
                 </div>
               </div>
@@ -439,7 +483,7 @@ export default function AboutPage() {
             <div className="h-px flex-1 bg-zinc-100 dark:bg-white/10 mb-4" />
           </div>
 
-          <div className="grid md:grid-cols-3 gap-px bg-zinc-100 dark:bg-white/10 border border-zinc-100 dark:border-white/10 rounded-[3rem] overflow-hidden">
+          <div className="grid md:grid-cols-3 gap-px bg-zinc-100 dark:bg-white/10 border border-zinc-100 dark:bg-white/10 rounded-none overflow-hidden">
             {history.map((item, i) => (
               <motion.div
                 key={item.year}
@@ -447,14 +491,14 @@ export default function AboutPage() {
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="bg-white dark:bg-[#030712] p-12 hover:bg-zinc-50 dark:hover:bg-zinc-900/50 transition-colors"
+                className="bg-white dark:bg-[#030712] p-16 hover:bg-zinc-50 dark:hover:bg-zinc-900/50 transition-colors"
               >
-                <div className="flex items-center gap-3 mb-6">
-                   <div className="h-2 w-2 rounded-full bg-emerald-500" />
-                   <span className="font-mono text-emerald-500 text-sm font-bold tracking-widest leading-none">{item.year}</span>
+                <div className="flex items-center gap-3 mb-8">
+                   <div className="h-2 w-2 rounded-none bg-emerald-500" />
+                   <span className="font-mono text-emerald-500 text-base font-black tracking-[0.2em] leading-none">{item.year}</span>
                 </div>
-                <h4 className="text-2xl font-bold text-zinc-900 dark:text-white uppercase tracking-tighter">{item.title}</h4>
-                <p className="mt-6 text-zinc-600 dark:text-zinc-400 leading-relaxed font-light">
+                <h4 className="text-3xl font-black text-zinc-900 dark:text-white uppercase tracking-tighter leading-none">{item.title}</h4>
+                <p className="mt-8 text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed font-light italic">
                   {item.description}
                 </p>
               </motion.div>
@@ -468,10 +512,6 @@ export default function AboutPage() {
         <div className="container mx-auto px-6">
           <div className="flex flex-col md:flex-row items-end justify-between mb-24 gap-8">
             <div className="max-w-2xl">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="h-1 w-8 bg-emerald-500" />
-                <span className="font-mono text-[10px] font-bold uppercase tracking-[0.4em] text-emerald-600 dark:text-emerald-400">Team</span>
-              </div>
               <h2 className="text-6xl md:text-8xl font-black tracking-tighter text-zinc-900 dark:text-white leading-[0.8]">
                 BEHIND THE <br />
                 <span className="text-emerald-600 uppercase">Brand.</span>
@@ -482,7 +522,7 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div className="flex flex-col md:flex-row h-[1200px] md:h-[700px] gap-px bg-zinc-100 dark:bg-white/10 border border-zinc-100 dark:border-white/10 overflow-hidden rounded-[2rem]">
+          <div className="flex flex-col md:flex-row h-[1200px] md:h-[700px] gap-px bg-zinc-100 dark:bg-white/10 border border-zinc-100 dark:border-white/10 overflow-hidden rounded-none">
             {team.map((member, i) => (
               <motion.div
                 key={member.id}
@@ -508,32 +548,25 @@ export default function AboutPage() {
                 {/* Content Overlay */}
                 <div className="relative z-10 h-full flex flex-col justify-between p-8 md:p-12">
                   <div className="flex justify-between items-start">
-                    <span className="font-mono text-[10px] font-bold text-emerald-500 tracking-widest bg-zinc-900/80 px-3 py-1 rounded-full border border-white/10">
+                    <span className="font-mono text-[10px] font-bold text-emerald-500 tracking-widest bg-zinc-900/80 px-3 py-1 rounded-none border border-white/10">
                       0{i + 1}
                     </span>
                   </div>
 
                   <div className="transform transition-transform duration-500 group-hover:-translate-y-4">
-                    <h3 className="font-heading text-3xl md:text-4xl font-black text-white leading-none tracking-tighter uppercase shadow-zinc-950/50 drop-shadow-sm">
+                    <h3 className="font-heading text-4xl md:text-5xl font-black text-white leading-[0.8] tracking-tighter uppercase shadow-zinc-950/50 drop-shadow-sm">
                       {member.name.split(' ').map((word, idx) => (
                          <span key={idx} className="block">{word}</span>
                       ))}
                     </h3>
                     
-                    {/* Role & Bio revealed on Hover via Group Hover */}
-                    <div className="overflow-hidden h-0 opacity-0 group-hover:h-auto group-hover:opacity-100 transition-all duration-500 ease-out">
-                      <p className="mt-4 font-mono text-xs font-bold text-emerald-400 uppercase tracking-[0.2em] mb-8">
+                    <div className="mt-6">
+                      <p className="font-mono text-xs font-black text-white uppercase tracking-[0.3em] mb-8">
                         {member.role}
                       </p>
-                      
-                      <div className="hidden md:block">
-                        <p className="text-zinc-100 text-sm font-light leading-relaxed max-w-[240px] border-l border-emerald-500/50 pl-6">
-                          {member.description || "Leading the infrastructure development for high-performance sustainable ecosystems."}
-                        </p>
-                      </div>
 
                       {/* Social Links */}
-                      <div className="flex items-center gap-4 mt-8">
+                      <div className="flex items-center gap-5 mt-6">
                         {[
                           { name: 'linkedin', path: "M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" },
                           { name: 'twitter', path: "M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932 6.064-6.932zm-1.292 19.49h2.039L6.486 3.24H4.298l13.311 17.403z" },
@@ -546,9 +579,11 @@ export default function AboutPage() {
                             <Link 
                               key={social.name} 
                               href={href} 
-                              className="text-white/60 hover:text-emerald-400 transition-colors"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-white hover:text-emerald-400 transition-colors"
                             >
-                              <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                              <svg className="w-6 h-6 fill-current" viewBox="0 0 24 24">
                                 <path d={social.path} />
                               </svg>
                             </Link>
@@ -560,8 +595,8 @@ export default function AboutPage() {
                 </div>
 
                 {/* Industrial Corner Accents */}
-                <div className="absolute top-4 left-4 h-4 w-4 border-t-2 border-l-2 border-emerald-500/30 opacity-0 group-hover:opacity-100 transition-opacity" />
-                <div className="absolute bottom-4 right-4 h-4 w-4 border-b-2 border-r-2 border-emerald-500/30 opacity-0 group-hover:opacity-100 transition-opacity" />
+                <div className="absolute top-6 left-6 h-6 w-6 border-t-2 border-l-2 border-emerald-500/30 opacity-0 group-hover:opacity-100 transition-opacity" />
+                <div className="absolute bottom-6 right-6 h-6 w-6 border-b-2 border-r-2 border-emerald-500/30 opacity-0 group-hover:opacity-100 transition-opacity" />
               </motion.div>
             ))}
           </div>
@@ -571,7 +606,7 @@ export default function AboutPage() {
       {/* CTA Section (Industrial Refinement) */}
       <section className="py-32 overflow-hidden border-t border-zinc-100 dark:border-white/5">
         <div className="container mx-auto px-6">
-          <div className="relative rounded-[3rem] p-12 overflow-hidden md:p-24 border border-zinc-100 dark:border-white/5 dark:shadow-none">
+          <div className="relative rounded-none p-12 overflow-hidden md:p-32 border border-zinc-100 dark:border-white/5">
             {/* Background Image & Overlay */}
             <div className="absolute inset-0 z-0">
                <Image 
@@ -584,37 +619,37 @@ export default function AboutPage() {
                <div className="absolute inset-0 bg-grid opacity-10 pointer-events-none" />
             </div>
             
-            <div className="relative z-10 max-w-3xl">
-              <div className="flex items-center gap-3 mb-8">
-                <div className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
+            <div className="relative z-10 max-w-4xl">
+              <div className="flex items-center gap-3 mb-10">
+                <div className="h-2 w-2 rounded-none bg-emerald-500 animate-pulse" />
                 <span className="font-mono text-[10px] font-bold uppercase tracking-[0.4em] text-emerald-400">Call to Action</span>
               </div>
               
-              <h2 className="font-heading text-6xl font-black text-white md:text-8xl leading-[0.8] tracking-tighter">
-                LET'S BUILD <br />
+              <h2 className="font-heading text-7xl font-black text-white md:text-[10rem] leading-[0.8] tracking-tighter uppercase">
+                BUILD <br />
                 <span className="text-emerald-500">THE FUTURE.</span>
               </h2>
               
-              <p className="mt-10 text-xl text-zinc-200 font-light leading-relaxed max-w-xl">
-                Join our ecosystem and transform how your business handles packaging, sustainability, and community impact through data-driven circularity.
+              <p className="mt-14 text-2xl text-zinc-200 font-light leading-snug max-w-2xl italic border-l border-emerald-500/50 pl-10">
+                Join our ecosystem and transform how your business handles packaging, sustainability, and community impact.
               </p>
               
-              <div className="mt-14 flex flex-wrap gap-6">
-                <Button asChild size="lg" className="h-16 rounded-xl bg-emerald-500 px-10 text-lg font-bold text-white hover:bg-emerald-600 transition-all border-none">
+              <div className="mt-20 flex flex-wrap gap-8">
+                <Button asChild size="lg" className="h-20 rounded-none bg-emerald-500 px-12 text-xl font-black uppercase tracking-tighter text-white hover:bg-white hover:text-black transition-all border-none">
                   <Link href="/contact">Partner with Us</Link>
                 </Button>
-                <Button asChild variant="outline" size="lg" className="h-16 rounded-xl px-10 text-lg font-bold bg-white text-zinc-950 border-none hover:bg-zinc-200 shadow-xl shadow-black/10 transition-all">
+                <Button asChild variant="outline" size="lg" className="h-20 rounded-none px-12 text-xl font-black uppercase tracking-tighter bg-white text-zinc-950 border-none hover:bg-emerald-500 hover:text-white transition-all">
                   <Link href="/store">Browse Products</Link>
                 </Button>
               </div>
             </div>
 
             {/* Decorative Tech Marker */}
-            <div className="absolute bottom-12 right-12 hidden lg:block">
-               <div className="font-mono text-[10px] text-white/40 uppercase tracking-widest text-right">
+            <div className="absolute bottom-16 right-16 hidden lg:block">
+               <div className="font-mono text-[12px] text-white/40 uppercase tracking-[0.3em] text-right leading-relaxed">
                   System: INFRA-STRUCTURE <br />
                   Node: GH-ACCRA-01 <br />
-                  Status: READY
+                  Status: OPERATIONAL_READY
                </div>
             </div>
           </div>
