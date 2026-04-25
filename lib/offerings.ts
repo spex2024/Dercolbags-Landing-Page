@@ -21,7 +21,7 @@ export type Offering = {
 export const offerings: Offering[] = [
   {
     slug: "store",
-    title: "Upgrade Your Packaging",
+    title: "Sustainable Packaging",
     eyebrow: "Production Hub",
     description: "We produce sustainable packaging locally, reducing import dependency, delivery time, and cost by up to 30% compared to imported alternatives.",
     details:
@@ -44,7 +44,7 @@ export const offerings: Offering[] = [
   },
   {
     slug: "watapak",
-    title: "Get Paid for Waste",
+    title: "WatPak",
     eyebrow: "Technology Platform",
     description: "A waste-to-packaging digital platform connecting waste pickers, recyclers, manufacturers, and businesses in one ecosystem.",
     details:
@@ -67,7 +67,7 @@ export const offerings: Offering[] = [
   },
   {
     slug: "community",
-    title: "Join the Community",
+    title: "Community Waste Recovery Program",
     eyebrow: "Community Impact",
     description: "Community waste-recovery programs that turn waste into raw materials.",
     details:
