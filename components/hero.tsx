@@ -148,38 +148,6 @@ export function Hero() {
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
         >
-          {/* External Bezel / Thick Emerald Border */}
-          <div className="absolute -inset-[4px] border-[4px] border-emerald-500/40 rounded-none pointer-events-none z-20" />
-          <div className="absolute -inset-[1px] border border-white/20 rounded-none pointer-events-none z-30" />
-
-          {/* Sci-Fi Corner Brackets */}
-          <div className="absolute -top-2 -left-2 w-8 h-8 border-t-2 border-l-2 border-emerald-500 z-40 pointer-events-none" />
-          <div className="absolute -top-2 -right-2 w-8 h-8 border-t-2 border-r-2 border-emerald-500 z-40 pointer-events-none" />
-          <div className="absolute -bottom-2 -left-2 w-8 h-8 border-b-2 border-l-2 border-emerald-500 z-40 pointer-events-none" />
-          <div className="absolute -bottom-2 -right-2 w-8 h-8 border-b-2 border-r-2 border-emerald-500 z-40 pointer-events-none" />
-
-          {/* Technical HUD Corner Labels */}
-          <div className={cn(
-            "absolute top-8 left-8 z-30 flex flex-col gap-1 pointer-events-none transition-all duration-700",
-            (!isPlaying && !isHovered) ? "opacity-60" : "opacity-0 translate-y-[-10px]"
-          )}>
-            <div className="flex items-center gap-2">
-              <div className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
-              <span className="font-mono text-[10px] font-bold text-white uppercase tracking-[0.2em]">Uplink: Active</span>
-            </div>
-            <span className="font-mono text-[8px] text-emerald-500/70 uppercase tracking-widest pl-3.5">Encryption: Eco-Secure</span>
-          </div>
-
-          <div className={cn(
-            "absolute top-8 right-8 z-30 flex flex-col items-end gap-1 pointer-events-none transition-all duration-700 text-right",
-            (!isPlaying && !isHovered) ? "opacity-60" : "opacity-0 translate-y-[-10px]"
-          )}>
-            <div className="flex items-center gap-3">
-              <span className="font-mono text-[10px] font-bold text-white uppercase tracking-[0.2em]">4K // Cinematic</span>
-              <div className="px-1.5 py-0.5 border border-red-500 text-[8px] font-black text-red-500 animate-pulse">REC</div>
-            </div>
-            <span className="font-mono text-[8px] text-white/40 uppercase tracking-widest">Buffer: 100% // Latency: 12ms</span>
-          </div>
 
           <motion.div 
             className="relative w-full aspect-video md:aspect-[21/10] lg:h-[800px] rounded-none overflow-hidden bg-zinc-950 border border-white/5 cursor-pointer"
@@ -196,50 +164,14 @@ export function Hero() {
               onWaiting={() => setIsBuffering(true)}
               onPlaying={() => setIsBuffering(false)}
               onEnded={() => setIsPlaying(false)}
-              className={cn(
-                "w-full h-full object-cover transition-all duration-1000",
-                (isPlaying || isHovered) ? "grayscale-0 opacity-100 blur-0" : "grayscale opacity-30 blur-[2px]"
-              )}
+              className="w-full h-full object-cover"
             >
               <source 
-                src="https://res.cloudinary.com/ddwet1dzj/video/upload/q_auto,f_auto/v1777106177/dercolbags/DercolBags__Smart_Packaging_Sustainable_Success._xtaush.mp4" 
+                src="https://res.cloudinary.com/ddwet1dzj/video/upload/v1777117322/dercolbags/DercolBags__Smart_Packaging_dsdnkh.mp4" 
                 type="video/mp4" 
               />
             </video>
 
-            {/* Sci-Fi Green Gradient Overlay */}
-            <div className={cn(
-              "absolute inset-0 bg-gradient-to-br from-emerald-500/10 via-transparent to-emerald-950/20 pointer-events-none z-10 transition-opacity duration-700",
-              (!isPlaying && !isHovered) ? "opacity-100" : "opacity-0"
-            )} />
-
-            {/* Scanlines Effect */}
-            <div className={cn(
-              "absolute inset-0 pointer-events-none z-10 bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.1)_50%),linear-gradient(90deg,rgba(255,0,0,0.03),rgba(0,255,0,0.01),rgba(0,0,255,0.03))] bg-[length:100%_4px,3px_100%] transition-opacity duration-700",
-              (!isPlaying && !isHovered) ? "opacity-20" : "opacity-0"
-            )} />
-            
-            {/* HUD Grid */}
-            <div className={cn(
-              "absolute inset-0 bg-grid pointer-events-none z-10 transition-opacity duration-700",
-              (!isPlaying && !isHovered) ? "opacity-[0.03]" : "opacity-0"
-            )} />
-
-            {/* Sci-Fi Target Crosshair (Center) */}
-            <div className={cn(
-              "absolute inset-0 flex items-center justify-center pointer-events-none z-20 transition-all duration-700",
-              (!isPlaying && !isHovered) ? "opacity-20 scale-100" : "opacity-0 scale-110"
-            )}>
-              <div className="relative w-20 h-20">
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-0.5 h-3 bg-emerald-500" />
-                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0.5 h-3 bg-emerald-500" />
-                <div className="absolute left-0 top-1/2 -translate-y-1/2 w-3 h-0.5 bg-emerald-500" />
-                <div className="absolute right-0 top-1/2 -translate-y-1/2 w-3 h-0.5 bg-emerald-500" />
-              </div>
-            </div>
-
-            {/* Gloss Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-tr from-emerald-500/5 via-transparent to-transparent pointer-events-none z-20" />
 
             {/* Center Play Overlay */}
             <AnimatePresence>
