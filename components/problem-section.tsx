@@ -33,15 +33,18 @@ export function ProblemSection() {
             </h2>
           </motion.div>
 
-          <motion.p
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.15 }}
-            className="text-lg md:text-xl text-zinc-600 dark:text-zinc-400 font-medium leading-relaxed lg:max-w-md"
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="relative lg:pl-12 border-l-2 border-emerald-500/20"
           >
-            Your product loses value and our streets pay the price.
-          </motion.p>
+            <p className="text-3xl md:text-4xl lg:text-5xl font-light text-zinc-900 dark:text-zinc-100 leading-[1.1] tracking-tighter italic">
+              Your product <span className="font-black text-emerald-600 dark:text-emerald-500 not-italic uppercase tracking-normal">loses value</span><br className="hidden md:block" />
+              <span className="text-lg md:text-xl lg:text-2xl opacity-60 not-italic font-medium tracking-normal ml-1">and our streets</span> <span className="font-black text-zinc-900 dark:text-white not-italic underline decoration-emerald-500/40 underline-offset-[12px] uppercase tracking-normal">pay the price.</span>
+            </p>
+          </motion.div>
         </div>
 
         {/* 4 Problems — heavy grid blocks */}

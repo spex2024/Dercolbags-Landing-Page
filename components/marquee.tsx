@@ -4,12 +4,16 @@ import { motion } from "framer-motion"
 import Image from "next/image"
 
 const partners = [
-  { name: "EcoLogic", logo: "/images/partners/logo1.png" },
-  { name: "GreenTech", logo: "/images/partners/logo2.png" },
-  { name: "SustainGrow", logo: "/images/partners/logo3.png" },
-  { name: "BioPack", logo: "/images/partners/logo4.png" },
-  { name: "CircularNode", logo: "/images/partners/logo5.png" },
-  { name: "EarthFoundry", logo: "/images/partners/logo6.png" },
+  { name: "Fidelity Bank Ghana", logo: "" },
+  { name: "Acumen West Africa", logo: "" },
+  { name: "Orange Corners", logo: "" },
+  { name: "Ghana Climate Innovation Centre", logo: "" },
+  { name: "Miller Center for Social Entrepreneurship", logo: "" },
+  { name: "Westerwelle Foundation", logo: "" },
+  { name: "Because International", logo: "" },
+  { name: "EY Ghana", logo: "" },
+  { name: "Deutsche Welle", logo: "" },
+  { name: "AgrInnovators", logo: "" },
 ]
 
 export function Marquee() {
@@ -24,39 +28,44 @@ export function Marquee() {
          </span>
       </div>
 
-      <div className="flex select-none overflow-hidden">
+      <div className="flex select-none overflow-hidden group">
         <motion.div
-          animate={{ x: [0, -1920] }}
+          animate={{ x: ["0%", "-50%"] }}
           transition={{
-            duration: 35,
+            duration: 40,
             repeat: Infinity,
             ease: "linear",
           }}
-          className="flex min-w-full shrink-0 items-center justify-around gap-20"
+          className="flex shrink-0 items-center gap-32 pr-32"
         >
-          {Array.from({ length: 2 }).map((_, i) => (
-            <div key={i} className="flex shrink-0 items-center justify-around gap-24">
-              {partners.map((partner) => (
-                <div
-                  key={partner.name}
-                  className="group relative flex items-center gap-4 transition-all duration-500 cursor-pointer"
-                >
-                  <div className="h-10 w-10 rounded-xl bg-zinc-900 dark:bg-white/10 flex items-center justify-center border border-white/10 shadow-lg shadow-black/20 group-hover:scale-110 group-hover:bg-emerald-500 transition-all duration-500">
-                    <span className="text-sm font-black text-emerald-500 group-hover:text-white">{partner.name[0]}</span>
-                  </div>
-                  <span className="font-heading text-2xl font-black tracking-tighter text-zinc-900 dark:text-white uppercase group-hover:text-emerald-500 transition-colors">
-                    {partner.name}
-                  </span>
-                </div>
-              ))}
+          {/* First set of partners */}
+          {partners.map((partner, idx) => (
+            <div
+              key={`${partner.name}-${idx}`}
+              className="flex items-center transition-all duration-500 cursor-pointer whitespace-nowrap"
+            >
+              <span className="font-heading text-sm md:text-base lg:text-lg font-black tracking-[0.2em] text-zinc-950 dark:text-white uppercase hover:text-emerald-500 transition-all duration-300">
+                {partner.name}
+              </span>
+            </div>
+          ))}
+          {/* Duplicate set for seamless looping */}
+          {partners.map((partner, idx) => (
+            <div
+              key={`${partner.name}-dup-${idx}`}
+              className="flex items-center transition-all duration-500 cursor-pointer whitespace-nowrap"
+            >
+              <span className="font-heading text-sm md:text-base lg:text-lg font-black tracking-[0.2em] text-zinc-950 dark:text-white uppercase hover:text-emerald-500 transition-all duration-300">
+                {partner.name}
+              </span>
             </div>
           ))}
         </motion.div>
       </div>
 
       {/* Industrial Gradients for smooth fade */}
-      <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-white dark:from-[#030712] to-transparent z-10" />
-      <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-white dark:from-[#030712] to-transparent z-10" />
+      <div className="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-white dark:from-[#030712] to-transparent z-10 pointer-events-none" />
+      <div className="absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-white dark:from-[#030712] to-transparent z-10 pointer-events-none" />
     </div>
   )
 }
