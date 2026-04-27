@@ -43,11 +43,16 @@ function buildReply(input: string) {
 }
 
 export function AiChatbot() {
+  const [mounted, setMounted] = React.useState(false)
   const [isOpen, setIsOpen] = React.useState(false)
   const [input, setInput] = React.useState("")
   const [isTyping, setIsTyping] = React.useState(false)
   const [messages, setMessages] = React.useState<ChatMessage[]>(initialMessages)
   const scrollRef = React.useRef<HTMLDivElement>(null)
+
+  React.useEffect(() => {
+    setMounted(true)
+  }, [])
 
   React.useEffect(() => {
     if (!scrollRef.current) return
@@ -84,6 +89,8 @@ export function AiChatbot() {
     event.preventDefault()
     sendMessage(input)
   }
+
+  if (!mounted) return null
 
   return (
     <div className="fixed right-4 bottom-28 z-[120] md:right-6 md:bottom-6">

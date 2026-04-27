@@ -11,12 +11,14 @@ import { NewsletterModal } from "@/components/newsletter-modal"
 import { FloatingPathsBackground } from "@/components/ui/floating-paths"
 
 import { Preloader } from "@/components/preloader"
+import { WhatsAppChat } from "@/components/whatsapp-chat"
 
 const robotoSlabHeading = Roboto_Slab({subsets:['latin'],variable:'--font-heading'});
 
 export const metadata = {
-  title: "DercolBags | Sustainable Packaging Architects",
-  description: "DercolBags is a sustainable packaging and Climate Tech Firm empowering African businesses.",
+  title: "DercolBags Packaging Company Limited | Sustainable Packaging Architects",
+  description: "DercolBags Packaging Company Limited is a leading sustainable packaging and Climate Tech Firm empowering African businesses with eco-friendly solutions.",
+  keywords: "pouches, paper boxes, fibre boxes, corrugated boxes, sustainable packaging, eco-friendly packaging, climate tech, circular economy, recycled packaging, custom packaging, Africa packaging",
   icons: {
     icon: "https://res.cloudinary.com/ddwet1dzj/image/upload/v1777043740/dercolbags/favicon-32x32_vuryfb.png",
     shortcut: "https://res.cloudinary.com/ddwet1dzj/image/upload/v1777043740/dercolbags/favicon-32x32_vuryfb.png",
@@ -47,6 +49,7 @@ export default function RootLayout({
           <Preloader />
           <FloatingPathsBackground position={-1} className="fixed inset-0 z-0 pointer-events-none" />
           <AiChatbot />
+          <WhatsAppChat />
           <NewsletterModal />
           <Navbar />
           <main className="relative flex-grow">

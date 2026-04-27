@@ -64,7 +64,7 @@ const history = [
   {
     year: "2021",
     title: "Foundation",
-    description: "DercolBags established in Ghana to address Africa’s growing dependence on single-use plastic packaging.",
+    description: "DercolBags Packaging Company Limited established in Ghana to address Africa’s growing dependence on single-use plastic packaging.",
   },
   {
     year: "2024",
@@ -113,7 +113,7 @@ export default function AboutPage() {
               className="mt-16 grid md:grid-cols-2 gap-12 items-start"
             >
               <p className="text-xl md:text-2xl text-zinc-600 dark:text-zinc-400 font-light leading-tight tracking-tight border-l-2 border-emerald-500 pl-8">
-                At DercolBags, we don't just "do packaging." We are architecting a <span className="text-zinc-950 dark:text-white font-black italic">circular economy company</span> that treats waste and packaging as the same problem.
+                At DercolBags Packaging Company Limited, we don't just "do packaging." We are architecting a <span className="text-zinc-950 dark:text-white font-black italic">circular economy company</span> that treats waste and packaging as the same problem.
               </p>
               <div className="space-y-6">
                 <p className="text-lg text-zinc-500 dark:text-zinc-400 leading-relaxed">
@@ -234,7 +234,7 @@ export default function AboutPage() {
               transition={{ delay: 0.1 }}
               className="mt-10 text-xl md:text-2xl text-zinc-500 dark:text-zinc-400 font-light italic leading-relaxed"
             >
-              Before DercolBags, there was no system that connected: <br />
+              Before DercolBags Packaging Company Limited, there was no system that connected: <br />
               <span className="text-zinc-950 dark:text-white font-black uppercase tracking-widest text-sm">Waste . Raw material . Packaging . Businesses</span>
             </motion.p>
           </div>

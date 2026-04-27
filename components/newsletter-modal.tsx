@@ -24,10 +24,15 @@ function markSeen() {
 }
 
 export function NewsletterModal() {
+  const [mounted, setMounted] = React.useState(false)
   const [isOpen, setIsOpen] = React.useState(false)
   const [email, setEmail] = React.useState("")
   const [submitted, setSubmitted] = React.useState(false)
   const [loading, setLoading] = React.useState(false)
+
+  React.useEffect(() => {
+    setMounted(true)
+  }, [])
 
   // Delay opening so the page has time to render first
   React.useEffect(() => {
@@ -97,6 +102,8 @@ export function NewsletterModal() {
     visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: revealEase } },
   }
 
+  if (!mounted) return null
+
   return (
     <AnimatePresence>
       {isOpen && (
@@ -155,8 +162,14 @@ export function NewsletterModal() {
                     <motion.div
                       initial={{ scale: 0.7, opacity: 0 }}
                       animate={{ scale: 1, opacity: 1, transition: { duration: 0.5, delay: 0.08, ease: smoothEase } }}
+                      className="relative h-12 w-48 mb-4"
                     >
-                      <CheckCircle className="w-16 h-16 text-emerald-500 dark:text-emerald-400" />
+                      <Image
+                        src="https://res.cloudinary.com/ddwet1dzj/image/upload/v1777042366/dercolbags/DERCOLBAGS_LOGO_tolkgw.png"
+                        alt="DercolBags Logo"
+                        fill
+                        className="object-contain grayscale dark:invert"
+                      />
                     </motion.div>
                     <div>
                       <h3 className="text-2xl font-heading font-black tracking-tighter uppercase text-zinc-950 dark:text-white mb-2">You&apos;re in!</h3>
@@ -173,41 +186,45 @@ export function NewsletterModal() {
                     animate="visible"
                     exit={{ opacity: 0 }}
                   >
-                    {/* Icon badge */}
-                    <motion.div variants={childVariants} className="flex items-center gap-2 mb-6">
-                      <div className="flex items-center justify-center w-10 h-10 rounded-none bg-emerald-500/10 dark:bg-emerald-500/20 border border-emerald-500/20 dark:border-emerald-500/30">
-                        <Leaf className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />
+                    {/* Logo badge */}
+                    <motion.div variants={childVariants} className="flex items-center gap-2 mb-8">
+                      <div className="relative h-12 w-48">
+                        <Image
+                          src="https://res.cloudinary.com/ddwet1dzj/image/upload/v1777042366/dercolbags/DERCOLBAGS_LOGO_tolkgw.png"
+                          alt="DercolBags Logo"
+                          fill
+                          className="object-contain object-left grayscale dark:invert"
+                        />
                       </div>
                     </motion.div>
-
+                    
                     {/* Headline */}
-                    <motion.h2 variants={childVariants} className="text-3xl sm:text-4xl font-heading font-black tracking-tight text-zinc-950 dark:text-white leading-tight mb-3 uppercase">
-                      Shape the Future of{" "}
-                      <span className="text-emerald-600 dark:text-emerald-400 italic">Eco Packaging</span>
+                    <motion.h2 variants={childVariants} className="text-3xl sm:text-4xl font-heading font-black tracking-tight text-zinc-950 dark:text-white leading-tight mb-4 uppercase">
+                      The Packaging <br />
+                      <span className="text-emerald-600 dark:text-emerald-400 italic">Intelligence.</span>
                     </motion.h2>
 
-                    <motion.p variants={childVariants} className="text-zinc-600 dark:text-zinc-400 text-sm leading-relaxed mb-8 italic">
-                      Join thousands of businesses getting early access to sustainable packaging innovations, 
-                      industry insights, and exclusive DercolBags offers.
+                    <motion.p variants={childVariants} className="text-zinc-600 dark:text-zinc-400 text-sm leading-relaxed mb-10 border-l-2 border-emerald-500 pl-4">
+                      Get precision-engineered insights on sustainable manufacturing, 
+                      bulk logistics, and exclusive DercolBags Packaging Company Limited architectural updates.
                     </motion.p>
 
                     {/* Form */}
                     <motion.form variants={childVariants} onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3">
                       <div className="relative flex-grow">
-                        <Mail className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-400 dark:text-zinc-500 pointer-events-none" />
                         <input
                           type="email"
                           value={email}
                           onChange={(e) => setEmail(e.target.value)}
-                          placeholder="your@email.com"
+                          placeholder="ENTER EMAIL ADDRESS"
                           required
-                          className="w-full pl-10 pr-4 py-3 rounded-none bg-zinc-50 dark:bg-white/5 border border-zinc-200 dark:border-white/10 text-zinc-950 dark:text-white text-sm placeholder:text-zinc-400 dark:placeholder:text-zinc-500 focus:outline-none focus:border-emerald-500/50 transition-all"
+                          className="w-full px-5 py-4 rounded-none bg-zinc-50 dark:bg-white/5 border border-zinc-200 dark:border-white/10 text-zinc-950 dark:text-white text-xs font-mono tracking-widest placeholder:text-zinc-400 dark:placeholder:text-zinc-500 focus:outline-none focus:border-emerald-500/50 transition-all uppercase"
                         />
                       </div>
                       <button
                         type="submit"
                         disabled={loading}
-                        className="relative flex items-center justify-center gap-2 px-6 py-3 rounded-none bg-zinc-950 hover:bg-emerald-600 text-white font-black text-sm uppercase tracking-tighter transition-all duration-200 disabled:opacity-70 disabled:cursor-not-allowed whitespace-nowrap overflow-hidden group border-none"
+                        className="relative flex items-center justify-center gap-2 px-8 py-4 rounded-none bg-zinc-950 hover:bg-emerald-600 text-white font-black text-sm uppercase tracking-tighter transition-all duration-200 disabled:opacity-70 disabled:cursor-not-allowed whitespace-nowrap overflow-hidden group border-none"
                       >
                         <span className="relative z-10 flex items-center gap-2">
                           {loading ? (
@@ -217,11 +234,11 @@ export function NewsletterModal() {
                                 animate={{ rotate: 360 }}
                                 transition={{ repeat: Infinity, duration: 0.8, ease: "linear" }}
                               />
-                              Subscribing...
+                              Accessing...
                             </>
                           ) : (
                             <>
-                              Subscribe
+                              Join Now
                               <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5" />
                             </>
                           )}
@@ -230,8 +247,8 @@ export function NewsletterModal() {
                     </motion.form>
 
                     {/* Fine print */}
-                    <motion.p variants={childVariants} className="mt-4 text-[11px] text-zinc-400 dark:text-zinc-600 text-center uppercase font-bold tracking-tighter">
-                      No spam, ever. Unsubscribe in one click.
+                    <motion.p variants={childVariants} className="mt-6 text-[10px] text-zinc-400 dark:text-zinc-600 text-center uppercase font-black tracking-widest">
+                      Encrypted connection. No spam protocols.
                     </motion.p>
                   </motion.div>
                 )}

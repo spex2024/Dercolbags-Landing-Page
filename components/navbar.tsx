@@ -84,6 +84,18 @@ const bottomNavItems = [
 
 function ThemeToggle() {
   const { resolvedTheme, setTheme } = useTheme()
+  const [mounted, setMounted] = React.useState(false)
+
+  React.useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  if (!mounted) {
+    return (
+      <div className="flex h-11 w-11 items-center justify-center rounded-none border border-emerald-200 bg-white dark:border-white/10 dark:bg-white/6" />
+    )
+  }
+
   const isDark = resolvedTheme === "dark"
 
   return (
@@ -130,7 +142,7 @@ export function Navbar() {
           >
             <Image
               src="https://res.cloudinary.com/ddwet1dzj/image/upload/v1777042366/dercolbags/DERCOLBAGS_LOGO_tolkgw.png"
-              alt="DercolBags Logo"
+              alt="DercolBags Packaging Company Limited Logo"
               fill
               className="object-contain object-left"
               priority

@@ -30,15 +30,12 @@ export function FooterNewsletter() {
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
           {/* Copy */}
           <div className="flex-1 max-w-xl text-center lg:text-left">
-            <div className="flex items-center justify-center lg:justify-start gap-3 mb-6">
-              <div className="h-1 w-12 bg-emerald-500" />
-            </div>
             <h3 className="text-3xl sm:text-5xl font-black tracking-tighter text-zinc-900 dark:text-white leading-[0.9] mb-6 uppercase">
-              Stay ahead of <br />
-              <span className="text-emerald-600">sustainable packaging</span>
+              Packaging <br />
+              <span className="text-emerald-600">Intelligence.</span>
             </h3>
-            <p className="text-zinc-500 dark:text-zinc-400 text-lg font-medium leading-relaxed max-w-md italic">
-              Get eco-packaging innovations and exclusive DercolBags insights straight to your terminal.
+            <p className="text-zinc-500 dark:text-zinc-400 text-lg font-medium leading-relaxed max-w-md italic border-l-2 border-emerald-500 pl-6">
+              Get precision-engineered insights and exclusive DercolBags Packaging Company Limited architectural updates.
             </p>
           </div>
 
@@ -50,9 +47,9 @@ export function FooterNewsletter() {
                 animate={{ opacity: 1, scale: 1 }}
                 className="flex items-center gap-4 px-8 py-6 rounded-none bg-emerald-50 dark:bg-emerald-500/10 border border-emerald-200 dark:border-emerald-500/20"
               >
-                <CheckCircle className="w-6 h-6 text-emerald-600 dark:text-emerald-400 shrink-0" />
-                <div>
-                  <p className="text-zinc-900 dark:text-white font-black text-sm uppercase tracking-tighter">Access Granted</p>
+                <div className="flex flex-col">
+                  <p className="text-emerald-600 dark:text-emerald-400 font-black text-lg uppercase tracking-tighter leading-none">Access Granted</p>
+                  <p className="text-zinc-500 text-[10px] uppercase font-bold tracking-widest mt-1">System Synced</p>
                 </div>
               </motion.div>
             ) : (
@@ -148,7 +145,7 @@ export function Footer() {
           <div>
             <p className="text-xs font-black tracking-widest text-zinc-400 uppercase mb-4 dark:text-zinc-500">Packaging</p>
             <ul className="flex flex-col gap-2.5">
-              {["Corrugated Boxes", "Pouches", "Custom Packaging", "Generic Packaging"].map((item) => (
+              {["Corrugated Boxes", "Fibre Boxes", "Paper Boxes", "Eco Pouches", "Custom Packaging", "Generic Packaging"].map((item) => (
                 <li key={item}>
                   <Link href="/solutions" className="text-sm text-zinc-600 hover:text-emerald-600 transition-colors duration-150 flex items-center gap-1.5 group dark:text-zinc-300 dark:hover:text-emerald-400 uppercase font-black tracking-tighter">
                     <span className="w-1.5 h-1.5 rounded-none bg-emerald-500/30 group-hover:bg-emerald-500 transition-colors" />
@@ -192,7 +189,7 @@ export function Footer() {
 
         {/* Bottom Bar */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-zinc-400 dark:text-zinc-500">
-          <p>© 2026 DercolBags Packaging Company Ltd. All rights reserved.</p>
+          <p>© 2026 DercolBags Packaging Company Limited. All rights reserved.</p>
           <div className="flex gap-6 uppercase tracking-widest text-[10px] font-black">
             <Link href="#" className="hover:text-emerald-600 transition-colors dark:hover:text-emerald-400">Privacy Policy</Link>
             <Link href="#" className="hover:text-emerald-600 transition-colors dark:hover:text-emerald-400">Terms of Service</Link>
