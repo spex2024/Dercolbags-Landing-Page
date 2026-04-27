@@ -12,6 +12,7 @@ import { FloatingPathsBackground } from "@/components/ui/floating-paths"
 
 import { Preloader } from "@/components/preloader"
 import { WhatsAppChat } from "@/components/whatsapp-chat"
+import { Analytics } from "@vercel/analytics/next"
 
 const robotoSlabHeading = Roboto_Slab({subsets:['latin'],variable:'--font-heading'});
 
@@ -58,6 +59,7 @@ export default function RootLayout({
           <div className="pb-bottom-nav md:pb-0">
             <Footer />
           </div>
+          <Analytics />
         </ThemeProvider>
       </body>
     </html>
