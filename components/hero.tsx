@@ -227,18 +227,18 @@ export function Hero() {
             {/* Controls Overlay */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-30" />
             
-            <div className="absolute bottom-12 left-12 flex items-center gap-4 z-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <div className="absolute bottom-12 left-12 flex items-center gap-4 z-40 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0">
               <button
                 onClick={(e) => { e.stopPropagation(); togglePlay(); }}
-                className="p-5 bg-emerald-500/10 backdrop-blur-xl hover:bg-emerald-500/20 text-emerald-500 rounded-none border border-emerald-500/30 transition-all pointer-events-auto"
+                className="p-6 bg-zinc-950/90 backdrop-blur-2xl hover:bg-emerald-600 text-white rounded-none border border-white/10 hover:border-emerald-600 transition-all pointer-events-auto group/btn shadow-2xl"
               >
-                {isPlaying ? <Pause className="w-6 h-6 fill-current" /> : <Play className="w-6 h-6 ml-0.5 fill-current" />}
+                {isPlaying ? <Pause className="w-7 h-7 fill-current" /> : <Play className="w-7 h-7 ml-0.5 fill-current" />}
               </button>
               <button
                 onClick={(e) => { e.stopPropagation(); toggleMute(); }}
-                className="p-5 bg-emerald-500/10 backdrop-blur-xl hover:bg-emerald-500/20 text-emerald-500 rounded-none border border-emerald-500/30 transition-all pointer-events-auto"
+                className="p-6 bg-zinc-950/90 backdrop-blur-2xl hover:bg-emerald-600 text-white rounded-none border border-white/10 hover:border-emerald-600 transition-all pointer-events-auto group/btn shadow-2xl"
               >
-                {isMuted ? <VolumeX className="w-6 h-6" /> : <Volume2 className="w-6 h-6" />}
+                {isMuted ? <VolumeX className="w-7 h-7" /> : <Volume2 className="w-7 h-7" />}
               </button>
             </div>
 
