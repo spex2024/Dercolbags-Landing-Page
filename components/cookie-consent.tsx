@@ -54,7 +54,7 @@ export function CookieConsent() {
               </div>
 
               <p className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed mb-8">
-                We use cookies to enhance your experience and analyze our traffic. By clicking "Accept", you consent to our use of cookies as outlined in our <Link href="/cookie-policy" className="text-emerald-600 hover:underline font-bold">Privacy Policy</Link>.
+                We use cookies to enhance your experience and analyze our traffic. By clicking "Accept", you consent to our use of cookies as outlined in our <Link href="/cookie-policy" className="text-emerald-700 dark:text-emerald-400 hover:underline font-bold transition-colors">Privacy Policy</Link>.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-3">
@@ -67,7 +67,7 @@ export function CookieConsent() {
                 <Button
                   variant="outline"
                   onClick={handleDecline}
-                  className="flex-1 rounded-none border-zinc-200 dark:border-white/10 text-zinc-900 dark:text-white hover:bg-zinc-50 dark:hover:bg-white/5 font-black text-[10px] uppercase tracking-widest h-12"
+                  className="flex-1 rounded-none border-zinc-950 dark:border-white/10 text-zinc-950 dark:text-white hover:bg-zinc-50 dark:hover:bg-white/5 font-black text-[10px] uppercase tracking-widest h-12"
                 >
                   Decline
                 </Button>
