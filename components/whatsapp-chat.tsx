@@ -2,7 +2,7 @@
 
 import * as React from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { MessageCircle, X, Send, Headset, BadgeDollarSign, HeartHandshake } from "lucide-react"
+import { ArrowRight, MessageCircle, X, Send, Headset, BadgeDollarSign, HeartHandshake } from "lucide-react"
 import { cn } from "@/lib/utils"
 
 const WHATSAPP_NUMBER = "233547499174"

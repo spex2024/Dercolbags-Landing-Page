@@ -44,7 +44,7 @@ export default function RootLayout({
       suppressHydrationWarning
       className={cn("antialiased font-sans", fontMono.variable, ibmPlexSans.variable, robotoSlabHeading.variable)}
     >
-      <body className="flex flex-col min-h-screen">
+      <body className="flex flex-col min-h-screen" suppressHydrationWarning>
         <ThemeProvider>
           <Preloader />
           <FloatingPathsBackground position={-1} className="fixed inset-0 z-0 pointer-events-none" />

@@ -8,12 +8,13 @@ import Image from "next/image"
 
 export function FooterNewsletter() {
   const [email, setEmail] = React.useState("")
+  const [name, setName] = React.useState("")
   const [submitted, setSubmitted] = React.useState(false)
   const [loading, setLoading] = React.useState(false)
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    if (!email.trim()) return
+    if (!email.trim() || !name.trim()) return
     setLoading(true)
     await new Promise((res) => setTimeout(res, 1000))
     setLoading(false)
@@ -30,17 +31,17 @@ export function FooterNewsletter() {
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
           {/* Copy */}
           <div className="flex-1 max-w-xl text-center lg:text-left">
-            <h3 className="text-3xl sm:text-5xl font-black tracking-tighter text-zinc-900 dark:text-white leading-[0.9] mb-6 uppercase">
-              Packaging <br />
-              <span className="text-emerald-600">Intelligence.</span>
+            <h3 className="text-2xl sm:text-4xl font-black tracking-tighter text-zinc-900 dark:text-white leading-tight mb-6 uppercase">
+              Connecting Businesses to <br />
+              <span className="text-emerald-600">Sustainable Packaging.</span>
             </h3>
-            <p className="text-zinc-500 dark:text-zinc-400 text-lg font-medium leading-relaxed max-w-md italic border-l-2 border-emerald-500 pl-6">
-              Get precision-engineered insights and exclusive DercolBags Packaging Company Limited architectural updates.
+            <p className="text-zinc-500 dark:text-zinc-400 text-base font-medium leading-relaxed max-w-md italic border-l-2 border-emerald-500 pl-6">
+              Precision-engineered insights and exclusive DercolBags Packaging Company Limited updates.
             </p>
           </div>
 
           {/* Form */}
-          <div className="w-full lg:w-auto lg:min-w-[420px]">
+          <div className="w-full lg:w-auto lg:min-w-[480px]">
             {submitted ? (
               <motion.div
                 initial={{ opacity: 0, scale: 0.95 }}
@@ -54,21 +55,33 @@ export function FooterNewsletter() {
               </motion.div>
             ) : (
               <div className="relative">
-                <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-2">
-                  <div className="relative flex-grow">
-                    <input
-                      type="email"
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      placeholder="ENTER EMAIL ADDRESS"
-                      required
-                      className="w-full px-6 py-4 rounded-none border border-zinc-200 dark:border-white/10 bg-zinc-50 dark:bg-white/5 text-zinc-900 dark:text-white text-xs font-mono tracking-widest placeholder:text-zinc-400 dark:placeholder:text-zinc-600 focus:outline-none focus:ring-1 focus:ring-emerald-500 transition-all uppercase"
-                    />
+                <form onSubmit={handleSubmit} className="flex flex-col gap-3">
+                  <div className="flex flex-col sm:flex-row gap-3">
+                    <div className="relative flex-grow">
+                      <input
+                        type="text"
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                        placeholder="NAME / BUSINESS"
+                        required
+                        className="w-full px-6 py-4 rounded-none border border-zinc-200 dark:border-white/10 bg-zinc-50 dark:bg-white/5 text-zinc-900 dark:text-white text-xs font-mono tracking-widest placeholder:text-zinc-400 dark:placeholder:text-zinc-600 focus:outline-none focus:ring-1 focus:ring-emerald-500 transition-all uppercase"
+                      />
+                    </div>
+                    <div className="relative flex-grow">
+                      <input
+                        type="email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        placeholder="EMAIL ADDRESS"
+                        required
+                        className="w-full px-6 py-4 rounded-none border border-zinc-200 dark:border-white/10 bg-zinc-50 dark:bg-white/5 text-zinc-900 dark:text-white text-xs font-mono tracking-widest placeholder:text-zinc-400 dark:placeholder:text-zinc-600 focus:outline-none focus:ring-1 focus:ring-emerald-500 transition-all uppercase"
+                      />
+                    </div>
                   </div>
                   <button
                     type="submit"
                     disabled={loading}
-                    className="flex items-center justify-center gap-2 px-8 py-4 rounded-none bg-zinc-950 dark:bg-emerald-500 hover:bg-emerald-600 dark:hover:bg-emerald-400 text-white font-black text-sm uppercase tracking-tighter transition-all disabled:opacity-70 group"
+                    className="flex items-center justify-center gap-2 w-full py-4 rounded-none bg-zinc-950 dark:bg-emerald-500 hover:bg-emerald-600 dark:hover:bg-emerald-400 text-white font-black text-sm uppercase tracking-tighter transition-all disabled:opacity-70 group"
                   >
                     {loading ? (
                       <motion.div
@@ -79,7 +92,7 @@ export function FooterNewsletter() {
                     ) : (
                       <>
                         Subscribe
-                        <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                        <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
                       </>
                     )}
                   </button>

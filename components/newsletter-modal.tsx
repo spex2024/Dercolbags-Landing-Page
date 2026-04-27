@@ -2,7 +2,8 @@
 
 import * as React from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { X, Mail, Leaf, ArrowRight, CheckCircle } from "lucide-react"
+import { X, ArrowRight } from "lucide-react"
+import Image from "next/image"
 
 const STORAGE_KEY = "dercolbags_newsletter_last_seen_at"
 const COOLDOWN_MS = 60 * 60 * 1000 // 1 hour
@@ -27,6 +28,7 @@ export function NewsletterModal() {
   const [mounted, setMounted] = React.useState(false)
   const [isOpen, setIsOpen] = React.useState(false)
   const [email, setEmail] = React.useState("")
+  const [name, setName] = React.useState("")
   const [submitted, setSubmitted] = React.useState(false)
   const [loading, setLoading] = React.useState(false)
 
@@ -51,7 +53,7 @@ export function NewsletterModal() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    if (!email.trim()) return
+    if (!email.trim() || !name.trim()) return
     setLoading(true)
     // Simulate API call
     await new Promise((res) => setTimeout(res, 1100))
@@ -193,33 +195,44 @@ export function NewsletterModal() {
                           src="https://res.cloudinary.com/ddwet1dzj/image/upload/v1777042366/dercolbags/DERCOLBAGS_LOGO_tolkgw.png"
                           alt="DercolBags Logo"
                           fill
-                          className="object-contain object-left grayscale dark:invert"
+                          className="object-contain object-left"
                         />
                       </div>
                     </motion.div>
                     
                     {/* Headline */}
-                    <motion.h2 variants={childVariants} className="text-3xl sm:text-4xl font-heading font-black tracking-tight text-zinc-950 dark:text-white leading-tight mb-4 uppercase">
-                      The Packaging <br />
-                      <span className="text-emerald-600 dark:text-emerald-400 italic">Intelligence.</span>
+                    <motion.h2 variants={childVariants} className="text-2xl sm:text-3xl font-heading font-black tracking-tight text-zinc-950 dark:text-white leading-snug mb-4 uppercase">
+                      Connecting Businesses to <br />
+                      <span className="text-emerald-600 dark:text-emerald-400">Sustainable Packaging.</span>
                     </motion.h2>
 
-                    <motion.p variants={childVariants} className="text-zinc-600 dark:text-zinc-400 text-sm leading-relaxed mb-10 border-l-2 border-emerald-500 pl-4">
-                      Get precision-engineered insights on sustainable manufacturing, 
-                      bulk logistics, and exclusive DercolBags Packaging Company Limited architectural updates.
+                    <motion.p variants={childVariants} className="text-zinc-600 dark:text-zinc-400 text-[13px] leading-relaxed mb-8 border-l-2 border-emerald-500 pl-4 max-w-sm">
+                      Get precision-engineered insights on sustainable manufacturing and DercolBags architectural updates.
                     </motion.p>
 
                     {/* Form */}
-                    <motion.form variants={childVariants} onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3">
-                      <div className="relative flex-grow">
-                        <input
-                          type="email"
-                          value={email}
-                          onChange={(e) => setEmail(e.target.value)}
-                          placeholder="ENTER EMAIL ADDRESS"
-                          required
-                          className="w-full px-5 py-4 rounded-none bg-zinc-50 dark:bg-white/5 border border-zinc-200 dark:border-white/10 text-zinc-950 dark:text-white text-xs font-mono tracking-widest placeholder:text-zinc-400 dark:placeholder:text-zinc-500 focus:outline-none focus:border-emerald-500/50 transition-all uppercase"
-                        />
+                    <motion.form variants={childVariants} onSubmit={handleSubmit} className="flex flex-col gap-3">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        <div className="relative flex-grow">
+                          <input
+                            type="text"
+                            value={name}
+                            onChange={(e) => setName(e.target.value)}
+                            placeholder="NAME / BUSINESS"
+                            required
+                            className="w-full px-5 py-4 rounded-none bg-zinc-50 dark:bg-white/5 border border-zinc-200 dark:border-white/10 text-zinc-950 dark:text-white text-xs font-mono tracking-widest placeholder:text-zinc-400 dark:placeholder:text-zinc-500 focus:outline-none focus:border-emerald-500/50 transition-all uppercase"
+                          />
+                        </div>
+                        <div className="relative flex-grow">
+                          <input
+                            type="email"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                            placeholder="EMAIL ADDRESS"
+                            required
+                            className="w-full px-5 py-4 rounded-none bg-zinc-50 dark:bg-white/5 border border-zinc-200 dark:border-white/10 text-zinc-950 dark:text-white text-xs font-mono tracking-widest placeholder:text-zinc-400 dark:placeholder:text-zinc-500 focus:outline-none focus:border-emerald-500/50 transition-all uppercase"
+                          />
+                        </div>
                       </div>
                       <button
                         type="submit"

@@ -24,28 +24,35 @@ import { Button } from "@/components/ui/button"
 const products = [
   {
     title: "Corrugated Boxes",
-    description: "High-strength, recycled fiber boxes engineered for industrial protection and retail excellence.",
+    description: "High-strength, recycled fiber boxes engineered for industrial protection and retail excellence by DercolBags Packaging Company Limited.",
     image: "/images/corrugated-boxes.png",
     specs: ["Custom Dimensions", "Recycled Material", "High Burst Strength", "Stackable Design"],
     storeHref: "/store"
   },
   {
+    title: "Fibre Boxes",
+    description: "Architectural-grade fiber packaging solutions designed for maximum sustainability and structural integrity in industrial applications.",
+    image: "/images/fibre-boxes.png",
+    specs: ["Reinforced Fiber", "Eco-friendly Substrate", "Custom Printing", "Moisture Resistant"],
+    storeHref: "/store"
+  },
+  {
     title: "Eco Pouches",
-    description: "Flexible, food-grade paper pouches designed for safety and shelf-life optimization.",
+    description: "Flexible, food-grade paper pouches designed for safety and shelf-life optimization, replacing single-use plastic pouches.",
     image: "/images/pouches.png",
     specs: ["Grease Resistant", "Sustainable Liner", "Bespoke Printing", "Re-sealable Options"],
     storeHref: "/store"
   },
   {
     title: "Custom Packaging",
-    description: "Bespoke structural design and premium branding tailored to your product's unique story.",
+    description: "Bespoke structural design and premium branding tailored to your product's unique story, architected by our specialized team.",
     image: "/images/custom-packaging.png",
     specs: ["Architectural Design", "Brand Integration", "Prototype Testing", "Premium Finishes"],
     storeHref: "/store"
   },
   {
     title: "Generic Packaging",
-    description: "Ready-to-ship, high-quality sustainable packaging for immediate industrial needs.",
+    description: "Ready-to-ship, high-quality sustainable paper boxes and pouches for immediate industrial needs.",
     image: "/images/generic-packaging.png",
     specs: ["Standard Sizes", "Bulk Pricing", "Immediate Dispatch", "100% Recyclable"],
     storeHref: "/store"

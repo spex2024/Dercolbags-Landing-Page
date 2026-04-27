@@ -100,7 +100,7 @@ export function Hero() {
           <div className="lg:pt-16 lg:pl-8 lg:pr-6">
             <motion.div variants={itemVariants} className="space-y-8">
               <p className="text-base md:text-lg lg:text-xl text-zinc-700 dark:text-zinc-200 font-normal leading-relaxed max-w-lg">
-                DercolBags Packaging Company Limited provides premium eco-friendly <span className="font-black">pouches, paper boxes, and fibre-based solutions</span> that help your products{" "}
+                DercolBags Packaging Company Limited provides premium eco-friendly <span className="font-black">packaging solutions</span> that help your products{" "}
                 <span className="text-emerald-600 dark:text-emerald-400 font-black">sell faster.</span>
               </p>
 
