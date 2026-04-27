@@ -131,7 +131,7 @@ export function Navbar() {
         className={cn(
           "fixed top-0 left-0 right-0 z-50 px-6 py-6 transition-all duration-300",
           isScrolled
-            ? "border-b border-emerald-100 bg-white/80 py-4 shadow-none backdrop-blur-md dark:border-white/8 dark:bg-zinc-950/80"
+            ? "border-b border-emerald-100 bg-white/80 py-4 shadow-none backdrop-blur-md dark:border-white/8 dark:bg-background/80"
             : "bg-transparent"
         )}
       >
@@ -284,7 +284,7 @@ export function Navbar() {
         className="fixed bottom-0 left-0 right-0 z-50 md:hidden"
       >
         {/* Frosted glass bar */}
-        <div className="mx-3 mb-3 overflow-hidden rounded-[1.5rem] border border-zinc-200/80 bg-white/90 backdrop-blur-xl dark:border-white/10 dark:bg-zinc-950/90">
+        <div className="mx-3 mb-3 overflow-hidden rounded-[1.5rem] border border-zinc-200/80 bg-white/90 backdrop-blur-xl dark:border-white/10 dark:bg-background/90">
           <div className="flex items-center justify-around px-2 py-3">
             {bottomNavItems.map(({ name, href, icon: Icon }) => {
               const isActive = pathname === href || (href !== "/" && pathname.startsWith(href))

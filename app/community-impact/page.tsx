@@ -58,12 +58,12 @@ const mainStats = [
 
 export default function CommunityImpactPage() {
   return (
-    <div className="bg-white dark:bg-[#030712] selection:bg-emerald-500 selection:text-white font-sans overflow-x-hidden">
+    <div className="bg-white dark:bg-[#08120e] selection:bg-emerald-500 selection:text-white font-sans overflow-x-hidden">
       
       {/* 1. ELEGANT HERO */}
       <section className="relative min-h-[70vh] flex items-center justify-center px-6 border-b border-zinc-100 dark:border-white/5 overflow-hidden">
-        <div className="absolute inset-0 z-0 opacity-30 grayscale dark:opacity-20 pointer-events-none">
-           <Image src="/images/community_impact.png" alt="Impact background" fill className="object-cover" priority />
+        <div className="absolute inset-0 z-0 opacity-40 grayscale dark:opacity-30 pointer-events-none">
+           <Image src="/images/community_awareness.png" alt="Impact background" fill className="object-cover" priority />
         </div>
         <div className="container relative z-10 mx-auto text-center">
           <motion.div
@@ -151,7 +151,7 @@ export default function CommunityImpactPage() {
                 </div>
              </div>
              <div className="lg:w-1/2 aspect-[4/3] relative rounded-none overflow-hidden border border-zinc-100 dark:border-white/5 bg-zinc-100 dark:bg-white/5">
-                <Image src="/images/community-impact.png" alt="Community Empowerment" fill className="object-cover grayscale hover:grayscale-0 transition-all duration-700" />
+                <Image src="/images/community_awareness.png" alt="Community Empowerment" fill className="object-cover grayscale hover:grayscale-0 transition-all duration-700" />
              </div>
           </div>
 
@@ -166,12 +166,12 @@ export default function CommunityImpactPage() {
                 </p>
                 
                 <div className="grid sm:grid-cols-2 gap-px bg-zinc-100 dark:bg-white/5 border border-zinc-100 dark:border-white/10">
-                   <div className="p-10 bg-white dark:bg-zinc-950">
+                   <div className="p-10 bg-white dark:bg-background">
                       <Leaf className="h-8 w-8 text-emerald-500 mb-6" />
                       <div className="text-4xl font-black text-zinc-900 dark:text-white mb-1">16,000+</div>
                       <p className="text-[10px] uppercase font-bold tracking-widest text-zinc-500">Tons Plastic Removed</p>
                    </div>
-                   <div className="p-10 bg-white dark:bg-zinc-950">
+                   <div className="p-10 bg-white dark:bg-background">
                       <Zap className="h-8 w-8 text-emerald-500 mb-6" />
                       <div className="text-4xl font-black text-zinc-900 dark:text-white mb-1">38,400</div>
                       <p className="text-[10px] uppercase font-bold tracking-widest text-zinc-500">CO₂ Emissions Reduced</p>
@@ -207,7 +207,7 @@ export default function CommunityImpactPage() {
                      { title: "Enable access to better markets and exports", icon: Globe },
                      { title: "Support value addition in agro-processing", icon: Factory }
                    ].map(item => (
-                     <div key={item.title} className="flex items-center gap-5 p-5 bg-white dark:bg-[#030712] hover:bg-zinc-50 dark:hover:bg-white/5 transition-all">
+                     <div key={item.title} className="flex items-center gap-5 p-5 bg-white dark:bg-[#08120e] hover:bg-zinc-50 dark:hover:bg-white/5 transition-all">
                         <item.icon className="h-6 w-6 text-emerald-600" />
                         <span className="text-zinc-800 dark:text-zinc-200 font-black text-lg uppercase tracking-tighter leading-tight">{item.title}</span>
                      </div>
@@ -239,11 +239,11 @@ export default function CommunityImpactPage() {
             
             <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-16 relative">
                {[
-                 { title: "Waste Gen", desc: "Communities and businesses generate waste.", icon: Users },
-                 { title: "Collection", desc: "Waste pickers collect and earn income.", icon: Recycle },
-                 { title: "Aggregation", desc: "Aggregators consolidate materials for processing.", icon: TrendingUp },
-                 { title: "Processing", desc: "Recyclers process waste into raw materials.", icon: Factory },
-                 { title: "Production", desc: "DercolBags produces sustainable packaging.", icon: ShieldCheck }
+                 { title: "Waste Generation", desc: "Communities and industries generate waste, identifying it as an untapped resource for the circular economy.", icon: Users },
+                 { title: "Ethical Collection", desc: "Waste pickers recover materials under fair conditions, securing reliable income and environmental health.", icon: Recycle },
+                 { title: "Aggregation", desc: "Local hubs consolidate recovered materials, streamlining them for industrial-scale processing.", icon: TrendingUp },
+                 { title: "Precision Processing", desc: "Advanced recycling transforms raw waste into high-quality sustainable inputs for manufacturing.", icon: Factory },
+                 { title: "Production", desc: "DercolBags engineers these inputs into premium, fibre-based packaging solutions.", icon: ShieldCheck }
                ].map((item, i) => (
                  <div key={item.title} className="relative group">
                     <div className="h-16 w-16 rounded-none bg-white/5 border border-white/10 flex items-center justify-center text-emerald-500 mb-10 group-hover:bg-emerald-500 group-hover:text-zinc-950 transition-all duration-500">
@@ -267,7 +267,7 @@ export default function CommunityImpactPage() {
       </section>
 
       {/* 5. FUTURE IMPACT (2030) */}
-      <section className="py-40 bg-white dark:bg-[#030712]">
+      <section className="py-40 bg-white dark:bg-[#08120e]">
          <div className="container mx-auto px-6">
             <div className="flex flex-col lg:flex-row gap-24 items-end mb-24">
                <div className="lg:w-2/3">
@@ -283,7 +283,7 @@ export default function CommunityImpactPage() {
                  { val: "1,500", label: "SMEs Empowered" },
                  { val: "5", label: "Countries Expanded" }
                ].map(item => (
-                 <div key={item.label} className="bg-white dark:bg-[#030712] p-16 hover:bg-zinc-50 dark:hover:bg-white/5 transition-colors group">
+                 <div key={item.label} className="bg-white dark:bg-[#08120e] p-16 hover:bg-zinc-50 dark:hover:bg-white/5 transition-colors group">
                     <div className="text-6xl font-black text-zinc-950 dark:text-white tracking-tighter mb-4 group-hover:text-emerald-500 transition-colors">{item.val}</div>
                     <div className="h-1 w-12 bg-emerald-500 mb-6" />
                     <p className="text-[10px] font-bold uppercase tracking-widest text-zinc-400">{item.label}</p>

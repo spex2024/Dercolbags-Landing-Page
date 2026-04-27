@@ -29,7 +29,7 @@ export function ContentPage({
   contactMode = "default",
 }: ContentPageProps) {
   return (
-    <div className="bg-white dark:bg-[#030712]">
+    <div className="bg-white dark:bg-[#08120e]">
       {/* Hero Section */}
       <section className="relative min-h-[90vh] flex items-center pt-32 pb-16 overflow-hidden border-b border-zinc-100 dark:border-white/5">
         <div className="absolute inset-0 bg-grid opacity-50 dark:opacity-20 pointer-events-none" />
@@ -76,7 +76,7 @@ export function ContentPage({
               initial={{ opacity: 0, scale: 0.95, y: 30 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-              className="relative p-8 md:p-12 bg-white dark:bg-zinc-900/50 backdrop-blur-xl border border-zinc-100 dark:border-white/10 rounded-[2.5rem] shadow-2xl dark:shadow-none"
+              className="relative p-8 md:p-12 bg-white dark:bg-card/50 backdrop-blur-xl border border-zinc-100 dark:border-white/10 rounded-[2.5rem] shadow-2xl dark:shadow-none"
             >
               {/* Technical Overlay */}
               <div className="absolute top-8 right-10 flex items-center gap-2">

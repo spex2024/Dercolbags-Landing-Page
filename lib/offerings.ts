@@ -72,7 +72,7 @@ export const offerings: Offering[] = [
     description: "Community waste-recovery programs that turn waste into raw materials.",
     details:
       "Our community waste-recovery programs turn household and industrial waste into high-quality raw materials, creating a sustainable foundation for circular manufacturing.",
-    image: "/images/community_waste_pickers.png",
+    image: "/images/community_awareness.png",
     icon: Heart,
     location: "Community Nodes",
     hours: "Active Recovery: Daily",
@@ -81,7 +81,7 @@ export const offerings: Offering[] = [
     ctaLabel: "Explore Impact",
     heroTitle: "Community Waste Recovery Programme",
     heroBody:
-      "We build community infrastructure that incentivizes waste collection, empowering thousands of individuals to participate in the circular economy.",
+      "We drive large-scale community awareness and education, empowering neighborhoods to reclaim their environment by turning waste into wealth.",
     featureList: [
       "Localized waste-recovery centers and collection nodes",
       "Incentivized programs for informal waste pickers",

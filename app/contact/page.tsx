@@ -44,7 +44,7 @@ const contactSocials = [
 
 export default function ContactPage() {
   return (
-    <div className="bg-white dark:bg-[#030712] selection:bg-emerald-500 selection:text-white font-sans overflow-x-hidden min-h-screen pt-20">
+    <div className="bg-white dark:bg-[#08120e] selection:bg-emerald-500 selection:text-white font-sans overflow-x-hidden min-h-screen pt-20">
       
       {/* 1. ARCHITECTURAL HERO */}
       <section className="py-24 md:py-48 px-6 border-b border-zinc-100 dark:border-white/5">
@@ -73,23 +73,46 @@ export default function ContactPage() {
                {/* LEFT: DIRECT CONTACT DETAILS */}
                <div className="space-y-24">
                   <div className="space-y-12">
-                     <div className="group block">
+                      <div className="group block">
                         <div className="flex items-center gap-4 text-emerald-500 mb-4">
                            <Mail className="h-5 w-5" />
                         </div>
-                        <a href="mailto:info@dercolbags.com" className="text-3xl md:text-5xl font-black text-zinc-950 dark:text-white tracking-tighter uppercase hover:text-emerald-500 transition-colors">
-                           info@dercolbags.com
+                        <a href="mailto:hello@dercolbags.com" className="text-3xl md:text-5xl font-black text-zinc-950 dark:text-white tracking-tighter uppercase hover:text-emerald-500 transition-colors">
+                           hello@dercolbags.com
                         </a>
-                     </div>
+                      </div>
 
-                     <div className="group block">
-                        <div className="flex items-center gap-4 text-emerald-500 mb-4">
-                           <Phone className="h-5 w-5" />
+                      <div className="space-y-12 border-t border-zinc-100 dark:border-white/5 pt-12">
+                        <div className="group block">
+                           <div className="flex items-center gap-4 text-emerald-500 mb-4">
+                              <Phone className="h-5 w-5" />
+                              <span className="text-[10px] font-bold uppercase tracking-widest text-zinc-400">Primary / WhatsApp</span>
+                           </div>
+                           <a href="tel:+233530091529" className="text-3xl md:text-5xl font-black text-zinc-950 dark:text-white tracking-tighter uppercase hover:text-emerald-500 transition-colors">
+                              +233 53 009 1529
+                           </a>
                         </div>
-                        <a href="tel:+233547499174" className="text-3xl md:text-5xl font-black text-zinc-950 dark:text-white tracking-tighter uppercase hover:text-emerald-500 transition-colors">
-                           +233 54 749 9174
-                        </a>
-                     </div>
+
+                        <div className="group block">
+                           <div className="flex items-center gap-4 text-emerald-500 mb-4">
+                              <Phone className="h-5 w-5" />
+                              <span className="text-[10px] font-bold uppercase tracking-widest text-zinc-400">Sales Inquiry</span>
+                           </div>
+                           <a href="tel:+233575529823" className="text-3xl md:text-5xl font-black text-zinc-950 dark:text-white tracking-tighter uppercase hover:text-emerald-500 transition-colors">
+                              +233 57 552 9823
+                           </a>
+                        </div>
+
+                        <div className="group block">
+                           <div className="flex items-center gap-4 text-emerald-500 mb-4">
+                              <Phone className="h-5 w-5" />
+                              <span className="text-[10px] font-bold uppercase tracking-widest text-zinc-400">Landline</span>
+                           </div>
+                           <a href="tel:+233302515422" className="text-3xl md:text-5xl font-black text-zinc-950 dark:text-white tracking-tighter uppercase hover:text-emerald-500 transition-colors">
+                              +233 30 251 5422
+                           </a>
+                        </div>
+                      </div>
 
                      <div className="group block">
                         <div className="flex items-center gap-4 text-emerald-500 mb-4">

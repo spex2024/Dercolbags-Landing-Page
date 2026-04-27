@@ -124,7 +124,7 @@ export function NewsletterModal() {
 
           {/* Modal Panel */}
           <motion.div
-            className="relative z-10 w-full max-w-lg overflow-hidden rounded-none border border-zinc-200 dark:border-white/10 bg-white dark:bg-[#030712] shadow-none"
+            className="relative z-10 w-full max-w-lg overflow-hidden rounded-none border border-zinc-200 dark:border-white/10 bg-white dark:bg-[#08120e] shadow-none"
             variants={panelVariants}
             initial="hidden"
             animate="visible"
@@ -203,7 +203,7 @@ export function NewsletterModal() {
                     {/* Headline */}
                     <motion.h2 variants={childVariants} className="text-2xl sm:text-3xl font-heading font-black tracking-tight text-zinc-950 dark:text-white leading-snug mb-4 uppercase">
                       Connecting Businesses to <br />
-                      <span className="text-emerald-600 dark:text-emerald-400">Sustainable Packaging.</span>
+                      <span className="text-zinc-950 dark:text-white">Sustainable Packaging.</span>
                     </motion.h2>
 
                     <motion.p variants={childVariants} className="text-zinc-600 dark:text-zinc-400 text-[13px] leading-relaxed mb-8 border-l-2 border-emerald-500 pl-4 max-w-sm">

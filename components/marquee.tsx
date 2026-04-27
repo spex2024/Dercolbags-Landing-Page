@@ -64,8 +64,8 @@ export function Marquee() {
       </div>
 
       {/* Industrial Gradients for smooth fade */}
-      <div className="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-white dark:from-[#030712] to-transparent z-10 pointer-events-none" />
-      <div className="absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-white dark:from-[#030712] to-transparent z-10 pointer-events-none" />
+      <div className="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-white dark:from-[#08120e] to-transparent z-10 pointer-events-none" />
+      <div className="absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-white dark:from-[#08120e] to-transparent z-10 pointer-events-none" />
     </div>
   )
 }

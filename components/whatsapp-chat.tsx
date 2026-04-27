@@ -5,7 +5,8 @@ import { motion, AnimatePresence } from "framer-motion"
 import { ArrowRight, MessageCircle, X, Send, Headset, BadgeDollarSign, HeartHandshake } from "lucide-react"
 import { cn } from "@/lib/utils"
 
-const WHATSAPP_NUMBER = "233547499174"
+const PRIMARY_NUMBER = "233530091529"
+const SALES_NUMBER = "233575529823"
 
 const chatOptions = [
   {
@@ -13,21 +14,16 @@ const chatOptions = [
     description: "Questions about our products?",
     icon: Headset,
     message: "Hi DercolBags, I have a question about your packaging products.",
-    color: "bg-blue-500"
+    color: "bg-blue-500",
+    number: PRIMARY_NUMBER
   },
   {
     title: "Sales",
     description: "Get a quote for bulk orders.",
     icon: BadgeDollarSign,
     message: "Hi DercolBags, I'd like to get a quote for a bulk order.",
-    color: "bg-emerald-500"
-  },
-  {
-    title: "Support",
-    description: "Technical help or order status.",
-    icon: HeartHandshake,
-    message: "Hi DercolBags, I need support with my recent order.",
-    color: "bg-amber-500"
+    color: "bg-emerald-500",
+    number: SALES_NUMBER
   }
 ]
 
@@ -39,8 +35,8 @@ export function WhatsAppChat() {
     setMounted(true)
   }, [])
 
-  const openWhatsApp = (message: string) => {
-    const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`
+  const openWhatsApp = (number: string, message: string) => {
+    const url = `https://wa.me/${number}?text=${encodeURIComponent(message)}`
     window.open(url, "_blank")
     setIsOpen(false)
   }
@@ -55,7 +51,7 @@ export function WhatsAppChat() {
             initial={{ opacity: 0, scale: 0.9, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9, y: 20 }}
-            className="absolute bottom-20 right-0 w-80 overflow-hidden rounded-none border border-zinc-200 bg-white shadow-2xl dark:border-white/10 dark:bg-zinc-950"
+            className="absolute bottom-20 right-0 w-80 overflow-hidden rounded-none border border-zinc-200 bg-white shadow-2xl dark:border-white/10 dark:bg-background"
           >
             {/* Header */}
             <div className="bg-[#25D366] p-6 text-white">
@@ -76,16 +72,16 @@ export function WhatsAppChat() {
                 </button>
               </div>
               <p className="text-emerald-50 text-[10px] font-black uppercase tracking-widest mt-4">
-                Packaging Architects Online
+                Our team is online to help you
               </p>
             </div>
 
             {/* Options */}
-            <div className="p-4 space-y-1 bg-zinc-50 dark:bg-zinc-900/50">
+            <div className="p-4 space-y-1 bg-zinc-50 dark:bg-card/50">
               {chatOptions.map((option) => (
                 <button
                   key={option.title}
-                  onClick={() => openWhatsApp(option.message)}
+                  onClick={() => openWhatsApp(option.number, option.message)}
                   className="flex w-full items-center gap-4 p-4 text-left transition-all hover:bg-white dark:hover:bg-zinc-800 border border-transparent hover:border-zinc-200 dark:hover:border-white/10 group"
                 >
                   <div className={cn("flex h-10 w-10 shrink-0 items-center justify-center text-white", option.color)}>
@@ -105,7 +101,7 @@ export function WhatsAppChat() {
             </div>
 
             {/* Footer */}
-            <div className="p-4 border-t border-zinc-100 dark:border-white/5 bg-white dark:bg-zinc-950">
+            <div className="p-4 border-t border-zinc-100 dark:border-white/5 bg-white dark:bg-background">
               <div className="flex items-center justify-between">
                 <span className="text-[9px] text-zinc-400 uppercase font-black tracking-widest flex items-center gap-2">
                   <span className="h-1.5 w-1.5 rounded-full bg-[#25D366] animate-pulse" />

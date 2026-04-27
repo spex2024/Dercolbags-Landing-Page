@@ -51,7 +51,7 @@ export function Preloader() {
           initial={{ opacity: 1 }}
           exit={{ opacity: 0, scale: 1.02 }}
           transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-          className="fixed inset-0 z-[99999] flex flex-col items-center justify-center bg-white dark:bg-[#030712] pointer-events-none overflow-hidden"
+          className="fixed inset-0 z-[99999] flex flex-col items-center justify-center bg-white dark:bg-[#08120e] pointer-events-none overflow-hidden"
         >
           {/* Subtle Industrial Texture */}
           <div className="absolute inset-0 bg-grid opacity-[0.03] dark:opacity-[0.07]" />

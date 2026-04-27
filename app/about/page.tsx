@@ -80,9 +80,9 @@ const history = [
 
 export default function AboutPage() {
   return (
-    <div className="bg-white dark:bg-[#030712] overflow-x-hidden">
+    <div className="bg-white dark:bg-[#08120e] overflow-x-hidden">
       {/* Hero Section - Core Positioning */}
-      <section className="relative pt-32 pb-24 overflow-hidden border-b border-zinc-100 dark:border-white/5 bg-white dark:bg-[#030712]">
+      <section className="relative pt-32 pb-24 overflow-hidden border-b border-zinc-100 dark:border-white/5 bg-white dark:bg-[#08120e]">
         {/* High-Visibility Technical Background */}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none z-0" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(16,185,129,0.08),transparent_50%)] pointer-events-none z-0" />
@@ -170,7 +170,7 @@ export default function AboutPage() {
             <div className="grid gap-px bg-zinc-200 dark:bg-white/10 border border-zinc-200 dark:border-white/10">
               <motion.div 
                 whileHover={{ backgroundColor: "rgba(16, 185, 129, 0.05)" }}
-                className="bg-white dark:bg-[#030712] p-10 transition-colors"
+                className="bg-white dark:bg-[#08120e] p-10 transition-colors"
               >
                 <h4 className="text-sm font-black uppercase tracking-widest text-zinc-950 dark:text-white mb-6 flex items-center gap-3">
                   <span className="h-2 w-2 bg-emerald-500" />
@@ -191,7 +191,7 @@ export default function AboutPage() {
               </motion.div>
               <motion.div 
                 whileHover={{ backgroundColor: "rgba(16, 185, 129, 0.05)" }}
-                className="bg-white dark:bg-[#030712] p-10 transition-colors"
+                className="bg-white dark:bg-[#08120e] p-10 transition-colors"
               >
                 <h4 className="text-sm font-black uppercase tracking-widest text-zinc-950 dark:text-white mb-6 flex items-center gap-3">
                   <span className="h-2 w-2 bg-red-500" />
@@ -247,7 +247,7 @@ export default function AboutPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: i * 0.05 }}
-                className="bg-white dark:bg-[#030712] p-12 lg:p-16 relative group overflow-hidden"
+                className="bg-white dark:bg-[#08120e] p-12 lg:p-16 relative group overflow-hidden"
               >
                 <div className="absolute top-0 left-0 w-full h-[2px] bg-emerald-500 scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500" />
                 <step.icon className="w-12 h-12 text-emerald-500 mb-10" />
@@ -297,7 +297,7 @@ export default function AboutPage() {
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="p-12 lg:p-16 bg-zinc-900 text-white dark:bg-zinc-900"
+              className="p-12 lg:p-16 bg-zinc-900 text-white dark:bg-card"
             >
               <span className="font-mono text-[10px] uppercase tracking-[0.4em] opacity-70">Mission</span>
               <h3 className="mt-8 text-3xl md:text-5xl font-black leading-tight tracking-tighter uppercase">
@@ -370,7 +370,7 @@ export default function AboutPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: i * 0.05 }}
-                className="flex flex-col items-center justify-center p-12 bg-white dark:bg-[#030712] border border-zinc-200 dark:border-white/10"
+                className="flex flex-col items-center justify-center p-12 bg-white dark:bg-[#08120e] border border-zinc-200 dark:border-white/10"
               >
                 <div className="font-mono text-6xl md:text-8xl font-black text-zinc-950 dark:text-white tracking-tighter leading-none flex items-baseline">
                   <AnimatedCounter value={stat.value} />
@@ -459,7 +459,7 @@ export default function AboutPage() {
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="bg-white dark:bg-[#030712] p-16 hover:bg-zinc-50 dark:hover:bg-zinc-900/50 transition-colors"
+                className="bg-white dark:bg-[#08120e] p-16 hover:bg-zinc-50 dark:hover:bg-zinc-900/50 transition-colors"
               >
                 <div className="flex items-center gap-3 mb-8">
                    <div className="h-2 w-2 rounded-none bg-emerald-500" />

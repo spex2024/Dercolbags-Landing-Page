@@ -27,7 +27,7 @@ const reviews = [
 
 export function Testimonials() {
   return (
-    <section className="py-24 md:py-32 bg-zinc-50 dark:bg-[#030712] border-t border-b border-zinc-200 dark:border-white/10">
+    <section className="py-24 md:py-32 bg-zinc-50 dark:bg-[#08120e] border-t border-b border-zinc-200 dark:border-white/10">
       <div className="container mx-auto px-6">
         {/* Header */}
         <div className="mb-16">

@@ -13,7 +13,7 @@ const problems = [
 
 export function ProblemSection() {
   return (
-    <section className="py-24 md:py-32 bg-white dark:bg-[#030712] border-t border-b border-zinc-200 dark:border-white/10">
+    <section className="py-24 md:py-32 bg-white dark:bg-[#08120e] border-t border-b border-zinc-200 dark:border-white/10">
       <div className="container mx-auto px-6">
 
         {/* Top: Label + Headline side by side */}
@@ -29,7 +29,7 @@ export function ProblemSection() {
             </span>
             <h2 className="text-5xl md:text-6xl lg:text-7xl font-black tracking-tighter text-zinc-950 dark:text-white leading-[0.9] uppercase">
               Poor Packaging<br />
-              <span className="text-zinc-500 dark:text-zinc-400">Hurts Your Business & The Environment.</span>
+              <span className="text-zinc-500 dark:text-zinc-400">Is Hurting Your Business & The Environment.</span>
             </h2>
           </motion.div>
 
@@ -41,8 +41,8 @@ export function ProblemSection() {
             className="relative lg:pl-12 border-l-2 border-emerald-500/20"
           >
             <p className="text-3xl md:text-4xl lg:text-5xl font-light text-zinc-900 dark:text-zinc-100 leading-[1.1] tracking-tighter italic">
-              Your product <span className="font-black text-emerald-600 dark:text-emerald-500 not-italic uppercase tracking-normal">loses value</span><br className="hidden md:block" />
-              <span className="text-lg md:text-xl lg:text-2xl opacity-60 not-italic font-medium tracking-normal ml-1">and our streets</span> <span className="font-black text-zinc-900 dark:text-white not-italic underline decoration-emerald-500/40 underline-offset-[12px] uppercase tracking-normal">pay the price.</span>
+              Your product <span className="font-black text-emerald-700 dark:text-emerald-400 not-italic uppercase tracking-normal">loses value</span><br className="hidden md:block" />
+              <span className="text-lg md:text-xl lg:text-2xl opacity-60 not-italic font-medium tracking-normal ml-1">and our streets</span> <span className="font-black text-zinc-900 dark:text-white not-italic underline decoration-emerald-500 dark:decoration-emerald-400 underline-offset-[12px] uppercase tracking-normal">pay the price.</span>
             </p>
           </motion.div>
         </div>
@@ -56,7 +56,7 @@ export function ProblemSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.08, duration: 0.5 }}
-              className="bg-zinc-950 dark:bg-[#030712] border border-zinc-200 dark:border-white/10 p-8 group relative overflow-hidden min-h-[300px] flex flex-col justify-end"
+              className="bg-zinc-950 dark:bg-[#08120e] border border-zinc-200 dark:border-white/10 p-8 group relative overflow-hidden min-h-[300px] flex flex-col justify-end"
             >
               {/* Background Image */}
               <Image 

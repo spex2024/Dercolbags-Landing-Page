@@ -23,6 +23,13 @@ import { Button } from "@/components/ui/button"
 
 const products = [
   {
+    title: "Paper Bags",
+    description: "Premium, heavy-duty Kraft paper bags designed for retail excellence and sustainable brand presentation, replacing single-use plastic bags.",
+    image: "/images/paper-bags.png",
+    specs: ["Durable Twisted Handles", "Eco-friendly Kraft Paper", "Custom Branding Available", "Reinforced Bottom"],
+    storeHref: "/store"
+  },
+  {
     title: "Corrugated Boxes",
     description: "High-strength, recycled fiber boxes engineered for industrial protection and retail excellence by DercolBags Packaging Company Limited.",
     image: "/images/corrugated-boxes.png",
@@ -30,10 +37,10 @@ const products = [
     storeHref: "/store"
   },
   {
-    title: "Fibre Boxes",
-    description: "Architectural-grade fiber packaging solutions designed for maximum sustainability and structural integrity in industrial applications.",
-    image: "/images/fibre-boxes.png",
-    specs: ["Reinforced Fiber", "Eco-friendly Substrate", "Custom Printing", "Moisture Resistant"],
+    title: "Paper Boxes",
+    description: "Architectural-grade sustainable paper boxes designed for premium presentation and structural integrity in retail and industrial contexts.",
+    image: "/images/paper-boxes.png",
+    specs: ["Reinforced Fiber", "Eco-friendly Substrate", "Custom Printing", "Various Dimensions"],
     storeHref: "/store"
   },
   {
@@ -62,7 +69,7 @@ const products = [
 const services = [
   {
     title: "01 Community Waste Recovery Program",
-    description: "We orchestrate local circular nodes that convert community plastic waste into premium packaging streams.",
+    description: "Driving large-scale community awareness and education to reclaim environments by turning waste into wealth through sustainable recovery systems.",
     icon: Recycle,
     metric: "Circular Loop"
   },
@@ -77,12 +84,18 @@ const services = [
     description: "Strategic sourcing of sustainable alternatives to lower costs and environmental impact.",
     icon: Handshake,
     metric: "Supply Chain"
+  },
+  {
+    title: "Watpak Platform",
+    description: "A digital waste-to-packaging ecosystem connecting waste pickers, recyclers, and manufacturers for full traceability.",
+    icon: Layers,
+    metric: "Tech Infrastructure"
   }
 ]
 
 export default function SolutionsPage() {
   return (
-    <div className="bg-white dark:bg-[#030712] selection:bg-emerald-500 selection:text-white font-sans overflow-x-hidden pt-20">
+    <div className="bg-white dark:bg-[#08120e] selection:bg-emerald-500 selection:text-white font-sans overflow-x-hidden pt-20">
       
       {/* 1. ARCHITECTURAL HERO */}
       <section className="py-32 md:py-48 px-6 border-b border-zinc-100 dark:border-white/5">
@@ -93,12 +106,12 @@ export default function SolutionsPage() {
                animate={{ opacity: 1, y: 0 }}
                transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
              >
-               <h1 className="text-6xl md:text-9xl font-black tracking-tighter text-zinc-950 dark:text-white leading-[0.8] uppercase mb-12">
-                  Precision <br />
-                  <span className="text-emerald-600">Packaging.</span>
+              <h1 className="text-6xl md:text-9xl font-black tracking-tighter text-zinc-950 dark:text-white leading-[0.8] uppercase mb-12">
+                  Premium Fibre <br />
+                  <span className="text-emerald-600">Solutions.</span>
                </h1>
                <p className="text-2xl md:text-3xl text-zinc-500 dark:text-zinc-400 font-light leading-snug max-w-2xl italic">
-                  Architecting the infrastructure for a waste-free African economy through high-performance sustainable products.
+                  Architecting the infrastructure for a waste-free African economy through high-performance, fibre-based sustainable products.
                </p>
              </motion.div>
           </div>
@@ -176,7 +189,7 @@ export default function SolutionsPage() {
                </p>
             </div>
 
-            <div className="grid lg:grid-cols-3 gap-px bg-white/10 border border-white/10">
+            <div className="grid lg:grid-cols-4 gap-px bg-white/10 border border-white/10">
                {services.map((service, i) => (
                  <div key={service.title} className="p-12 md:p-16 bg-zinc-950 dark:bg-black hover:bg-zinc-900 transition-colors group">
                     <div className="h-16 w-16 rounded-none bg-emerald-500/10 text-emerald-500 flex items-center justify-center mb-12 group-hover:bg-emerald-500 group-hover:text-zinc-950 transition-all border border-emerald-500/20">

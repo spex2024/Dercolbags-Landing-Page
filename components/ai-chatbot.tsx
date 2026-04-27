@@ -102,7 +102,7 @@ export function AiChatbot() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 18, scale: 0.96 }}
             transition={{ duration: 0.34, ease: [0.22, 1, 0.36, 1] }}
-            className="w-[calc(100vw-2rem)] max-w-sm overflow-hidden rounded-none border border-zinc-200 bg-white/95 text-zinc-900 shadow-none backdrop-blur-2xl dark:border-white/10 dark:bg-zinc-950 dark:text-white"
+            className="w-[calc(100vw-2rem)] max-w-sm overflow-hidden rounded-none border border-zinc-200 bg-white/95 text-zinc-900 shadow-none backdrop-blur-2xl dark:border-white/10 dark:bg-background dark:text-white"
           >
             <div className="relative overflow-hidden border-b border-zinc-100 px-5 py-4 dark:border-white/10">
               <div className="absolute inset-0 bg-grid opacity-10 pointer-events-none" />
@@ -223,7 +223,7 @@ export function AiChatbot() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 14, scale: 0.96 }}
             transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-            className="group relative flex items-center gap-3 rounded-none border border-zinc-200 bg-white p-3 md:px-4 md:py-3 text-zinc-900 shadow-none transition hover:-translate-y-0.5 dark:border-white/10 dark:bg-zinc-950 dark:text-white"
+            className="group relative flex items-center gap-3 rounded-none border border-zinc-200 bg-white p-3 md:px-4 md:py-3 text-zinc-900 shadow-none transition hover:-translate-y-0.5 dark:border-white/10 dark:bg-background dark:text-white"
           >
             <span className="relative flex h-14 w-14 md:h-11 md:w-11 items-center justify-center rounded-none bg-zinc-950 text-white group-hover:bg-emerald-600 transition-colors">
               <MessageCircleMore className="h-6 w-6 md:h-5 md:w-5" />

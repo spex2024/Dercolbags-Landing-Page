@@ -24,7 +24,7 @@ export function FooterNewsletter() {
   return (
     <div className="relative rounded-none overflow-hidden border border-zinc-100 dark:border-white/5">
       {/* Background - White in light mode, Dark in dark mode */}
-      <div className="absolute inset-0 bg-white dark:bg-[#030712]" />
+      <div className="absolute inset-0 bg-white dark:bg-[#08120e]" />
       <div className="absolute inset-0 bg-grid opacity-20 dark:opacity-10 pointer-events-none" />
       
       <div className="relative z-10 px-8 py-10 sm:px-12 sm:py-16">
@@ -33,7 +33,7 @@ export function FooterNewsletter() {
           <div className="flex-1 max-w-xl text-center lg:text-left">
             <h3 className="text-2xl sm:text-4xl font-black tracking-tighter text-zinc-900 dark:text-white leading-tight mb-6 uppercase">
               Connecting Businesses to <br />
-              <span className="text-emerald-600">Sustainable Packaging.</span>
+              <span className="text-zinc-900 dark:text-white">Sustainable Packaging.</span>
             </h3>
             <p className="text-zinc-500 dark:text-zinc-400 text-base font-medium leading-relaxed max-w-md italic border-l-2 border-emerald-500 pl-6">
               Precision-engineered insights and exclusive DercolBags Packaging Company Limited updates.
@@ -127,12 +127,18 @@ export function Footer() {
                 className="object-contain object-left"
               />
             </Link>
-            <p className="text-zinc-500 text-sm leading-relaxed max-w-xs dark:text-zinc-400 italic mb-4">
+            <p className="text-zinc-500 text-sm leading-relaxed max-w-xs dark:text-white/80 italic mb-4">
               Sustainable packaging and climate-tech firm empowering African businesses to replace single-use plastics with eco-friendly alternatives.
             </p>
-            <div className="flex items-center gap-2 text-zinc-400 dark:text-zinc-500 text-xs font-black uppercase tracking-widest mb-6">
-              <span className="text-emerald-500">T:</span>
-              <a href="tel:+233547499174" className="hover:text-emerald-500 transition-colors">+233 54 749 9174</a>
+            <div className="flex flex-col gap-2 text-zinc-400 dark:text-white text-xs font-black uppercase tracking-widest mb-6">
+              <div className="flex items-center gap-2">
+                <span className="text-emerald-500">T:</span>
+                <a href="tel:+233530091529" className="hover:text-emerald-500 transition-colors">+233 53 009 1529</a>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="text-emerald-500">E:</span>
+                <a href="mailto:hello@dercolbags.com" className="hover:text-emerald-500 transition-colors">hello@dercolbags.com</a>
+              </div>
             </div>
             {/* Social Icons */}
             <div className="flex gap-3 mt-5">
@@ -146,21 +152,21 @@ export function Footer() {
                 <Link
                   key={name}
                   href={href}
-                  className="flex items-center justify-center w-9 h-9 rounded-none border border-zinc-100 dark:border-white/5 bg-zinc-50 hover:bg-emerald-50 hover:text-emerald-600 text-zinc-500 transition-all duration-200 hover:-translate-y-0.5 dark:bg-white/6 dark:text-zinc-300 dark:hover:bg-emerald-500 dark:hover:text-white"
+                  className="flex items-center justify-center w-9 h-9 rounded-none border border-zinc-100 dark:border-white/5 bg-zinc-50 hover:bg-emerald-50 hover:text-emerald-600 text-zinc-500 transition-all duration-200 hover:-translate-y-0.5 dark:bg-white/6 dark:text-white dark:hover:bg-emerald-500 dark:hover:text-white"
                 >
                   <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d={path} /></svg>
                 </Link>
               ))}
             </div>
           </div>
-
-          {/* Packaging Column */}
+ 
           <div>
-            <p className="text-xs font-black tracking-widest text-zinc-400 uppercase mb-4 dark:text-zinc-500">Packaging</p>
+            <p className="text-xs font-black tracking-widest text-zinc-400 uppercase mb-1 dark:text-white">Packaging</p>
+            <p className="text-[10px] font-bold text-emerald-600 dark:text-emerald-400 uppercase tracking-widest mb-4">Premium fibre-based solutions</p>
             <ul className="flex flex-col gap-2.5">
-              {["Corrugated Boxes", "Fibre Boxes", "Paper Boxes", "Eco Pouches", "Custom Packaging", "Generic Packaging"].map((item) => (
+              {["Paper Bags", "Corrugated Boxes", "Paper Boxes", "Eco Pouches", "Custom Packaging", "Generic Packaging"].map((item) => (
                 <li key={item}>
-                  <Link href="/solutions" className="text-sm text-zinc-600 hover:text-emerald-600 transition-colors duration-150 flex items-center gap-1.5 group dark:text-zinc-300 dark:hover:text-emerald-400 uppercase font-black tracking-tighter">
+                  <Link href="/solutions" className="text-sm text-zinc-600 hover:text-emerald-600 transition-colors duration-150 flex items-center gap-1.5 group dark:text-white/90 dark:hover:text-emerald-400 uppercase font-black tracking-tighter">
                     <span className="w-1.5 h-1.5 rounded-none bg-emerald-500/30 group-hover:bg-emerald-500 transition-colors" />
                     {item}
                   </Link>
@@ -168,30 +174,40 @@ export function Footer() {
               ))}
             </ul>
           </div>
-
+ 
           {/* Services Column */}
           <div>
-            <p className="text-xs font-black tracking-widest text-zinc-400 uppercase mb-4 dark:text-zinc-500">Services</p>
+            <p className="text-xs font-black tracking-widest text-zinc-400 uppercase mb-4 dark:text-white">Services</p>
             <ul className="flex flex-col gap-2.5">
-              {["Community Waste Recovery Program", "Training & Consultancy", "Procurement Support"].map((item) => (
-                <li key={item}>
-                  <Link href="/solutions" className="text-sm text-zinc-600 hover:text-emerald-600 transition-colors duration-150 flex items-center gap-1.5 group dark:text-zinc-300 dark:hover:text-emerald-400 uppercase font-black tracking-tighter">
+              {[
+                { name: "Community Waste Recovery Program", href: "/solutions" },
+                { name: "Training & Consultancy", href: "/solutions" },
+                { name: "Procurement Support", href: "/solutions" },
+                { name: "Watpak", href: "/watpak" }
+              ].map((item) => (
+                <li key={item.name}>
+                  <Link href={item.href} className="text-sm text-zinc-600 hover:text-emerald-600 transition-colors duration-150 flex items-center gap-1.5 group dark:text-white/90 dark:hover:text-emerald-400 uppercase font-black tracking-tighter">
                     <span className="w-1.5 h-1.5 rounded-none bg-emerald-500/30 group-hover:bg-emerald-500 transition-colors" />
-                    {item}
+                    {item.name}
                   </Link>
                 </li>
               ))}
             </ul>
           </div>
-
+ 
           {/* Company Column */}
           <div>
-            <p className="text-xs font-black tracking-widest text-zinc-400 uppercase mb-4 dark:text-zinc-500">Company</p>
+            <p className="text-xs font-black tracking-widest text-zinc-400 uppercase mb-4 dark:text-white">Company</p>
             <ul className="flex flex-col gap-2.5">
-              {[{ name: "About Us", href: "/about" }, { name: "Sustainability", href: "/community-impact" }, { name: "Watapak", href: "/watapak" }, { name: "Contact", href: "/contact" }].map((item) => (
+              {[
+                { name: "About", href: "/about" },
+                { name: "Solutions", href: "/solutions" },
+                { name: "Community", href: "/community-impact" },
+                { name: "Contact Us", href: "/contact" }
+              ].map((item) => (
                 <li key={item.name}>
-                  <Link href={item.href} className="text-sm text-zinc-600 hover:text-emerald-600 transition-colors duration-150 flex items-center gap-1.5 group dark:text-zinc-300 dark:hover:text-emerald-400 uppercase font-black tracking-tighter">
-                    <span className="w-1 h-1 rounded-none bg-zinc-300 group-hover:bg-emerald-500 transition-colors dark:bg-zinc-600 dark:group-hover:bg-emerald-400" />
+                  <Link href={item.href} className="text-sm text-zinc-600 hover:text-emerald-600 transition-colors duration-150 flex items-center gap-1.5 group dark:text-white/90 dark:hover:text-emerald-400 uppercase font-black tracking-tighter">
+                    <span className="w-1 h-1 rounded-none bg-zinc-300 group-hover:bg-emerald-500 transition-colors dark:bg-zinc-100 dark:group-hover:bg-emerald-400" />
                     {item.name}
                   </Link>
                 </li>
@@ -199,9 +215,9 @@ export function Footer() {
             </ul>
           </div>
         </div>
-
+ 
         {/* Bottom Bar */}
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-zinc-400 dark:text-zinc-500">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-zinc-400 dark:text-white/60">
           <p>© 2026 DercolBags Packaging Company Limited. All rights reserved.</p>
           <div className="flex gap-6 uppercase tracking-widest text-[10px] font-black">
             <Link href="#" className="hover:text-emerald-600 transition-colors dark:hover:text-emerald-400">Privacy Policy</Link>
@@ -209,6 +225,7 @@ export function Footer() {
             <Link href="#" className="hover:text-emerald-600 transition-colors dark:hover:text-emerald-400">Cookie Policy</Link>
           </div>
         </div>
+
       </div>
     </footer>
   )

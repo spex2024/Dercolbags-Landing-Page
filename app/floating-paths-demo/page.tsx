@@ -4,9 +4,9 @@ import { ArrowRight, Sparkles } from "lucide-react";
 
 export default function FloatingPathsBackgroundExample() {
   return (
-    <div className="min-h-screen bg-background flex flex-col items-center justify-center p-4">
+    <div className="min-h-screen bg-zinc-950 flex flex-col items-center justify-center p-4">
       <FloatingPathsBackground
-        className="max-w-5xl aspect-video rounded-3xl border border-border shadow-2xl flex flex-col items-center justify-center bg-card/50 backdrop-blur-sm overflow-hidden"
+        className="max-w-5xl aspect-video rounded-3xl border border-border shadow-2xl flex flex-col items-center justify-center bg-zinc-900/50 backdrop-blur-sm overflow-hidden"
         position={-0.5}
       >
         <div className="relative z-20 text-center px-6 space-y-6">

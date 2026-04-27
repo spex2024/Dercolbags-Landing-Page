@@ -17,7 +17,7 @@ export function OfferingPage({ offering }: OfferingPageProps) {
   const isCommunity = offering.slug === "community"
 
   return (
-    <div className="bg-white dark:bg-[#030712]">
+    <div className="bg-white dark:bg-[#08120e]">
       {/* Hero Section */}
       <section className="relative min-h-[90vh] flex items-center pt-32 pb-16 overflow-hidden border-b border-zinc-100 dark:border-white/5">
         <div className="absolute inset-0 bg-grid opacity-50 dark:opacity-20 pointer-events-none" />
@@ -76,7 +76,7 @@ export function OfferingPage({ offering }: OfferingPageProps) {
               transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
               className="relative aspect-[4/5] overflow-hidden rounded-none shadow-none border border-zinc-100 dark:border-white/5"
             >
-              <div className="absolute inset-0 bg-zinc-900 z-10 opacity-10" />
+              <div className="absolute inset-0 bg-zinc-900 z-10 opacity-40" />
               <Image 
                 src={offering.image} 
                 alt={offering.title} 
@@ -84,7 +84,7 @@ export function OfferingPage({ offering }: OfferingPageProps) {
                 className="object-cover grayscale hover:grayscale-0 transition-all duration-1000" 
                 priority 
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/45 via-zinc-900/15 to-transparent z-20" />
+              <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/80 via-zinc-900/40 to-transparent z-20" />
               
               {/* Technical Overlay */}
               <div className="absolute inset-0 z-30 p-6 md:p-10 flex flex-col justify-end pointer-events-none">
@@ -107,7 +107,7 @@ export function OfferingPage({ offering }: OfferingPageProps) {
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
-              className="group relative bg-white dark:bg-[#030712] p-12 lg:p-20 hover:bg-zinc-50 dark:hover:bg-zinc-900/50 transition-colors"
+              className="group relative bg-white dark:bg-[#08120e] p-12 lg:p-20 hover:bg-zinc-50 dark:hover:bg-zinc-900/50 transition-colors"
             >
               <div className="grid gap-16 lg:grid-cols-[0.8fr_1.2fr]">
                 <div>
@@ -115,10 +115,10 @@ export function OfferingPage({ offering }: OfferingPageProps) {
                   <h2 className="text-4xl md:text-6xl font-black text-zinc-900 dark:text-white leading-[0.95] tracking-tighter uppercase whitespace-pre-wrap">The Architectural Basis.</h2>
                   
                   <div className="mt-16 space-y-px bg-zinc-200 dark:bg-white/10 border border-zinc-200 dark:border-white/10">
-                    <div className="p-8 bg-white dark:bg-[#030712]">
+                    <div className="p-8 bg-white dark:bg-[#08120e]">
                        <p className="text-xl font-black text-zinc-900 dark:text-white uppercase tracking-tighter">{offering.location}</p>
                     </div>
-                    <div className="p-8 bg-white dark:bg-[#030712]">
+                    <div className="p-8 bg-white dark:bg-[#08120e]">
                        <p className="text-xl font-black text-zinc-900 dark:text-white uppercase tracking-tighter">{offering.hours}</p>
                     </div>
                   </div>
@@ -138,7 +138,7 @@ export function OfferingPage({ offering }: OfferingPageProps) {
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="group relative bg-white dark:bg-[#030712] p-12 lg:p-20 hover:bg-zinc-50 dark:hover:bg-zinc-900/50 transition-colors"
+              className="group relative bg-white dark:bg-[#08120e] p-12 lg:p-20 hover:bg-zinc-50 dark:hover:bg-zinc-900/50 transition-colors"
             >
               <div className="h-1 w-12 bg-emerald-500 mb-12" />
               

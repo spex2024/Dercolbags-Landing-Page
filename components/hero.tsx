@@ -67,7 +67,7 @@ export function Hero() {
   }
 
   return (
-    <section className="relative min-h-[90vh] flex flex-col pt-32 pb-32 overflow-hidden bg-white dark:bg-[#030712]">
+    <section className="relative min-h-[90vh] flex flex-col pt-32 pb-32 overflow-hidden bg-white dark:bg-[#08120e]">
       {/* Background Grid */}
       <div className="absolute inset-0 bg-grid opacity-20 pointer-events-none" />
       
@@ -85,8 +85,9 @@ export function Hero() {
               variants={itemVariants}
               className="text-5xl md:text-6xl lg:text-7xl font-black tracking-tighter text-zinc-950 dark:text-white leading-[1.05] uppercase"
             >
-              IS YOUR PACKAGING<br />
-              <span className="text-emerald-500">COSTING YOU SALES?</span>
+              Poor packaging is quietly <br />
+              <span className="text-emerald-600 dark:text-emerald-400">reducing your sales.</span>
+              <span className="block text-2xl md:text-3xl mt-6 normal-case font-medium italic tracking-tight text-zinc-500 dark:text-zinc-400">Do you know?</span>
             </motion.h1>
             <motion.p 
               variants={itemVariants}
@@ -100,15 +101,23 @@ export function Hero() {
           <div className="lg:pt-16 lg:pl-8 lg:pr-6">
             <motion.div variants={itemVariants} className="space-y-8">
               <p className="text-base md:text-lg lg:text-xl text-zinc-700 dark:text-zinc-200 font-normal leading-relaxed max-w-lg">
-                DercolBags Packaging Company Limited provides premium eco-friendly <span className="font-black">packaging solutions</span> that help your products{" "}
-                <span className="text-emerald-600 dark:text-emerald-400 font-black">sell faster.</span>
+                The reality is simple:{" "}
+                <span className="font-black text-emerald-700 dark:text-emerald-400">great products</span>{" "}
+                are being ignored every day, because their{" "}
+                <span className="text-red-700 dark:text-red-400 font-black">packaging fails</span>{" "}
+                to speak for them.
               </p>
 
               <div className="flex flex-wrap gap-x-6 gap-y-3 pt-2">
-                {["Look better.", "Gain trust.", "Sell more.", "Reduce waste."].map((item) => (
-                  <div key={item} className="flex items-center gap-2">
-                    <span className="h-2 w-2 rounded-full bg-emerald-500 flex-shrink-0" />
-                    <span className="text-sm font-black uppercase tracking-widest text-zinc-950 dark:text-white">{item}</span>
+                {[
+                  { label: "Good Product.", color: "bg-emerald-500" },
+                  { label: "Bad packaging.", color: "bg-red-500" },
+                  { label: "Less trust.", color: "bg-red-500" },
+                  { label: "Fewer sales.", color: "bg-red-500" },
+                ].map((item) => (
+                  <div key={item.label} className="flex items-center gap-2">
+                    <span className={cn("h-2 w-2 rounded-full flex-shrink-0", item.color)} />
+                    <span className="text-sm font-black uppercase tracking-widest text-zinc-950 dark:text-white">{item.label}</span>
                   </div>
                 ))}
               </div>
@@ -127,7 +136,7 @@ export function Hero() {
                 <Button 
                   asChild
                   size="lg"
-                  className="w-full rounded-none bg-emerald-600 hover:bg-emerald-700 text-white h-12 transition-all font-black text-xs uppercase tracking-widest"
+                  className="w-full rounded-none bg-emerald-600 hover:bg-emerald-700 dark:bg-emerald-500 dark:hover:bg-emerald-400 text-white h-12 transition-all font-black text-xs uppercase tracking-widest border-none"
                 >
                   <Link href="/watapak" className="flex items-center justify-center gap-2">
                     <Recycle className="w-4 h-4" />
@@ -218,7 +227,7 @@ export function Hero() {
             {/* Controls Overlay */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-30" />
             
-            <div className="absolute bottom-12 left-12 flex items-center gap-4 z-40">
+            <div className="absolute bottom-12 left-12 flex items-center gap-4 z-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
               <button
                 onClick={(e) => { e.stopPropagation(); togglePlay(); }}
                 className="p-5 bg-emerald-500/10 backdrop-blur-xl hover:bg-emerald-500/20 text-emerald-500 rounded-none border border-emerald-500/30 transition-all pointer-events-auto"

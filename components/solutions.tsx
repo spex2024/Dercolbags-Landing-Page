@@ -44,6 +44,15 @@ export function Solutions() {
             <p className="mt-10 text-xl text-zinc-600 dark:text-zinc-400 font-light leading-relaxed max-w-2xl">
               DercolBags gives you premium eco-friendly packaging that makes your products look better, sell faster, and create less waste. Simple.
             </p>
+
+            <div className="mt-8 flex flex-wrap gap-x-8 gap-y-4">
+              {["Look better.", "Gain trust.", "Sell more.", "Reduce waste."].map((item) => (
+                <div key={item} className="flex items-center gap-2.5">
+                  <span className="h-2 w-2 rounded-full bg-emerald-500 flex-shrink-0 shadow-[0_0_8px_rgba(16,185,129,0.4)]" />
+                  <span className="text-sm font-black uppercase tracking-[0.2em] text-zinc-950 dark:text-white/90">{item}</span>
+                </div>
+              ))}
+            </div>
           </motion.div>
 
           <div className="flex flex-col gap-6 lg:h-[750px] lg:flex-row">
@@ -75,10 +84,10 @@ export function Solutions() {
                       src={item.image}
                       alt={item.title}
                       fill
-                      className="object-cover opacity-70 transition-transform duration-700 group-hover:scale-110"
+                      className="object-cover opacity-30 transition-transform duration-700 group-hover:scale-110"
                       priority
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/60 to-transparent" />
                   </motion.div>
 
                   <motion.div
@@ -86,7 +95,7 @@ export function Solutions() {
                     animate={{ opacity: isHovered ? 1 : 0, scale: isHovered ? 1 : 0.8 }}
                     className="absolute top-8 right-8 z-20"
                   >
-                    <div className="flex h-14 w-14 items-center justify-center rounded-none bg-white text-zinc-900 border border-white/10 transition-all hover:bg-emerald-500 hover:text-white active:scale-95 group/btn dark:bg-zinc-950/90 dark:text-white">
+                    <div className="flex h-14 w-14 items-center justify-center rounded-none bg-white text-zinc-900 border border-white/10 transition-all hover:bg-emerald-500 hover:text-white active:scale-95 group/btn dark:bg-background/90 dark:text-white">
                       <ArrowUpRight className="h-6 w-6 transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
                     </div>
                   </motion.div>
@@ -168,7 +177,7 @@ export function Solutions() {
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: 18, scale: 0.99 }}
               transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-              className="absolute left-1/2 top-[calc(50%+2rem)] flex h-[min(calc(100vh-8.5rem),860px)] w-[min(92vw,1100px)] -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-none bg-white border border-zinc-200 dark:border-white/10 dark:bg-zinc-950 sm:top-[calc(50%+2.5rem)]"
+              className="absolute left-1/2 top-[calc(50%+2rem)] flex h-[min(calc(100vh-8.5rem),860px)] w-[min(92vw,1100px)] -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-none bg-white border border-zinc-200 dark:border-white/10 dark:bg-background sm:top-[calc(50%+2.5rem)]"
             >
               <div className="relative flex h-full w-full flex-col overflow-hidden text-zinc-900 dark:text-white">
                 <div className="min-h-0 flex-1 overflow-y-auto overscroll-contain p-6 sm:p-8">
@@ -203,10 +212,10 @@ export function Solutions() {
                           src={selectedOffering.image}
                           alt={selectedOffering.title}
                           fill
-                          className="object-cover"
+                          className="object-cover opacity-60"
                           priority
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/35 via-black/10 to-transparent" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-transparent" />
                       </div>
                     </div>
 
