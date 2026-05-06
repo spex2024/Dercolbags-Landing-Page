@@ -2,8 +2,9 @@
 
 import * as React from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { X, ArrowRight } from "lucide-react"
+import { X, ArrowRight, CheckCircle2 } from "lucide-react"
 import Image from "next/image"
+import axios from "axios"
 
 const STORAGE_KEY = "dercolbags_newsletter_last_seen_at"
 const COOLDOWN_MS = 60 * 60 * 1000 // 1 hour
@@ -31,6 +32,7 @@ export function NewsletterModal() {
   const [name, setName] = React.useState("")
   const [submitted, setSubmitted] = React.useState(false)
   const [loading, setLoading] = React.useState(false)
+  const [error, setError] = React.useState("")
 
   React.useEffect(() => {
     setMounted(true)
@@ -51,17 +53,25 @@ export function NewsletterModal() {
     setIsOpen(false)
   }, [])
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     if (!email.trim() || !name.trim()) return
     setLoading(true)
-    // Simulate API call
-    await new Promise((res) => setTimeout(res, 1100))
-    setLoading(false)
-    setSubmitted(true)
-    setTimeout(() => {
-      setIsOpen(false)
-    }, 2200)
+    setError("")
+    try {
+      await axios.post(process.env.NEXT_PUBLIC_NEWSLETTER_API_URL!, {
+        brand: "dercolbags",
+        name: name.trim(),
+        email: email.trim(),
+        source: window.location.origin,
+      })
+      setSubmitted(true)
+      setTimeout(() => setIsOpen(false), 4000)
+    } catch {
+      setError("Something went wrong. Please try again.")
+    } finally {
+      setLoading(false)
+    }
   }
 
   // Backdrop variants
@@ -156,15 +166,25 @@ export function NewsletterModal() {
                 {submitted ? (
                   <motion.div
                     key="success"
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    animate={{ opacity: 1, scale: 1, transition: { duration: 0.45, ease: smoothEase } }}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0, transition: { duration: 0.5, ease: smoothEase } }}
                     exit={{ opacity: 0 }}
-                    className="flex flex-col items-center gap-5 py-6 text-center"
+                    className="flex flex-col items-center gap-6 py-8 text-center"
                   >
+                    {/* Animated check */}
                     <motion.div
-                      initial={{ scale: 0.7, opacity: 0 }}
-                      animate={{ scale: 1, opacity: 1, transition: { duration: 0.5, delay: 0.08, ease: smoothEase } }}
-                      className="relative h-12 w-48 mb-4"
+                      initial={{ scale: 0, opacity: 0 }}
+                      animate={{ scale: 1, opacity: 1, transition: { duration: 0.5, delay: 0.1, ease: smoothEase } }}
+                      className="flex items-center justify-center w-16 h-16 rounded-none bg-emerald-500/10 border border-emerald-500/30"
+                    >
+                      <CheckCircle2 className="w-8 h-8 text-emerald-500" />
+                    </motion.div>
+
+                    {/* Logo */}
+                    <motion.div
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1, transition: { duration: 0.4, delay: 0.25 } }}
+                      className="relative h-10 w-40"
                     >
                       <Image
                         src="https://res.cloudinary.com/ddwet1dzj/image/upload/v1777042366/dercolbags/DERCOLBAGS_LOGO_tolkgw.png"
@@ -173,12 +193,23 @@ export function NewsletterModal() {
                         className="object-contain grayscale dark:invert"
                       />
                     </motion.div>
-                    <div>
-                      <h3 className="text-2xl font-heading font-black tracking-tighter uppercase text-zinc-950 dark:text-white mb-2">You&apos;re in!</h3>
-                      <p className="text-emerald-600 dark:text-emerald-300/80 text-sm font-bold uppercase tracking-tighter">
-                        Welcome to the community.
+
+                    {/* Message */}
+                    <motion.div
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0, transition: { duration: 0.45, delay: 0.3, ease: smoothEase } }}
+                      className="flex flex-col gap-2"
+                    >
+                      <h3 className="text-2xl font-heading font-black tracking-tighter uppercase text-zinc-950 dark:text-white">
+                        Thank You!
+                      </h3>
+                      <p className="text-zinc-600 dark:text-zinc-400 text-sm leading-relaxed max-w-xs">
+                        You&apos;ve successfully joined the DercolBags community. Expect precision-engineered updates on sustainable packaging straight to your inbox.
                       </p>
-                    </div>
+                      <p className="text-emerald-600 dark:text-emerald-400 text-[11px] font-black uppercase tracking-widest mt-1">
+                        Welcome aboard —
+                      </p>
+                    </motion.div>
                   </motion.div>
                 ) : (
                   <motion.div
@@ -258,6 +289,16 @@ export function NewsletterModal() {
                         </span>
                       </button>
                     </motion.form>
+
+                    {error && (
+                      <motion.p
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        className="mt-3 text-[11px] text-red-500 text-center font-bold uppercase tracking-widest"
+                      >
+                        {error}
+                      </motion.p>
+                    )}
 
                     {/* Fine print */}
                     <motion.p variants={childVariants} className="mt-6 text-[10px] text-zinc-400 dark:text-zinc-600 text-center uppercase font-black tracking-widest">

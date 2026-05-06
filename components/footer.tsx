@@ -3,22 +3,35 @@
 import * as React from "react"
 import Link from "next/link"
 import { motion } from "framer-motion"
-import { Mail, Leaf, ArrowRight, Send, BriefcaseBusiness, Camera, CheckCircle } from "lucide-react"
+import { ArrowRight, CheckCircle2 } from "lucide-react"
 import Image from "next/image"
+import axios from "axios"
 
 export function FooterNewsletter() {
   const [email, setEmail] = React.useState("")
   const [name, setName] = React.useState("")
   const [submitted, setSubmitted] = React.useState(false)
   const [loading, setLoading] = React.useState(false)
+  const [error, setError] = React.useState("")
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     if (!email.trim() || !name.trim()) return
     setLoading(true)
-    await new Promise((res) => setTimeout(res, 1000))
-    setLoading(false)
-    setSubmitted(true)
+    setError("")
+    try {
+      await axios.post(process.env.NEXT_PUBLIC_NEWSLETTER_API_URL!, {
+        brand: "dercolbags",
+        name: name.trim(),
+        email: email.trim(),
+        source: window.location.origin,
+      })
+      setSubmitted(true)
+    } catch {
+      setError("Something went wrong. Please try again.")
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (
@@ -44,14 +57,35 @@ export function FooterNewsletter() {
           <div className="w-full lg:w-auto lg:min-w-[480px]">
             {submitted ? (
               <motion.div
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                className="flex items-center gap-4 px-8 py-6 rounded-none bg-emerald-50 dark:bg-emerald-500/10 border border-emerald-200 dark:border-emerald-500/20"
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+                className="flex flex-col items-center gap-5 px-8 py-10 rounded-none bg-emerald-50 dark:bg-emerald-500/10 border border-emerald-200 dark:border-emerald-500/20 text-center"
               >
-                <div className="flex flex-col">
-                  <p className="text-emerald-600 dark:text-emerald-400 font-black text-lg uppercase tracking-tighter leading-none">Access Granted</p>
-                  <p className="text-zinc-500 text-[10px] uppercase font-bold tracking-widest mt-1">System Synced</p>
-                </div>
+                <motion.div
+                  initial={{ scale: 0, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  transition={{ duration: 0.4, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+                  className="flex items-center justify-center w-14 h-14 bg-emerald-500/15 border border-emerald-500/30"
+                >
+                  <CheckCircle2 className="w-7 h-7 text-emerald-500" />
+                </motion.div>
+                <motion.div
+                  initial={{ opacity: 0, y: 8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: 0.2 }}
+                  className="flex flex-col gap-2"
+                >
+                  <p className="text-zinc-900 dark:text-white font-black text-xl uppercase tracking-tighter leading-none">
+                    Thank You for Subscribing!
+                  </p>
+                  <p className="text-zinc-500 dark:text-zinc-400 text-sm leading-relaxed max-w-sm">
+                    You&apos;re now part of the DercolBags community. We&apos;ll keep you updated with sustainable packaging insights and exclusive news.
+                  </p>
+                  <p className="text-emerald-600 dark:text-emerald-400 text-[10px] font-black uppercase tracking-widest mt-1">
+                    Welcome aboard —
+                  </p>
+                </motion.div>
               </motion.div>
             ) : (
               <div className="relative">
@@ -96,6 +130,11 @@ export function FooterNewsletter() {
                       </>
                     )}
                   </button>
+                  {error && (
+                    <p className="text-[11px] text-red-500 text-center font-bold uppercase tracking-widest mt-2">
+                      {error}
+                    </p>
+                  )}
                 </form>
               </div>
             )}
