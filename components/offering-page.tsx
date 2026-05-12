@@ -85,12 +85,10 @@ export function OfferingPage({ offering }: OfferingPageProps) {
               className="relative aspect-[4/5] overflow-hidden rounded-none shadow-none border border-zinc-100 dark:border-white/5"
             >
               <div className="absolute inset-0 bg-zinc-900 z-10 opacity-40" />
-              <Image
+              <img
                 src={offering.image}
                 alt={offering.title}
-                fill
-                className="object-cover grayscale hover:grayscale-0 transition-all duration-1000"
-                priority
+                className="absolute inset-0 w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/80 via-zinc-900/40 to-transparent z-20" />
 

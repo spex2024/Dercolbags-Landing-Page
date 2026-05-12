@@ -142,7 +142,7 @@ export function NewsletterModal() {
           >
             {/* Grid background */}
             <div className="absolute inset-0 bg-grid opacity-10 pointer-events-none" />
-            
+
             <motion.div
               aria-hidden="true"
               className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-emerald-500/30 dark:via-emerald-300/80 to-transparent"
@@ -150,7 +150,7 @@ export function NewsletterModal() {
               animate={{ opacity: 1, scaleX: 1 }}
               transition={{ duration: 0.6, delay: 0.18, ease: smoothEase }}
             />
-            
+
             {/* Close button */}
             <button
               onClick={handleClose}
@@ -184,13 +184,12 @@ export function NewsletterModal() {
                     <motion.div
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1, transition: { duration: 0.4, delay: 0.25 } }}
-                      className="relative h-10 w-40"
+                      className="h-10 w-40"
                     >
-                      <Image
+                      <img
                         src="https://res.cloudinary.com/ddwet1dzj/image/upload/v1777042366/dercolbags/DERCOLBAGS_LOGO_tolkgw.png"
                         alt="DercolBags Logo"
-                        fill
-                        className="object-contain grayscale dark:invert"
+                        className="w-full h-full object-contain grayscale dark:invert"
                       />
                     </motion.div>
 
@@ -221,16 +220,15 @@ export function NewsletterModal() {
                   >
                     {/* Logo badge */}
                     <motion.div variants={childVariants} className="flex items-center gap-2 mb-8">
-                      <div className="relative h-12 w-48">
-                        <Image
+                      <div className="h-12 w-48">
+                        <img
                           src="https://res.cloudinary.com/ddwet1dzj/image/upload/v1777042366/dercolbags/DERCOLBAGS_LOGO_tolkgw.png"
                           alt="DercolBags Logo"
-                          fill
-                          className="object-contain object-left"
+                          className="w-full h-full object-contain object-left"
                         />
                       </div>
                     </motion.div>
-                    
+
                     {/* Headline */}
                     <motion.h2 variants={childVariants} className="text-2xl sm:text-3xl font-heading font-black tracking-tight text-zinc-950 dark:text-white leading-snug mb-4 uppercase">
                       Connecting Businesses to <br />
