@@ -20,7 +20,7 @@ function AnimatedCounter({ value, duration = 2 }: { value: string; duration?: nu
       if (match) {
         const target = parseInt(match[0], 10)
         const suffix = value.replace(match[0], "")
-        
+
         const controls = animate(0, target, {
           duration,
           ease: [0.16, 1, 0.3, 1],
@@ -87,7 +87,7 @@ export default function AboutPage() {
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none z-0" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(16,185,129,0.08),transparent_50%)] pointer-events-none z-0" />
         <FloatingPathsBackground position={1} className="absolute inset-0 z-0 opacity-30" />
-        
+
         <div className="container relative z-10 mx-auto px-6">
           <div className="max-w-5xl">
             <motion.div
@@ -127,7 +127,7 @@ export default function AboutPage() {
                     </Link>
                   </Button>
                   <Button asChild size="lg" className="rounded-none bg-emerald-600 text-white h-14 px-8 font-black uppercase tracking-widest text-[10px]">
-                    <Link href="/watapak" className="flex items-center gap-3">
+                    <Link href="/watpak" className="flex items-center gap-3">
                       <Recycle className="w-4 h-4" />
                       Paid for Waste
                     </Link>
@@ -168,7 +168,7 @@ export default function AboutPage() {
             </motion.div>
 
             <div className="grid gap-px bg-zinc-200 dark:bg-white/10 border border-zinc-200 dark:border-white/10">
-              <motion.div 
+              <motion.div
                 whileHover={{ backgroundColor: "rgba(16, 185, 129, 0.05)" }}
                 className="bg-white dark:bg-[#08120e] p-10 transition-colors"
               >
@@ -189,7 +189,7 @@ export default function AboutPage() {
                   ))}
                 </ul>
               </motion.div>
-              <motion.div 
+              <motion.div
                 whileHover={{ backgroundColor: "rgba(16, 185, 129, 0.05)" }}
                 className="bg-white dark:bg-[#08120e] p-10 transition-colors"
               >
@@ -220,7 +220,7 @@ export default function AboutPage() {
         <div className="container mx-auto px-6">
           <div className="text-center max-w-4xl mx-auto mb-24">
 
-            <motion.h2 
+            <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               className="text-5xl md:text-8xl font-black tracking-tighter text-zinc-950 dark:text-white leading-[0.9] uppercase"
@@ -228,7 +228,7 @@ export default function AboutPage() {
               WASTE BECOMES <br />
               <span className="text-emerald-500 italic font-light">VALUE.</span>
             </motion.h2>
-            <motion.p 
+            <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
@@ -266,7 +266,7 @@ export default function AboutPage() {
 
           <div className="mt-24 p-12 md:p-20 bg-emerald-600 text-white text-center relative overflow-hidden group">
             <div className="absolute inset-0 bg-grid opacity-20 pointer-events-none" />
-            <motion.h3 
+            <motion.h3
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.4 }}
@@ -431,12 +431,12 @@ export default function AboutPage() {
             </div>
 
             <div className="flex-1 w-full relative aspect-square md:aspect-[4/5] bg-zinc-100 dark:bg-white/5 overflow-hidden border border-zinc-200 dark:border-white/10">
-               <Image 
+              <Image
                 src="https://res.cloudinary.com/ddwet1dzj/image/upload/v1777037145/dercolbags/DERCOL_WEBSITEEEEE.jpg_rixtgf.jpg"
                 alt="Scaling Sustainable Future"
                 fill
                 className="object-cover grayscale hover:grayscale-0 transition-all duration-1000"
-               />
+              />
 
             </div>
           </div>
@@ -462,8 +462,8 @@ export default function AboutPage() {
                 className="bg-white dark:bg-[#08120e] p-16 hover:bg-zinc-50 dark:hover:bg-zinc-900/50 transition-colors"
               >
                 <div className="flex items-center gap-3 mb-8">
-                   <div className="h-2 w-2 rounded-none bg-emerald-500" />
-                   <span className="font-mono text-emerald-600 dark:text-emerald-400 text-base font-black tracking-[0.2em] leading-none">{item.year}</span>
+                  <div className="h-2 w-2 rounded-none bg-emerald-500" />
+                  <span className="font-mono text-emerald-600 dark:text-emerald-400 text-base font-black tracking-[0.2em] leading-none">{item.year}</span>
                 </div>
                 <h4 className="text-3xl font-black text-zinc-950 dark:text-white uppercase tracking-tighter leading-none">{item.title}</h4>
                 <p className="mt-8 text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed font-light italic">
@@ -547,7 +547,7 @@ export default function AboutPage() {
                   <div className="transform transition-transform duration-500 group-hover:-translate-y-4">
                     <h3 className="font-heading text-4xl md:text-5xl font-black text-white leading-[0.8] tracking-tighter uppercase mb-4">
                       {member.name.split(' ').map((word, idx) => (
-                         <span key={idx} className="block">{word}</span>
+                        <span key={idx} className="block">{word}</span>
                       ))}
                     </h3>
                     <p className="font-mono text-[10px] font-black text-emerald-500/80 uppercase tracking-[0.3em]">
@@ -569,7 +569,7 @@ export default function AboutPage() {
       <section className="relative w-full py-20 md:py-24 overflow-hidden bg-zinc-950">
         {/* Background Image & Overlays */}
         <div className="absolute inset-0 z-0">
-          <Image 
+          <Image
             src="https://res.cloudinary.com/ddwet1dzj/image/upload/v1777106306/dercolbags/screenshot-2025-08-06-051132-600x336_euyqme.png"
             alt="DercolBags Ecosystem"
             fill
@@ -583,7 +583,7 @@ export default function AboutPage() {
           <div className="grid lg:grid-cols-2 gap-24 items-start mb-24">
             {/* Left: Monumental Headline & Subtext */}
             <div>
-              <motion.h2 
+              <motion.h2
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.4 }}
@@ -594,8 +594,8 @@ export default function AboutPage() {
                 SUSTAINABLE <br />
                 <span className="text-emerald-500 italic font-light">PACKAGING.</span>
               </motion.h2>
-              
-              <motion.p 
+
+              <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: 0.1 }}
@@ -607,7 +607,7 @@ export default function AboutPage() {
 
             {/* Right: Technical Service List */}
             <div className="lg:text-right lg:pt-12">
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, x: 20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.4, delay: 0.2 }}
@@ -628,7 +628,7 @@ export default function AboutPage() {
           </div>
 
           {/* Bottom Action Bar: High-Impact Emerald */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
@@ -642,9 +642,9 @@ export default function AboutPage() {
             </div>
 
             <div className="flex flex-wrap items-center gap-4 md:pr-6">
-              <Button 
+              <Button
                 asChild
-                size="lg" 
+                size="lg"
                 className="rounded-none bg-zinc-950 text-white h-14 md:h-16 px-8 transition-all font-black text-xs uppercase tracking-widest border-none"
               >
                 <Link href="/store" className="flex items-center gap-3">
@@ -652,17 +652,17 @@ export default function AboutPage() {
                   Upgrade Packaging
                 </Link>
               </Button>
-              <Button 
+              <Button
                 asChild
                 size="lg"
                 className="rounded-none bg-white text-zinc-950 h-14 md:h-16 px-8 transition-all font-black text-xs uppercase tracking-widest border-none"
               >
-                <Link href="/watapak" className="flex items-center gap-3">
+                <Link href="/watpak" className="flex items-center gap-3">
                   <Recycle className="w-4 h-4" />
                   Paid for Waste
                 </Link>
               </Button>
-              <Button 
+              <Button
                 asChild
                 size="lg"
                 variant="outline"

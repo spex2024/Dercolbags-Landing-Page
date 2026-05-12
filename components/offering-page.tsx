@@ -22,7 +22,7 @@ export function OfferingPage({ offering }: OfferingPageProps) {
       <section className="relative min-h-[90vh] flex items-center pt-32 pb-16 overflow-hidden border-b border-zinc-100 dark:border-white/5">
         <div className="absolute inset-0 bg-grid opacity-50 dark:opacity-20 pointer-events-none" />
         <FloatingPathsBackground position={1} className="absolute inset-0 z-0" />
-        
+
         <div className="container relative z-10 mx-auto px-6">
           <div className="grid gap-10 md:gap-16 lg:grid-cols-[1.1fr_0.9fr] lg:items-start relative">
             <motion.div
@@ -39,7 +39,7 @@ export function OfferingPage({ offering }: OfferingPageProps) {
                   <span key={i} className={i % 4 === 3 ? "text-emerald-600 italic" : ""}>{word} </span>
                 ))}
               </h1>
-              
+
               <p className="mt-8 md:mt-10 max-w-xl text-lg md:text-2xl leading-relaxed text-zinc-500 dark:text-zinc-400 font-light tracking-tight italic">
                 {offering.heroBody}
               </p>
@@ -63,6 +63,14 @@ export function OfferingPage({ offering }: OfferingPageProps) {
                       <ArrowUpRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
                     </Link>
                   </Button>
+                  {offering.slug === "watpak" && (
+                    <Button asChild size="lg" className="h-14 md:h-16 w-full sm:w-auto rounded-none bg-emerald-600 px-8 md:px-10 text-base md:text-lg font-black uppercase tracking-tighter text-white hover:bg-emerald-700 transition-all border-none">
+                      <a href="https://watpak.com" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-3">
+                        Visit Watpak.com
+                        <ArrowUpRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+                      </a>
+                    </Button>
+                  )}
                   <Button asChild variant="outline" size="lg" className="h-14 md:h-16 w-full sm:w-auto rounded-none px-8 md:px-10 text-base md:text-lg font-black uppercase tracking-tighter border-zinc-200 dark:border-white/10 dark:bg-white/5 text-zinc-900 dark:text-white hover:bg-zinc-50 dark:hover:bg-white/10 transition-all">
                     <Link href="/">Overview</Link>
                   </Button>
@@ -77,15 +85,15 @@ export function OfferingPage({ offering }: OfferingPageProps) {
               className="relative aspect-[4/5] overflow-hidden rounded-none shadow-none border border-zinc-100 dark:border-white/5"
             >
               <div className="absolute inset-0 bg-zinc-900 z-10 opacity-40" />
-              <Image 
-                src={offering.image} 
-                alt={offering.title} 
-                fill 
-                className="object-cover grayscale hover:grayscale-0 transition-all duration-1000" 
-                priority 
+              <Image
+                src={offering.image}
+                alt={offering.title}
+                fill
+                className="object-cover grayscale hover:grayscale-0 transition-all duration-1000"
+                priority
               />
               <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/80 via-zinc-900/40 to-transparent z-20" />
-              
+
               {/* Technical Overlay */}
               <div className="absolute inset-0 z-30 p-6 md:p-10 flex flex-col justify-end pointer-events-none">
                 <div className="bg-zinc-950/80 backdrop-blur-xl border border-white/10 rounded-none p-6 md:p-8">
@@ -113,13 +121,13 @@ export function OfferingPage({ offering }: OfferingPageProps) {
                 <div>
                   <div className="h-1 w-12 bg-emerald-500 mb-8" />
                   <h2 className="text-4xl md:text-6xl font-black text-zinc-900 dark:text-white leading-[0.95] tracking-tighter uppercase whitespace-pre-wrap">The Architectural Basis.</h2>
-                  
+
                   <div className="mt-16 space-y-px bg-zinc-200 dark:bg-white/10 border border-zinc-200 dark:border-white/10">
                     <div className="p-8 bg-white dark:bg-[#08120e]">
-                       <p className="text-xl font-black text-zinc-900 dark:text-white uppercase tracking-tighter">{offering.location}</p>
+                      <p className="text-xl font-black text-zinc-900 dark:text-white uppercase tracking-tighter">{offering.location}</p>
                     </div>
                     <div className="p-8 bg-white dark:bg-[#08120e]">
-                       <p className="text-xl font-black text-zinc-900 dark:text-white uppercase tracking-tighter">{offering.hours}</p>
+                      <p className="text-xl font-black text-zinc-900 dark:text-white uppercase tracking-tighter">{offering.hours}</p>
                     </div>
                   </div>
                 </div>
@@ -141,7 +149,7 @@ export function OfferingPage({ offering }: OfferingPageProps) {
               className="group relative bg-white dark:bg-[#08120e] p-12 lg:p-20 hover:bg-zinc-50 dark:hover:bg-zinc-900/50 transition-colors"
             >
               <div className="h-1 w-12 bg-emerald-500 mb-12" />
-              
+
               <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                 {offering.featureList.map((feature, i) => (
                   <motion.div

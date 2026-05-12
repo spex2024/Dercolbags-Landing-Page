@@ -16,8 +16,8 @@ const actions = [
   },
   {
     label: "Get Paid for Waste",
-    sub: "Turn your waste into income via Watapak.",
-    href: "/watapak",
+    sub: "Turn your waste into income via Watpak.",
+    href: "/watpak",
     icon: Recycle,
     style: "bg-emerald-500 text-white hover:bg-emerald-400",
   },

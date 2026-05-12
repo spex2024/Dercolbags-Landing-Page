@@ -204,7 +204,7 @@ export function Navbar() {
                     size="sm"
                     className="h-8 rounded-none bg-emerald-600 px-3 text-[9px] font-black uppercase tracking-widest text-white hover:bg-emerald-700 border-none"
                   >
-                    <Link href="/watapak" className="flex items-center gap-1.5">
+                    <Link href="/watpak" className="flex items-center gap-1.5">
                       <Recycle className="h-3 w-3 flex-shrink-0" />
                       <span className="hidden xl:inline">Get Paid for Waste</span>
                     </Link>
@@ -239,7 +239,7 @@ export function Navbar() {
                     size="sm"
                     className="h-8 w-8 px-0 rounded-none bg-emerald-600 text-white hover:bg-emerald-700 border-none"
                   >
-                    <Link href="/watapak" aria-label="Get Paid for Waste">
+                    <Link href="/watpak" aria-label="Get Paid for Waste">
                       <Recycle className="h-3.5 w-3.5" />
                     </Link>
                   </Button>

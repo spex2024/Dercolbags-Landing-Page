@@ -4,7 +4,7 @@ import { OfferingPage } from "@/components/offering-page"
 import { getOfferingBySlug } from "@/lib/offerings"
 
 export default function WatapakPage() {
-  const offering = getOfferingBySlug("watapak")
+  const offering = getOfferingBySlug("watpak")
 
   if (!offering) {
     notFound()

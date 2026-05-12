@@ -1,7 +1,7 @@
 import { Heart, Recycle, ShoppingBag, type LucideIcon } from "lucide-react"
 
 export type Offering = {
-  slug: "watapak" | "store" | "community"
+  slug: "watpak" | "store" | "community"
   title: string
   eyebrow: string
   description: string
@@ -43,22 +43,22 @@ export const offerings: Offering[] = [
     ],
   },
   {
-    slug: "watapak",
+    slug: "watpak",
     title: "WatPak",
     eyebrow: "Technology Platform",
     description: "A waste-to-packaging digital platform connecting waste pickers, recyclers, manufacturers, and businesses in one ecosystem.",
     details:
-      "Watapak is a waste-to-packaging digital platform that connects waste pickers, recyclers, manufacturers, and businesses in one seamless ecosystem, ensuring end-to-end traceability and circularity.",
+      "Watpak is a waste-to-packaging digital platform that connects waste pickers, recyclers, manufacturers, and businesses in one seamless ecosystem, ensuring end-to-end traceability and circularity.",
     image: "https://res.cloudinary.com/ddwet1dzj/image/upload/v1777040954/dercolbags/Y_-_BB.jpg_jensat.jpg",
     icon: Recycle,
     location: "Ecosystem Hub",
     hours: "24/7 Digital Operations",
     tags: ["Web app", "Supply Chain", "Connectivity"],
-    learnMoreHref: "/watapak",
+    learnMoreHref: "/watpak",
     ctaLabel: "Open Platform",
     heroTitle: "Digital Infrastructure for Circularity",
     heroBody:
-      "Watapak connects the entire value chain—from the person collecting waste on the street to the business receiving sustainable packaging—ensuring every metric ton is accounted for.",
+      "Watpak connects the entire value chain—from the person collecting waste on the street to the business receiving sustainable packaging—ensuring every metric ton is accounted for.",
     featureList: [
       "Real-time connectivity between waste pickers and recyclers",
       "End-to-end traceability of recycled raw materials",
@@ -77,7 +77,7 @@ export const offerings: Offering[] = [
     location: "Community Nodes",
     hours: "Active Recovery: Daily",
     tags: ["Social Impact", "Environment", "Recovery"],
-    learnMoreHref: "/community",
+    learnMoreHref: "/community-impact",
     ctaLabel: "Explore Impact",
     heroTitle: "Community Waste Recovery Programme",
     heroBody:
@@ -93,7 +93,7 @@ export const offerings: Offering[] = [
 export function getOfferingBySlug(slug: string): Omit<Offering, "icon"> | undefined {
   const found = offerings.find((offering) => offering.slug === slug)
   if (!found) return undefined
-  
+
   const { icon, ...serializableOffering } = found
   return serializableOffering
 }

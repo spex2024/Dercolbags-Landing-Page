@@ -39,7 +39,7 @@ export function FooterNewsletter() {
       {/* Background - White in light mode, Dark in dark mode */}
       <div className="absolute inset-0 bg-white dark:bg-[#08120e]" />
       <div className="absolute inset-0 bg-grid opacity-20 dark:opacity-10 pointer-events-none" />
-      
+
       <div className="relative z-10 px-8 py-10 sm:px-12 sm:py-16">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
           {/* Copy */}
@@ -198,7 +198,7 @@ export function Footer() {
               ))}
             </div>
           </div>
- 
+
           <div>
             <p className="text-xs font-black tracking-widest text-zinc-400 uppercase mb-1 dark:text-white">Packaging</p>
             <p className="text-[10px] font-bold text-emerald-600 dark:text-emerald-400 uppercase tracking-widest mb-4">Premium fibre-based solutions</p>
@@ -213,7 +213,7 @@ export function Footer() {
               ))}
             </ul>
           </div>
- 
+
           {/* Services Column */}
           <div>
             <p className="text-xs font-black tracking-widest text-zinc-400 uppercase mb-4 dark:text-white">Services</p>
@@ -233,7 +233,7 @@ export function Footer() {
               ))}
             </ul>
           </div>
- 
+
           {/* Company Column */}
           <div>
             <p className="text-xs font-black tracking-widest text-zinc-400 uppercase mb-4 dark:text-white">Company</p>
@@ -254,15 +254,10 @@ export function Footer() {
             </ul>
           </div>
         </div>
- 
+
         {/* Bottom Bar */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-zinc-400 dark:text-white/60">
           <p>© 2026 DercolBags Packaging Company Limited. All rights reserved.</p>
-          <div className="flex gap-6 uppercase tracking-widest text-[10px] font-black">
-            <Link href="#" className="hover:text-emerald-600 transition-colors dark:hover:text-emerald-400">Privacy Policy</Link>
-            <Link href="#" className="hover:text-emerald-600 transition-colors dark:hover:text-emerald-400">Terms of Service</Link>
-            <Link href="#" className="hover:text-emerald-600 transition-colors dark:hover:text-emerald-400">Cookie Policy</Link>
-          </div>
         </div>
 
       </div>
