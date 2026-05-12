@@ -12,21 +12,21 @@ const actions = [
     sub: "Premium eco-friendly packaging for your business.",
     href: "/store",
     icon: ShoppingBag,
-    style: "bg-white text-zinc-950 hover:bg-emerald-400",
+    style: "bg-white text-zinc-950 hover:bg-emerald-400 dark:bg-zinc-800 dark:text-white dark:hover:bg-emerald-600",
   },
   {
     label: "Get Paid for Waste",
     sub: "Turn your waste into income via Watpak.",
     href: "/watpak",
     icon: Recycle,
-    style: "bg-emerald-500 text-white hover:bg-emerald-400",
+    style: "bg-emerald-500 text-white hover:bg-emerald-400 dark:bg-emerald-600 dark:hover:bg-emerald-500",
   },
   {
     label: "Join the Community",
     sub: "Be part of Ghana's circular economy movement.",
     href: "/community-impact",
     icon: Users,
-    style: "bg-transparent text-white border border-white/30 hover:bg-white/10",
+    style: "bg-transparent text-white border border-white/30 hover:bg-white/10 dark:bg-zinc-800 dark:border-zinc-600 dark:hover:bg-zinc-700",
   },
 ]
 

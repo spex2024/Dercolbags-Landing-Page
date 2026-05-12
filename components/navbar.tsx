@@ -30,12 +30,12 @@ import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 
-interface NavLink {
+interface NavItem {
   name: string
   href: string
 }
 
-const navLinks: NavLink[] = [
+const navLinks: NavItem[] = [
   { name: "Home", href: "/" },
   { name: "About", href: "/about" },
   { name: "Solutions", href: "/solutions" },
@@ -44,20 +44,20 @@ const navLinks: NavLink[] = [
 ]
 
 const socialLinks = [
-  { 
-    name: "X", 
-    href: "https://x.com/DercolBags", 
-    path: "M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932 6.064-6.932zm-1.292 19.49h2.039L6.486 3.24H4.298l13.311 17.403z" 
+  {
+    name: "X",
+    href: "https://x.com/DercolBags",
+    path: "M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932 6.064-6.932zm-1.292 19.49h2.039L6.486 3.24H4.298l13.311 17.403z"
   },
-  { 
-    name: "LinkedIn", 
-    href: "https://www.linkedin.com/company/dercolbagspackaging/", 
-    path: "M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" 
+  {
+    name: "LinkedIn",
+    href: "https://www.linkedin.com/company/dercolbagspackaging/",
+    path: "M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
   },
-  { 
-    name: "Instagram", 
-    href: "https://www.instagram.com/dercolbags/", 
-    path: "M12 0c-3.263 0-3.67.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c3.403 0 6.162 2.759 6.162 6.162s-2.759 6.163-6.162 6.163-6.162-2.759-6.162-6.163 2.759-6.162 6.162-6.162zm0 10.162c2.209 0 4-1.79 4-4 0-2.209-1.791-4-4-4s-4 1.791-4 4c0 2.21 1.791 4 4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" 
+  {
+    name: "Instagram",
+    href: "https://www.instagram.com/dercolbags/",
+    path: "M12 0c-3.263 0-3.67.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c3.403 0 6.162 2.759 6.162 6.162s-2.759 6.163-6.162 6.163-6.162-2.759-6.162-6.163 2.759-6.162 6.162-6.162zm0 10.162c2.209 0 4-1.79 4-4 0-2.209-1.791-4-4-4s-4 1.791-4 4c0 2.21 1.791 4 4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
   },
   {
     name: "Facebook",
@@ -72,6 +72,43 @@ const socialLinks = [
 ]
 
 const socialLinksLegacy = [] // Kept empty for now to avoid breaking other logic if any
+
+/** Memoized nav link component to fix INP performance issues */
+const NavLink = React.memo(({
+  link,
+  pathname,
+  isScrolled
+}: {
+  link: NavItem
+  pathname: string
+  isScrolled: boolean
+}) => {
+  const isActive = pathname === link.href || (link.href !== "/" && pathname.startsWith(link.href))
+
+  return (
+    <Link
+      href={link.href}
+      className={cn(
+        "group relative text-[10px] font-black uppercase tracking-[0.2em] transition-colors",
+        isActive
+          ? "text-emerald-600 dark:text-emerald-400"
+          : isScrolled
+            ? "text-zinc-900 hover:text-emerald-600 dark:text-zinc-100 dark:hover:text-emerald-400"
+            : "text-zinc-600 hover:text-emerald-600 dark:text-zinc-300 dark:hover:text-emerald-400"
+      )}
+    >
+      {link.name}
+      <span
+        className={cn(
+          "absolute -bottom-1 left-0 h-0.5 bg-emerald-600 dark:bg-emerald-400 transition-all",
+          isActive ? "w-full" : "w-0 group-hover:w-full"
+        )}
+      />
+    </Link>
+  )
+})
+
+NavLink.displayName = "NavLink"
 
 /** Bottom nav items — shown only on mobile */
 const bottomNavItems = [
@@ -151,39 +188,21 @@ export function Navbar() {
 
           {/* Desktop nav links */}
           <nav className="hidden flex-1 items-center justify-center gap-8 md:flex">
-            {navLinks.map((link) => {
-              const isActive = pathname === link.href || (link.href !== "/" && pathname.startsWith(link.href))
-              
-              return (
-                <Link
-                  key={link.name}
-                  href={link.href}
-                  className={cn(
-                    "group relative text-[10px] font-black uppercase tracking-[0.2em] transition-colors",
-                    isActive
-                      ? "text-emerald-600 dark:text-emerald-400"
-                      : isScrolled
-                      ? "text-zinc-900 hover:text-emerald-600 dark:text-zinc-100 dark:hover:text-emerald-400"
-                      : "text-zinc-600 hover:text-emerald-600 dark:text-zinc-300 dark:hover:text-emerald-400"
-                  )}
-                >
-                  {link.name}
-                  <span 
-                    className={cn(
-                      "absolute -bottom-1 left-0 h-0.5 bg-emerald-600 dark:bg-emerald-400 transition-all",
-                      isActive ? "w-full" : "w-0 group-hover:w-full"
-                    )} 
-                  />
-                </Link>
-              )
-            })}
+            {navLinks.map((link) => (
+              <NavLink
+                key={link.name}
+                link={link}
+                pathname={pathname}
+                isScrolled={isScrolled}
+              />
+            ))}
           </nav>
 
           {/* Desktop right controls */}
           <div className="hidden items-center gap-3 md:flex">
             <AnimatePresence>
               {isScrolled && (
-                <motion.div 
+                <motion.div
                   initial={{ opacity: 0, x: 20 }}
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0, x: 20 }}
@@ -219,7 +238,7 @@ export function Navbar() {
           <div className="flex items-center gap-2 md:hidden">
             <AnimatePresence>
               {isScrolled && (
-                <motion.div 
+                <motion.div
                   initial={{ opacity: 0, x: 20 }}
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0, x: 20 }}
@@ -252,7 +271,7 @@ export function Navbar() {
       </motion.header>
 
       {/* ── SLIM FLOATING SOCIALS (EDGE MOUNTED) ── */}
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0, x: 20 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ delay: 1, duration: 0.8 }}

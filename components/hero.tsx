@@ -230,13 +230,13 @@ export function Hero() {
             <div className="absolute bottom-12 left-12 flex items-center gap-4 z-40 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0">
               <button
                 onClick={(e) => { e.stopPropagation(); togglePlay(); }}
-                className="p-6 bg-zinc-950/90 backdrop-blur-2xl hover:bg-emerald-600 text-white rounded-none border border-white/10 hover:border-emerald-600 transition-all pointer-events-auto group/btn shadow-2xl"
+                className="p-6 bg-zinc-950/90 backdrop-blur-2xl hover:bg-emerald-600 text-white rounded-none border border-white/10 hover:border-emerald-600 transition-all pointer-events-auto group/btn shadow-2xl dark:bg-zinc-800/90 dark:border-zinc-600 dark:hover:border-emerald-500"
               >
                 {isPlaying ? <Pause className="w-7 h-7 fill-current" /> : <Play className="w-7 h-7 ml-0.5 fill-current" />}
               </button>
               <button
                 onClick={(e) => { e.stopPropagation(); toggleMute(); }}
-                className="p-6 bg-zinc-950/90 backdrop-blur-2xl hover:bg-emerald-600 text-white rounded-none border border-white/10 hover:border-emerald-600 transition-all pointer-events-auto group/btn shadow-2xl"
+                className="p-6 bg-zinc-950/90 backdrop-blur-2xl hover:bg-emerald-600 text-white rounded-none border border-white/10 hover:border-emerald-600 transition-all pointer-events-auto group/btn shadow-2xl dark:bg-zinc-800/90 dark:border-zinc-600 dark:hover:border-emerald-500"
               >
                 {isMuted ? <VolumeX className="w-7 h-7" /> : <Volume2 className="w-7 h-7" />}
               </button>
