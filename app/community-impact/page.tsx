@@ -202,7 +202,7 @@ export default function CommunityImpactPage() {
                 
                 <div className="grid gap-px bg-zinc-100 dark:bg-white/10 border border-zinc-100 dark:border-white/10">
                    {[
-                     { title: "Reduce packaging costs by 20–30%", icon: TrendingUp },
+                     { title: "Reduce packaging costs by 20-30%", icon: TrendingUp },
                      { title: "Improve profit margins for SMEs", icon: ShieldCheck },
                      { title: "Enable access to better markets and exports", icon: Globe },
                      { title: "Support value addition in agro-processing", icon: Factory }
@@ -298,7 +298,7 @@ export default function CommunityImpactPage() {
         <div className="container mx-auto px-6 text-center max-w-4xl">
            <h3 className="text-3xl md:text-5xl font-black text-zinc-900 dark:text-white tracking-tighter uppercase mb-12">Why This <span className="text-emerald-600 italic">Matters.</span></h3>
            <p className="text-2xl md:text-3xl text-zinc-600 dark:text-zinc-400 font-light leading-relaxed italic tracking-tight">
-              "Waste is not just an environmental problem—it is an untapped economic resource. 
+              "Waste is not just an environmental problem - it is an untapped economic resource. 
               By building a circular ecosystem, we are creating jobs, supporting businesses, and protecting our environment at scale."
            </p>
         </div>

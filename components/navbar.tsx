@@ -110,7 +110,7 @@ const NavLink = React.memo(({
 
 NavLink.displayName = "NavLink"
 
-/** Bottom nav items — shown only on mobile */
+/** Bottom nav items - shown only on mobile */
 const bottomNavItems = [
   { name: "Home", href: "/", icon: Home },
   { name: "About", href: "/about", icon: Info },

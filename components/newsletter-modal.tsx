@@ -206,7 +206,7 @@ export function NewsletterModal() {
                         You&apos;ve successfully joined the DercolBags community. Expect precision-engineered updates on sustainable packaging straight to your inbox.
                       </p>
                       <p className="text-emerald-600 dark:text-emerald-400 text-[11px] font-black uppercase tracking-widest mt-1">
-                        Welcome aboard —
+                        Welcome aboard -
                       </p>
                     </motion.div>
                   </motion.div>

@@ -47,7 +47,7 @@ export function ProblemSection() {
           </motion.div>
         </div>
 
-        {/* 4 Problems — heavy grid blocks */}
+        {/* 4 Problems - heavy grid blocks */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {problems.map((p, i) => (
             <motion.div
@@ -59,17 +59,17 @@ export function ProblemSection() {
               className="bg-zinc-950 dark:bg-[#08120e] border border-zinc-200 dark:border-white/10 p-8 group relative overflow-hidden min-h-[300px] flex flex-col justify-end"
             >
               {/* Background Image */}
-              <Image 
-                src={p.image} 
-                alt={p.label} 
-                fill 
-                className="object-cover opacity-40 group-hover:opacity-70 transition-opacity duration-500 grayscale group-hover:grayscale-0" 
+              <Image
+                src={p.image}
+                alt={p.label}
+                fill
+                className="object-cover opacity-40 group-hover:opacity-70 transition-opacity duration-500 grayscale group-hover:grayscale-0"
               />
               {/* Gradient Overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/90 via-zinc-950/40 to-zinc-950/10" />
-              
+
               <div className="absolute inset-0 bg-zinc-950/0 group-hover:bg-zinc-950/5 dark:group-hover:bg-white/5 transition-colors duration-500 pointer-events-none" />
-              
+
               <div className="relative z-10">
                 <span className="font-mono text-[10px] text-zinc-400 dark:text-zinc-500 font-bold block mb-4">{p.num}</span>
                 <h3 className="text-xl md:text-2xl font-black tracking-tighter text-white uppercase mb-2 group-hover:text-emerald-500 transition-colors duration-300">

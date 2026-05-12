@@ -46,9 +46,9 @@ export const offerings: Offering[] = [
     slug: "watpak",
     title: "WatPak",
     eyebrow: "Technology Platform",
-    description: "A waste-to-packaging digital platform connecting waste pickers, recyclers, manufacturers, and businesses in one ecosystem.",
+    description: "A waste-to-packaging digital platform connecting waste generators, waste pickers, recyclers, manufacturers, and businesses in one seamless ecosystem, ensuring end-to-end traceability and circularity.",
     details:
-      "Watpak is a waste-to-packaging digital platform that connects waste pickers, recyclers, manufacturers, and businesses in one seamless ecosystem, ensuring end-to-end traceability and circularity.",
+      "Watpak is a waste-to-packaging digital platform that connects waste generators, waste pickers, recyclers, manufacturers, and businesses in one seamless ecosystem, ensuring end-to-end traceability and circularity.",
     image: "https://res.cloudinary.com/ddwet1dzj/image/upload/v1777040954/dercolbags/Y_-_BB.jpg_jensat.jpg",
     icon: Recycle,
     location: "Ecosystem Hub",
@@ -58,9 +58,9 @@ export const offerings: Offering[] = [
     ctaLabel: "Open Platform",
     heroTitle: "Digital Infrastructure for Circularity",
     heroBody:
-      "Watpak connects the entire value chain—from the person collecting waste on the street to the business receiving sustainable packaging—ensuring every metric ton is accounted for.",
+      "Watpak connects the entire value chain - from the person collecting waste on the street to the business receiving sustainable packaging - ensuring every metric ton is accounted for.",
     featureList: [
-      "Real-time connectivity between waste pickers and recyclers",
+      "Real-time connectivity between waste generators, waste pickers, and recyclers",
       "End-to-end traceability of recycled raw materials",
       "Unified supply chain visibility for all partner businesses",
     ],

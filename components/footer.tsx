@@ -83,7 +83,7 @@ export function FooterNewsletter() {
                     You&apos;re now part of the DercolBags community. We&apos;ll keep you updated with sustainable packaging insights and exclusive news.
                   </p>
                   <p className="text-emerald-600 dark:text-emerald-400 text-[10px] font-black uppercase tracking-widest mt-1">
-                    Welcome aboard —
+                    Welcome aboard -
                   </p>
                 </motion.div>
               </motion.div>
