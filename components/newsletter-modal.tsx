@@ -299,7 +299,7 @@ export function NewsletterModal() {
                     )}
 
                     {/* Fine print */}
-                    <motion.p variants={childVariants} className="mt-6 text-[10px] text-zinc-400 dark:text-zinc-600 text-center uppercase font-black tracking-widest">
+                    <motion.p variants={childVariants} className="mt-6 text-[10px] text-zinc-400 dark:text-zinc-500 text-center uppercase font-black tracking-widest">
                       Encrypted connection. No spam protocols.
                     </motion.p>
                   </motion.div>

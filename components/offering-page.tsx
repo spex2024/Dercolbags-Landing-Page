@@ -40,7 +40,7 @@ export function OfferingPage({ offering }: OfferingPageProps) {
                 ))}
               </h1>
 
-              <p className="mt-8 md:mt-10 max-w-xl text-lg md:text-2xl leading-relaxed text-zinc-500 dark:text-zinc-400 font-light tracking-tight italic">
+              <p className="mt-8 md:mt-10 max-w-xl text-lg md:text-2xl leading-relaxed text-zinc-500 dark:text-zinc-300 font-light tracking-tight italic">
                 {offering.heroBody}
               </p>
 
@@ -48,7 +48,7 @@ export function OfferingPage({ offering }: OfferingPageProps) {
                 {offering.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="rounded-none border border-zinc-100 bg-white px-4 py-1.5 text-[10px] font-bold uppercase tracking-widest text-zinc-500 dark:border-white/10 dark:bg-white/5 dark:text-zinc-400"
+                    className="rounded-none border border-zinc-100 bg-white px-4 py-1.5 text-[10px] font-bold uppercase tracking-widest text-zinc-500 dark:border-white/10 dark:bg-white/5 dark:text-zinc-300"
                   >
                     {tag}
                   </span>
@@ -131,7 +131,7 @@ export function OfferingPage({ offering }: OfferingPageProps) {
                 </div>
 
                 <div className="flex flex-col justify-end">
-                  <p className="text-2xl leading-relaxed text-zinc-600 dark:text-zinc-400 font-light max-w-2xl border-l-2 border-emerald-500/30 pl-10 italic">
+                  <p className="text-2xl leading-relaxed text-zinc-600 dark:text-zinc-300 font-light max-w-2xl border-l-2 border-emerald-500/30 pl-10 italic">
                     {offering.details}
                   </p>
                 </div>

@@ -87,7 +87,7 @@ export function Hero() {
             >
               Poor packaging is quietly <br />
               <span className="text-emerald-600 dark:text-emerald-400">reducing your sales.</span>
-              <span className="block text-2xl md:text-3xl mt-6 normal-case font-medium italic tracking-tight text-zinc-500 dark:text-zinc-400">Do you know?</span>
+              <span className="block text-2xl md:text-3xl mt-6 normal-case font-medium italic tracking-tight text-zinc-500 dark:text-zinc-300">Do you know?</span>
             </motion.h1>
             <motion.p
               variants={itemVariants}

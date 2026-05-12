@@ -47,7 +47,7 @@ export function Testimonials() {
             className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tighter text-zinc-950 dark:text-white uppercase"
           >
             Trusted By Local<br />
-            <span className="text-zinc-500">Industry Leaders.</span>
+            <span className="text-zinc-500 dark:text-zinc-300">Industry Leaders.</span>
           </motion.h2>
         </div>
 
@@ -64,7 +64,7 @@ export function Testimonials() {
             >
               <div>
                 <Quote className="w-8 h-8 text-zinc-200 dark:text-white/10 mb-6" />
-                <p className="text-base md:text-lg text-zinc-700 dark:text-zinc-300 font-medium leading-relaxed mb-8">
+                <p className="text-base md:text-lg text-zinc-700 dark:text-zinc-200 font-medium leading-relaxed mb-8">
                   &quot;{review.quote}&quot;
                 </p>
               </div>
@@ -73,7 +73,7 @@ export function Testimonials() {
                 <p className="text-xs font-medium text-emerald-600 dark:text-emerald-500 uppercase tracking-widest mt-1">
                   {review.role}
                 </p>
-                <p className="text-xs text-zinc-500 dark:text-zinc-500 mt-1">
+                <p className="text-xs text-zinc-500 dark:text-zinc-400 mt-1">
                   {review.company}
                 </p>
               </div>

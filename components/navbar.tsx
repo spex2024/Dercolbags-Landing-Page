@@ -94,7 +94,7 @@ const NavLink = React.memo(({
           ? "text-emerald-600 dark:text-emerald-400"
           : isScrolled
             ? "text-zinc-900 hover:text-emerald-600 dark:text-zinc-100 dark:hover:text-emerald-400"
-            : "text-zinc-600 hover:text-emerald-600 dark:text-zinc-300 dark:hover:text-emerald-400"
+            : "text-zinc-600 hover:text-emerald-600 dark:text-zinc-200 dark:hover:text-emerald-400"
       )}
     >
       {link.name}

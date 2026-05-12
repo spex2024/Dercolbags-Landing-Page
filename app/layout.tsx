@@ -1,4 +1,4 @@
-import { Geist_Mono, IBM_Plex_Sans, Roboto_Slab } from "next/font/google"
+import { Geist_Mono, Poppins } from "next/font/google"
 import Image from "next/image"
 
 import "./globals.css"
@@ -13,9 +13,20 @@ import { FloatingPathsBackground } from "@/components/ui/floating-paths"
 import { Preloader } from "@/components/preloader"
 import { WhatsAppChat } from "@/components/whatsapp-chat"
 import { CookieConsent } from "@/components/cookie-consent"
+import { CustomCursor } from "@/components/custom-cursor"
 import { Analytics } from "@vercel/analytics/next"
 
-const robotoSlabHeading = Roboto_Slab({subsets:['latin'],variable:'--font-heading'});
+const poppins = Poppins({
+  subsets: ["latin"],
+  variable: "--font-sans",
+  weight: ["300", "400", "500", "600", "700", "800", "900"],
+})
+
+const poppinsHeading = Poppins({
+  subsets: ["latin"],
+  variable: "--font-heading",
+  weight: ["700", "800", "900"],
+})
 
 export const metadata = {
   title: "DercolBags Packaging Company Limited | Sustainable Packaging Architects",
@@ -28,15 +39,13 @@ export const metadata = {
   }
 }
 
-const ibmPlexSans = IBM_Plex_Sans({subsets:['latin'],variable:'--font-sans'})
-
 const fontMono = Geist_Mono({
   subsets: ["latin"],
   variable: "--font-mono",
 })
 
 export default function RootLayout({
-  children,
+  children
 }: Readonly<{
   children: React.ReactNode
 }>) {
@@ -44,10 +53,11 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={cn("antialiased font-sans", fontMono.variable, ibmPlexSans.variable, robotoSlabHeading.variable)}
+      className={cn("antialiased font-sans", fontMono.variable, poppins.variable, poppinsHeading.variable)}
     >
       <body className="flex flex-col min-h-screen" suppressHydrationWarning>
         <ThemeProvider>
+          <CustomCursor />
           <Preloader />
           <FloatingPathsBackground position={-1} className="fixed inset-0 z-0 pointer-events-none" />
           <AiChatbot />

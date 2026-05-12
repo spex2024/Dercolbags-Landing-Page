@@ -69,7 +69,7 @@ export function CtaSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-lg text-zinc-400 font-light max-w-xl mx-auto mb-16"
+          className="text-lg text-zinc-400 dark:text-zinc-300 font-light max-w-xl mx-auto mb-16"
         >
           Better packaging. Extra income. Stronger community. Choose your path below.
         </motion.p>
@@ -114,7 +114,7 @@ export function CtaSection() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.5, duration: 0.6 }}
-          className="mt-16 flex flex-col sm:flex-row items-center justify-center gap-4 text-zinc-500 text-sm"
+          className="mt-16 flex flex-col sm:flex-row items-center justify-center gap-4 text-zinc-500 dark:text-zinc-400 text-sm"
         >
           <span className="h-px w-12 bg-white/10 hidden sm:block" />
           <span>Not sure where to start?</span>

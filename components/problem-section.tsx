@@ -24,12 +24,12 @@ export function ProblemSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <span className="font-mono text-[10px] font-bold uppercase tracking-[0.3em] text-zinc-500 dark:text-zinc-400 block mb-6">
+            <span className="font-mono text-[10px] font-bold uppercase tracking-[0.3em] text-zinc-500 dark:text-zinc-300 block mb-6">
               The Reality
             </span>
             <h2 className="text-5xl md:text-6xl lg:text-7xl font-black tracking-tighter text-zinc-950 dark:text-white leading-[0.9] uppercase">
               Poor Packaging<br />
-              <span className="text-zinc-500 dark:text-zinc-400">Is Hurting Your Business & The Environment.</span>
+              <span className="text-zinc-500 dark:text-zinc-300">Is Hurting Your Business & The Environment.</span>
             </h2>
           </motion.div>
 
@@ -40,7 +40,7 @@ export function ProblemSection() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="relative lg:pl-12 border-l-2 border-emerald-500/20"
           >
-            <p className="text-3xl md:text-4xl lg:text-5xl font-light text-zinc-900 dark:text-zinc-100 leading-[1.1] tracking-tighter italic">
+            <p className="text-3xl md:text-4xl lg:text-5xl font-light text-zinc-900 dark:text-zinc-200 leading-[1.1] tracking-tighter italic">
               Your product <span className="font-black text-emerald-700 dark:text-emerald-400 not-italic uppercase tracking-normal">loses value</span><br className="hidden md:block" />
               <span className="text-lg md:text-xl lg:text-2xl opacity-60 not-italic font-medium tracking-normal ml-1">and our streets</span> <span className="font-black text-zinc-900 dark:text-white not-italic underline decoration-emerald-500 dark:decoration-emerald-400 underline-offset-[12px] uppercase tracking-normal">pay the price.</span>
             </p>
@@ -71,11 +71,11 @@ export function ProblemSection() {
               <div className="absolute inset-0 bg-zinc-950/0 group-hover:bg-zinc-950/5 dark:group-hover:bg-white/5 transition-colors duration-500 pointer-events-none" />
 
               <div className="relative z-10">
-                <span className="font-mono text-[10px] text-zinc-400 dark:text-zinc-500 font-bold block mb-4">{p.num}</span>
+                <span className="font-mono text-[10px] text-zinc-400 dark:text-zinc-300 font-bold block mb-4">{p.num}</span>
                 <h3 className="text-xl md:text-2xl font-black tracking-tighter text-white uppercase mb-2 group-hover:text-emerald-500 transition-colors duration-300">
                   {p.label}
                 </h3>
-                <p className="text-sm font-medium text-zinc-400 leading-relaxed">
+                <p className="text-sm font-medium text-zinc-300 dark:text-zinc-300 leading-relaxed">
                   {p.desc}
                 </p>
               </div>

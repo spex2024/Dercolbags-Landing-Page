@@ -64,7 +64,7 @@ export function WhatsAppChat() {
                   </div>
                   <h3 className="text-lg font-black uppercase tracking-tighter">Direct Help</h3>
                 </div>
-                <button 
+                <button
                   onClick={() => setIsOpen(false)}
                   className="rounded-none bg-black/10 p-2 hover:bg-black/20 transition-colors"
                 >
@@ -91,7 +91,7 @@ export function WhatsAppChat() {
                     <h4 className="text-[10px] font-black uppercase tracking-[0.2em] text-zinc-900 dark:text-white group-hover:text-emerald-600 dark:group-hover:text-emerald-400">
                       {option.title}
                     </h4>
-                    <p className="text-[10px] text-zinc-400 dark:text-zinc-500 uppercase font-bold tracking-tighter mt-0.5">
+                    <p className="text-[10px] text-zinc-400 dark:text-zinc-400 uppercase font-bold tracking-tighter mt-0.5">
                       {option.description.split('.')[0]}
                     </p>
                   </div>
@@ -107,7 +107,7 @@ export function WhatsAppChat() {
                   <span className="h-1.5 w-1.5 rounded-full bg-[#25D366] animate-pulse" />
                   Live Sync Active
                 </span>
-                <span className="text-[9px] text-zinc-400 uppercase font-black tracking-widest">
+                <span className="text-[9px] text-zinc-400 dark:text-zinc-300 uppercase font-black tracking-widest">
                   EST: 2-5 MIN
                 </span>
               </div>
@@ -124,8 +124,8 @@ export function WhatsAppChat() {
           onClick={() => setIsOpen(!isOpen)}
           className={cn(
             "flex h-16 w-16 items-center justify-center shadow-2xl transition-all duration-300 border-none",
-            isOpen 
-              ? "bg-zinc-950 text-white dark:bg-white dark:text-zinc-950" 
+            isOpen
+              ? "bg-zinc-950 text-white dark:bg-white dark:text-zinc-950"
               : "bg-[#25D366] text-white hover:bg-[#128C7E]"
           )}
         >
@@ -137,7 +137,7 @@ export function WhatsAppChat() {
             </svg>
           )}
         </motion.button>
-        
+
         {/* Help Bubble */}
         {!isOpen && (
           <motion.div

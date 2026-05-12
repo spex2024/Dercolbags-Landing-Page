@@ -20,12 +20,12 @@ export function Marquee() {
   return (
     <div className="relative w-full overflow-hidden bg-transparent py-14">
       <div className="absolute inset-0 bg-grid opacity-5 pointer-events-none" />
-      
+
       <div className="container mx-auto px-6 mb-10 flex items-center gap-3">
-         <div className="h-1.5 w-8 bg-emerald-500" />
-         <span className="font-mono text-[10px] font-bold uppercase tracking-[0.4em] text-zinc-900 dark:text-zinc-200">
-            Trusted by // Global Circular Systems
-         </span>
+        <div className="h-1.5 w-8 bg-emerald-500" />
+        <span className="font-mono text-[10px] font-bold uppercase tracking-[0.4em] text-zinc-900 dark:text-zinc-100">
+          Trusted by // Global Circular Systems
+        </span>
       </div>
 
       <div className="flex select-none overflow-hidden group">

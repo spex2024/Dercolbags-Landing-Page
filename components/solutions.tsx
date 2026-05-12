@@ -40,8 +40,8 @@ export function Solutions() {
               Here Is<br />
               <span className="text-emerald-500">Your Solution.</span>
             </h3>
-            
-            <p className="mt-10 text-xl text-zinc-600 dark:text-zinc-400 font-light leading-relaxed max-w-2xl">
+
+            <p className="mt-10 text-xl text-zinc-600 dark:text-zinc-300 font-light leading-relaxed max-w-2xl">
               DercolBags gives you premium eco-friendly packaging that makes your products look better, sell faster, and create less waste. Simple.
             </p>
 
@@ -184,7 +184,7 @@ export function Solutions() {
                   <button
                     type="button"
                     onClick={() => setSelectedOffering(null)}
-                    className="sticky top-0 z-20 ml-auto flex h-11 w-11 items-center justify-center rounded-none bg-zinc-100 text-zinc-700 transition hover:bg-zinc-200 dark:bg-white/8 dark:text-white/80 dark:hover:bg-white/14"
+                    className="sticky top-0 z-20 ml-auto flex h-11 w-11 items-center justify-center rounded-none bg-zinc-100 text-zinc-700 transition hover:bg-zinc-200 dark:bg-white/8 dark:text-zinc-200 dark:hover:bg-white/14"
                     aria-label="Close modal"
                   >
                     <X className="h-4 w-4" />
@@ -221,8 +221,8 @@ export function Solutions() {
 
                     <div className="mt-8 grid gap-6 lg:grid-cols-[0.95fr_1.05fr]">
                       <div>
-                        <p className="text-sm font-semibold uppercase tracking-[0.24em] text-zinc-500 dark:text-zinc-500">Overview</p>
-                        <p className="mt-3 text-base leading-7 text-zinc-600 dark:text-zinc-300">{selectedOffering.details}</p>
+                        <p className="text-sm font-semibold uppercase tracking-[0.24em] text-zinc-500 dark:text-zinc-300">Overview</p>
+                        <p className="mt-3 text-base leading-7 text-zinc-600 dark:text-zinc-200">{selectedOffering.details}</p>
                       </div>
 
                       <div className="grid gap-3">
@@ -236,10 +236,10 @@ export function Solutions() {
                     </div>
 
                     <div className="mt-7">
-                      <p className="text-sm font-semibold uppercase tracking-[0.24em] text-zinc-500 dark:text-zinc-500">What this product includes</p>
+                      <p className="text-sm font-semibold uppercase tracking-[0.24em] text-zinc-500 dark:text-zinc-300">What this product includes</p>
                       <div className="mt-4 space-y-3">
                         {selectedOffering.featureList.map((feature) => (
-                          <div key={feature} className="rounded-none border border-emerald-100 bg-white p-4 text-sm font-bold uppercase tracking-tighter leading-tight dark:border-white/5 dark:bg-white/5">
+                          <div key={feature} className="rounded-none border border-emerald-100 bg-white p-4 text-sm font-bold uppercase tracking-tighter leading-tight dark:border-emerald-500/20 dark:bg-emerald-500/5 dark:text-zinc-200">
                             {feature}
                           </div>
                         ))}
