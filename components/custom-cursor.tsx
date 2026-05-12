@@ -46,7 +46,7 @@ export function CustomCursor() {
   return (
     <>
       <motion.div
-        className="fixed top-0 left-0 w-8 h-8 rounded-full border-2 border-emerald-500 pointer-events-none z-[9999] mix-blend-difference hidden md:block"
+        className="fixed top-0 left-0 w-8 h-8 rounded-full border-2 border-emerald-600 pointer-events-none z-[9999] mix-blend-difference hidden md:block"
         style={{
           translateX: cursorXSpring,
           translateY: cursorYSpring,
@@ -57,7 +57,7 @@ export function CustomCursor() {
         transition={{ duration: 0.2 }}
       />
       <motion.div
-        className="fixed top-0 left-0 w-2 h-2 rounded-full bg-emerald-500 pointer-events-none z-[9999] mix-blend-difference hidden md:block"
+        className="fixed top-0 left-0 w-2 h-2 rounded-full bg-emerald-600 pointer-events-none z-[9999] mix-blend-difference hidden md:block"
         style={{
           translateX: cursorXSpring,
           translateY: cursorYSpring,
