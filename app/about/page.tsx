@@ -7,7 +7,6 @@ import Link from "next/link"
 import { ArrowRight, ArrowUpRight, Recycle, ShoppingBag, Heart, Target, Shield, CheckCircle, Factory, Users, Globe } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
-import { FloatingPathsBackground } from "@/components/ui/floating-paths"
 
 function AnimatedCounter({ value, duration = 2 }: { value: string; duration?: number }) {
   const [displayValue, setDisplayValue] = React.useState("0")
@@ -81,26 +80,69 @@ const history = [
 export default function AboutPage() {
   return (
     <div className="bg-white dark:bg-[#08120e] overflow-x-hidden">
-      {/* Hero Section - Core Positioning */}
-      <section className="relative pt-32 pb-24 overflow-hidden border-b border-zinc-100 dark:border-white/5 bg-white dark:bg-[#08120e]">
-        {/* High-Visibility Technical Background */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none z-0" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(16,185,129,0.08),transparent_50%)] pointer-events-none z-0" />
-        <FloatingPathsBackground position={1} className="absolute inset-0 z-0 opacity-30" />
+      {/* Hero Section — Cinematic */}
+      <section className="relative min-h-[100svh] flex items-end pt-40 pb-20 md:pb-28 overflow-hidden border-b border-white/5 bg-zinc-950">
+        {/* Cinematic Background Image — Ken Burns slow zoom */}
+        <motion.div
+          initial={{ scale: 1.08, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ scale: { duration: 14, ease: "linear", repeat: Infinity, repeatType: "reverse" }, opacity: { duration: 1.4, ease: [0.22, 1, 0.36, 1] } }}
+          className="absolute inset-0 z-0"
+        >
+          <Image
+            src="https://res.cloudinary.com/dm9ce4hff/image/upload/f_auto,q_auto,w_2800,c_fill,g_auto/v1778819910/team_zipma0.png"
+            alt="The DercolBags team"
+            fill
+            priority
+            unoptimized
+            sizes="100vw"
+            className="object-cover object-center"
+          />
+        </motion.div>
 
+        {/* Layered cinematic gradients — deep blacks at bottom for text legibility, atmospheric tint */}
+        <div className="absolute inset-0 z-[1] bg-gradient-to-t from-zinc-950 via-zinc-950/85 to-zinc-950/55 pointer-events-none" />
+        <div className="absolute inset-0 z-[1] bg-gradient-to-r from-zinc-950/85 via-zinc-950/30 to-zinc-950/60 pointer-events-none" />
+        <div className="absolute inset-0 z-[1] bg-[radial-gradient(ellipse_120%_70%_at_50%_100%,rgba(16,185,129,0.18),transparent_60%)] pointer-events-none" />
+
+        {/* Vignette */}
+        <div
+          className="absolute inset-0 z-[1] pointer-events-none"
+          style={{
+            background:
+              "radial-gradient(ellipse_at_center, transparent 40%, rgba(0,0,0,0.7) 100%)",
+          }}
+        />
+
+        {/* Film grain */}
+        <div
+          className="absolute inset-0 z-[2] opacity-[0.08] mix-blend-overlay pointer-events-none"
+          style={{
+            backgroundImage:
+              "repeating-linear-gradient(0deg, rgba(255,255,255,0.5) 0px, rgba(255,255,255,0.5) 1px, transparent 1px, transparent 3px)",
+          }}
+        />
+
+        {/* Letterbox / technical grid overlay */}
+        <div className="absolute inset-0 z-[2] bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:60px_60px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_60%,transparent_100%)] pointer-events-none" />
+
+        {/* Content */}
         <div className="container relative z-10 mx-auto px-6">
-          <div className="max-w-5xl">
+          <div className="max-w-6xl">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+              transition={{ duration: 0.6, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
             >
-              <div className="flex items-center gap-4 mb-10">
+              <div className="flex items-center gap-4 mb-8">
                 <span className="h-px w-12 bg-emerald-500" />
+                <span className="font-mono text-[10px] font-black text-emerald-400 uppercase tracking-[0.3em]">
+                  About / Dercolbags Packaging Co.
+                </span>
               </div>
-              <h1 className="font-heading text-5xl md:text-8xl lg:text-9xl font-black leading-[0.9] tracking-tighter text-zinc-950 dark:text-white uppercase">
+              <h1 className="font-heading text-5xl md:text-8xl lg:text-9xl font-black leading-[0.9] tracking-tighter text-white uppercase drop-shadow-[0_4px_24px_rgba(0,0,0,0.5)]">
                 CONNECTING <br />
-                <span className="text-emerald-500">BUSINESSES TO</span> <br />
+                <span className="text-emerald-400">BUSINESSES TO</span> <br />
                 <span className="italic font-light">SUSTAINABLE</span> <br />
                 PACKAGING.
               </h1>
@@ -109,30 +151,30 @@ export default function AboutPage() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-              className="mt-16 grid md:grid-cols-2 gap-12 items-start"
+              transition={{ duration: 0.6, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
+              className="mt-14 grid md:grid-cols-2 gap-10 items-start"
             >
-              <p className="text-xl md:text-2xl text-zinc-600 dark:text-zinc-400 font-light leading-tight tracking-tight border-l-2 border-emerald-500 pl-8">
-                At DercolBags Packaging Company Limited, we don't just "do packaging." We are architecting a <span className="text-zinc-950 dark:text-white font-black italic">circular economy company</span> that treats waste and packaging as the same problem.
+              <p className="text-xl md:text-2xl text-white/80 font-light leading-tight tracking-tight border-l-2 border-emerald-500 pl-8">
+                At DercolBags Packaging Company Limited, we don't just "do packaging." We are architecting a <span className="text-white font-black italic">circular economy company</span> that treats waste and packaging as the same problem.
               </p>
               <div className="space-y-6">
-                <p className="text-lg text-zinc-500 dark:text-zinc-400 leading-relaxed">
+                <p className="text-lg text-white/70 leading-relaxed">
                   We transform waste into packaging and packaging into opportunity. Our system connects waste recovery directly to the manufacturing of affordable, eco-friendly materials for businesses.
                 </p>
-                <div className="flex flex-wrap items-center gap-4 pt-4">
-                  <Button asChild size="lg" className="rounded-none bg-zinc-950 dark:bg-white text-white dark:text-zinc-950 h-14 px-8 font-black uppercase tracking-widest text-[10px]">
+                <div className="flex flex-wrap items-center gap-4 pt-2">
+                  <Button asChild size="lg" className="rounded-none bg-white text-zinc-950 hover:bg-emerald-400 h-14 px-8 font-black uppercase tracking-widest text-[10px]">
                     <Link href="/store" className="flex items-center gap-3">
                       <ShoppingBag className="w-4 h-4" />
                       Upgrade Packaging
                     </Link>
                   </Button>
-                  <Button asChild size="lg" className="rounded-none bg-emerald-600 text-white h-14 px-8 font-black uppercase tracking-widest text-[10px]">
+                  <Button asChild size="lg" className="rounded-none bg-emerald-500 text-white hover:bg-emerald-400 h-14 px-8 font-black uppercase tracking-widest text-[10px]">
                     <Link href="/watpak" className="flex items-center gap-3">
                       <Recycle className="w-4 h-4" />
                       Paid for Waste
                     </Link>
                   </Button>
-                  <Button asChild size="lg" variant="outline" className="rounded-none bg-transparent border-zinc-200 dark:border-white/10 text-zinc-950 dark:text-white h-14 px-8 font-black uppercase tracking-widest text-[10px]">
+                  <Button asChild size="lg" variant="outline" className="rounded-none bg-transparent border-white/20 text-white hover:bg-white/10 hover:text-white h-14 px-8 font-black uppercase tracking-widest text-[10px] backdrop-blur-sm">
                     <Link href="/contact" className="flex items-center gap-3">
                       <Users className="w-4 h-4" />
                       Community
@@ -143,6 +185,27 @@ export default function AboutPage() {
             </motion.div>
           </div>
         </div>
+
+        {/* Bottom corner brackets — cinema framing */}
+        <div className="absolute bottom-6 left-6 h-8 w-8 border-b-2 border-l-2 border-emerald-500/60 z-10 pointer-events-none" />
+        <div className="absolute bottom-6 right-6 h-8 w-8 border-b-2 border-r-2 border-emerald-500/60 z-10 pointer-events-none" />
+        <div className="absolute top-20 left-6 h-8 w-8 border-t-2 border-l-2 border-emerald-500/60 z-10 pointer-events-none" />
+        <div className="absolute top-20 right-6 h-8 w-8 border-t-2 border-r-2 border-emerald-500/60 z-10 pointer-events-none" />
+
+        {/* Scroll hint */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.2, duration: 0.6 }}
+          className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 font-mono text-[10px] font-black uppercase tracking-[0.3em] text-white/40"
+        >
+          <span>Scroll</span>
+          <motion.span
+            animate={{ y: [0, 6, 0] }}
+            transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
+            className="h-8 w-px bg-gradient-to-b from-emerald-400 to-transparent"
+          />
+        </motion.div>
       </section>
 
       {/* P - PROBLEM Section */}
@@ -476,7 +539,7 @@ export default function AboutPage() {
       </section>
 
       {/* Architectural Strip Grid (Team Section) */}
-      <section className="py-32 overflow-hidden bg-white dark:bg-black border-y border-zinc-100 dark:border-white/5">
+      <section id="team" className="py-32 overflow-hidden bg-white dark:bg-black border-y border-zinc-100 dark:border-white/5 scroll-mt-24">
         <div className="container mx-auto px-6">
           <div className="flex flex-col md:flex-row items-end justify-between mb-24 gap-8">
             <div className="max-w-2xl">
@@ -490,78 +553,108 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div className="flex flex-col md:flex-row h-[1400px] md:h-[700px] gap-px bg-zinc-100 dark:bg-white/10 border border-zinc-100 dark:border-white/10 overflow-hidden">
-            {[
+          {(() => {
+            // Cloudinary transformations: auto format/quality, face-aware fill crop @ 900x1200
+            const cld = (v: string, id: string) =>
+              `https://res.cloudinary.com/dm9ce4hff/image/upload/f_auto,q_auto,w_900,h_1200,c_fill,g_face/${v}/${id}.png`
+            const team = [
               {
                 id: "DIR-001",
                 name: "Derrick Kofi Sarfo",
                 role: "Co-Founder & CEO",
-                image: "https://res.cloudinary.com/ddwet1dzj/image/upload/v1777037145/dercolbags/DERCOL_WEBSITEEEEE.jpg_rixtgf.jpg", // Placeholder for actual team image if needed, using existing asset for now or keep original path
+                image: cld("v1778817950", "derrick_tdbqox"),
               },
               {
                 id: "OPS-002",
-                name: "Bevelyn Dartey",
+                name: "Beverlyn Dartey",
                 role: "Chief Operating Officer",
-                image: "/images/team_bevelyn.png",
+                image: cld("v1778817948", "beverlyn_hiutw7"),
               },
               {
                 id: "FIN-003",
                 name: "Abednego Tetteh",
                 role: "Head of Finance",
-                image: "/images/team_abednego.png",
+                image: cld("v1778817954", "Abed_xp9ch6"),
               },
               {
                 id: "TEC-004",
                 name: "Enoch Ekow Enu",
                 role: "Product Lead",
-                image: "/images/team_enoch.png",
+                image: cld("v1778819527", "ChatGPT_Image_May_15_2026_04_30_52_AM_ollbvp"),
               },
               {
                 id: "DES-005",
                 name: "Richard A. Nyarko",
                 role: "Creative Designer",
-                image: "/images/team_richard.png",
+                image: cld("v1778819089", "richard_cjte2p"),
               },
-            ].map((member, i) => (
-              <motion.div
-                key={member.id}
-                initial={{ flex: 1 }}
-                whileHover={{ flex: 1.8 }}
-                transition={{ duration: 0.4, ease: [0.23, 1, 0.32, 1] }}
-                className="group relative h-full bg-zinc-950 overflow-hidden cursor-pointer"
-              >
-                {/* Background Image */}
-                <div className="absolute inset-0 z-0">
-                  <Image
-                    src={member.image}
-                    alt={member.name}
-                    fill
-                    className="object-cover object-center grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110 opacity-50 group-hover:opacity-100"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/40 to-transparent opacity-90 transition-opacity duration-500" />
-                </div>
+            ]
+            return (
+              <div className="flex flex-col md:flex-row h-auto md:h-[720px] gap-px bg-zinc-100 dark:bg-white/10 border border-zinc-100 dark:border-white/10 overflow-hidden">
+                {team.map((member, i) => (
+                  <motion.div
+                    key={member.id}
+                    initial={{ opacity: 0, y: 40, flex: 1 }}
+                    whileInView={{ opacity: 1, y: 0, flex: 1 }}
+                    whileHover={{ flex: 2 }}
+                    viewport={{ once: true, margin: "-100px" }}
+                    transition={{
+                      opacity: { duration: 0.6, delay: i * 0.08 },
+                      y: { duration: 0.6, delay: i * 0.08 },
+                      flex: { duration: 0.5, ease: [0.23, 1, 0.32, 1] },
+                    }}
+                    className="group relative h-[480px] md:h-full bg-zinc-950 overflow-hidden cursor-pointer"
+                  >
+                    {/* Background Image */}
+                    <div className="absolute inset-0 z-0">
+                      <Image
+                        src={member.image}
+                        alt={member.name}
+                        fill
+                        sizes="(max-width: 768px) 100vw, 25vw"
+                        unoptimized
+                        className="object-cover object-top grayscale contrast-110 group-hover:grayscale-0 group-hover:contrast-100 transition-all duration-[900ms] ease-out group-hover:scale-[1.06] opacity-60 group-hover:opacity-100"
+                      />
+                      {/* Layered gradient: lighter at top so faces read, deep emerald-tinted base */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/70 to-zinc-950/10 transition-opacity duration-500" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-emerald-950/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                    </div>
 
-                <div className="relative z-10 h-full flex flex-col justify-end p-8 md:p-12 pb-16">
+                    {/* Subtle grain/scanline overlay for editorial feel */}
+                    <div
+                      className="absolute inset-0 z-[1] opacity-[0.08] mix-blend-overlay pointer-events-none"
+                      style={{
+                        backgroundImage:
+                          "repeating-linear-gradient(0deg, rgba(255,255,255,0.6) 0px, rgba(255,255,255,0.6) 1px, transparent 1px, transparent 3px)",
+                      }}
+                    />
 
+                    {/* Vertical emerald accent line — grows on hover */}
+                    <div className="absolute left-0 top-1/2 -translate-y-1/2 w-[2px] h-0 bg-emerald-500 group-hover:h-24 transition-all duration-700 ease-out z-20" />
 
-                  <div className="transform transition-transform duration-500 group-hover:-translate-y-4">
-                    <h3 className="font-heading text-4xl md:text-5xl font-black text-white leading-[0.8] tracking-tighter uppercase mb-4">
-                      {member.name.split(' ').map((word, idx) => (
-                        <span key={idx} className="block">{word}</span>
-                      ))}
-                    </h3>
-                    <p className="font-mono text-[10px] font-black text-emerald-500/80 uppercase tracking-[0.3em]">
-                      {member.role}
-                    </p>
-                  </div>
-                </div>
+                    {/* Bottom content */}
+                    <div className="relative z-10 h-full flex flex-col justify-end p-6 md:p-10 pb-10 md:pb-12">
+                      <div className="transform transition-all duration-500 ease-out group-hover:-translate-y-2">
+                        <div className="h-px w-8 bg-emerald-500 mb-5 transition-all duration-500 group-hover:w-16" />
+                        <h3 className="font-heading text-3xl md:text-[2.75rem] font-black text-white leading-[0.85] tracking-tighter uppercase mb-4">
+                          {member.name.split(' ').map((word, idx) => (
+                            <span key={idx} className="block">{word}</span>
+                          ))}
+                        </h3>
+                        <p className="font-mono text-[10px] font-black text-emerald-400 uppercase tracking-[0.3em]">
+                          {member.role}
+                        </p>
+                      </div>
+                    </div>
 
-                {/* Industrial Corner Accents */}
-                <div className="absolute top-6 left-6 h-6 w-6 border-t-2 border-l-2 border-emerald-500/30 opacity-0 group-hover:opacity-100 transition-opacity" />
-                <div className="absolute bottom-6 right-6 h-6 w-6 border-b-2 border-r-2 border-emerald-500/30 opacity-0 group-hover:opacity-100 transition-opacity" />
-              </motion.div>
-            ))}
-          </div>
+                    {/* Industrial Corner Accents — always present, brighter on hover */}
+                    <div className="absolute top-6 left-6 h-5 w-5 border-t border-l border-emerald-500/40 group-hover:border-emerald-400 group-hover:h-8 group-hover:w-8 transition-all duration-500" />
+                    <div className="absolute bottom-6 right-6 h-5 w-5 border-b border-r border-emerald-500/40 group-hover:border-emerald-400 group-hover:h-8 group-hover:w-8 transition-all duration-500" />
+                  </motion.div>
+                ))}
+              </div>
+            )
+          })()}
         </div>
       </section>
 

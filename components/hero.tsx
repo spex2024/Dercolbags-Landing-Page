@@ -101,11 +101,11 @@ export function Hero() {
           <div className="lg:pt-16 lg:pl-8 lg:pr-6">
             <motion.div variants={itemVariants} className="space-y-8">
               <p className="text-base md:text-lg lg:text-xl text-zinc-700 dark:text-zinc-200 font-normal leading-relaxed max-w-lg">
-                The reality is simple:{" "}
+                The reality is simple: your{" "}
                 <span className="font-black text-emerald-700 dark:text-emerald-400">great products</span>{" "}
-                are being ignored every day, because their{" "}
-                <span className="text-red-700 dark:text-red-400 font-black">packaging fails</span>{" "}
-                to speak for them.
+                are being ignored every day, because the{" "}
+                <span className="text-red-700 dark:text-red-400 font-black">packaging you've chosen</span>{" "}
+                fails to speak for them.
               </p>
 
               <div className="flex flex-wrap gap-x-6 gap-y-3 pt-2">
