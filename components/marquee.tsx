@@ -4,15 +4,15 @@ import { motion } from "framer-motion"
 import Image from "next/image"
 
 const partners = [
-  { name: "Fidelity Bank Ghana", logo: "" },
-  { name: "Acumen West Africa", logo: "" },
-  { name: "Orange Corners", logo: "" },
-  { name: "Ghana Climate Innovation Centre", logo: "" },
-  { name: "Miller Center for Social Entrepreneurship", logo: "" },
-  { name: "Westerwelle Foundation", logo: "" },
-  { name: "Because International", logo: "" },
-  { name: "EY Ghana", logo: "" },
-  { name: "Deutsche Welle", logo: "" },
+  { name: "Fidelity Bank Ghana", logo: "https://res.cloudinary.com/ddwet1dzj/image/upload/v1782441825/partners/Member-logos-and-steering-committee-templates-for-website-80_ns2zbs.png" },
+  { name: "Acumen West Africa", logo: "https://res.cloudinary.com/ddwet1dzj/image/upload/v1782441825/partners/1280px-Deutsche_Welle_Logo.svg__ezziiq.png" },
+  { name: "Orange Corners", logo: "https://res.cloudinary.com/ddwet1dzj/image/upload/v1782441825/partners/ey_r49idr.jpg" },
+  { name: "Ghana Climate Innovation Centre", logo: "https://res.cloudinary.com/ddwet1dzj/image/upload/v1782441825/partners/GCIC_Stacked_Logo_Full-Colour_chkpov.png" },
+  { name: "Miller Center for Social Entrepreneurship", logo: "https://res.cloudinary.com/ddwet1dzj/image/upload/v1730642005/partners/Picture3_rdukuo.png" },
+  { name: "Westerwelle Foundation", logo: "https://res.cloudinary.com/ddwet1dzj/image/upload/v1730641749/partners/Picture12_h8pnv4.jpg" },
+  { name: "Because International", logo: "https://res.cloudinary.com/ddwet1dzj/image/upload/v1730641721/partners/Picture5_zv1fxp.jpg" },
+  { name: "EY Ghana", logo: "https://res.cloudinary.com/ddwet1dzj/image/upload/v1730641721/partners/Picture2_ynw3op.png" },
+  { name: "Deutsche Welle", logo: "https://res.cloudinary.com/ddwet1dzj/image/upload/v1730641622/partners/Picture4_fjgkgb.png" },
   { name: "AgrInnovators", logo: "" },
 ]
 
@@ -42,22 +42,44 @@ export function Marquee() {
           {partners.map((partner, idx) => (
             <div
               key={`${partner.name}-${idx}`}
-              className="flex items-center transition-all duration-500 cursor-pointer whitespace-nowrap"
+              className="flex items-center justify-center transition-all duration-500 cursor-pointer shrink-0"
             >
-              <span className="font-heading text-sm md:text-base lg:text-lg font-black tracking-[0.2em] text-zinc-950 dark:text-white uppercase hover:text-emerald-500 transition-all duration-300">
-                {partner.name}
-              </span>
+              {partner.logo ? (
+                <div className="relative w-40 h-20">
+                  <Image
+                    src={partner.logo}
+                    alt={partner.name}
+                    fill
+                    className="object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                  />
+                </div>
+              ) : (
+                <span className="font-heading text-sm md:text-base lg:text-lg font-black tracking-[0.2em] text-zinc-950 dark:text-white uppercase whitespace-nowrap">
+                  {partner.name}
+                </span>
+              )}
             </div>
           ))}
           {/* Duplicate set for seamless looping */}
           {partners.map((partner, idx) => (
             <div
               key={`${partner.name}-dup-${idx}`}
-              className="flex items-center transition-all duration-500 cursor-pointer whitespace-nowrap"
+              className="flex items-center justify-center transition-all duration-500 cursor-pointer shrink-0"
             >
-              <span className="font-heading text-sm md:text-base lg:text-lg font-black tracking-[0.2em] text-zinc-950 dark:text-white uppercase hover:text-emerald-500 transition-all duration-300">
-                {partner.name}
-              </span>
+              {partner.logo ? (
+                <div className="relative w-40 h-20">
+                  <Image
+                    src={partner.logo}
+                    alt={partner.name}
+                    fill
+                    className="object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                  />
+                </div>
+              ) : (
+                <span className="font-heading text-sm md:text-base lg:text-lg font-black tracking-[0.2em] text-zinc-950 dark:text-white uppercase whitespace-nowrap">
+                  {partner.name}
+                </span>
+              )}
             </div>
           ))}
         </motion.div>
