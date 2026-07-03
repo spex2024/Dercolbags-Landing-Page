@@ -41,10 +41,16 @@ const products = [
     image: "/images/custom-packaging.png",
   },
   {
-    title: "Generic Packaging",
+    title: "Kraft Bowls",
     category: "Boxes",
-    description: "Ready-to-ship sustainable boxes and pouches in standard sizes for immediate dispatch.",
+    description: "Stackable kraft paper bowls with matching lids in standard sizes, ready for soups, salads, and hot food.",
     image: "/images/product-generic-container.jpg",
+  },
+  {
+    title: "Branded Paper Cups",
+    category: "Custom",
+    description: "Custom-printed paper food cups with matching carrier trays, perfect for ice cream, desserts, and snacks.",
+    image: "/images/product-paper-cups.jpg",
   },
   {
     title: "Branded Takeaway Bags",
@@ -57,6 +63,48 @@ const products = [
     category: "Bags",
     description: "Sealed kraft delivery bags with fold-over closures and built-in labeling for food delivery brands.",
     image: "/images/product-delivery-bag.jpg",
+  },
+  {
+    title: "Luxury Boutique Bags",
+    category: "Bags",
+    description: "Matte black boutique bags with gold foil-stamped branding, rope handles, and premium contrast interiors.",
+    image: "/images/product-boutique-bag.jpg",
+  },
+  {
+    title: "Premium Shopping Bags",
+    category: "Bags",
+    description: "Rich metallic-finish shopping bags with rope handles and refined single-color branding for restaurants and retail.",
+    image: "/images/product-premium-shopping-bag.jpg",
+  },
+  {
+    title: "Corporate Gift Bags",
+    category: "Bags",
+    description: "Crisp white executive bags with full-color crest printing and cotton rope handles for institutions and corporate gifting.",
+    image: "/images/product-corporate-bag.jpg",
+  },
+  {
+    title: "Marble Thank You Bags",
+    category: "Bags",
+    description: "Ready-made grey marble-print bags with an elegant Thank You motif, perfect off-the-shelf for boutiques and gifting.",
+    image: "/images/product-marble-thankyou-bag.jpg",
+  },
+  {
+    title: "Damask Thank You Bags",
+    category: "Bags",
+    description: "Cream damask-patterned bags with black rope handles and classic Thank You script, ready for instant retail use.",
+    image: "/images/product-damask-thankyou-bag.jpg",
+  },
+  {
+    title: "Gold Trim Marble Bags",
+    category: "Bags",
+    description: "Marble-print gift bags framed in gold with rope handles, ready-made for weddings, events, and boutique retail.",
+    image: "/images/product-gold-marble-bag.jpg",
+  },
+  {
+    title: "Kraft Takeout Boxes",
+    category: "Boxes",
+    description: "Grease-resistant kraft takeout boxes in multiple sizes with secure fold-top closures and custom sleeve branding.",
+    image: "/images/product-takeout-box.jpg",
   },
   {
     title: "Custom Food Boxes",
