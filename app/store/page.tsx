@@ -11,27 +11,27 @@ const categories = ["All", "Bags", "Boxes", "Pouches", "Custom"]
 
 const products = [
   {
-    title: "Paper Bags",
+    title: "Kraft Paper Bags",
     category: "Bags",
-    description: "Heavy-duty Kraft paper bags with twisted handles, custom branding, and reinforced bottom.",
+    description: "Heavy-duty kraft paper bags with rope handles, custom branding, and a reinforced base — a café and retail staple.",
     image: "/images/product-paper-bag-ritual.jpg",
   },
   {
-    title: "Corrugated Boxes",
+    title: "Corrugated Shipping Boxes",
     category: "Boxes",
     description: "High-strength recycled fiber boxes with custom dimensions and stackable design for industrial use.",
     image: "/images/corrugated-boxes.png",
   },
   {
-    title: "Paper Boxes",
+    title: "Gable Boxes",
     category: "Boxes",
-    description: "Architectural-grade sustainable paper boxes for premium retail and industrial presentation.",
+    description: "Fold-flat gable boxes with built-in carry handles, perfect for cakes, party favors, and takeaway meals.",
     image: "/images/product-paper-box-gable.jpg",
   },
   {
-    title: "Eco Pouches",
+    title: "Window Zip Pouches",
     category: "Pouches",
-    description: "Food-grade paper pouches with grease-resistant liner and re-sealable options.",
+    description: "Food-grade kraft stand-up pouches with clear display windows and resealable zips for snacks and dry goods.",
     image: "/images/product-pouch-standup.jpg",
   },
   {
@@ -83,6 +83,30 @@ const products = [
     image: "/images/product-corporate-bag.jpg",
   },
   {
+    title: "Printed Boutique Bags",
+    category: "Bags",
+    description: "Vivid full-colour boutique bags with patterned gussets and rope handles for fashion and beauty brands.",
+    image: "/images/product-printed-boutique-bag.jpg",
+  },
+  {
+    title: "Fashion Retail Bags",
+    category: "Bags",
+    description: "Bold two-tone fashion bags with printed front panels and rope handles for clothing lines and streetwear brands.",
+    image: "/images/product-fashion-retail-bag.jpg",
+  },
+  {
+    title: "Memorial & Funeral Bags",
+    category: "Bags",
+    description: "Personalized tribute bags with photo printing and patterned gussets for funerals and memorial services.",
+    image: "/images/product-memorial-bag.jpg",
+  },
+  {
+    title: "Canvas Tote Bags",
+    category: "Bags",
+    description: "Reusable printed canvas totes, durable and washable — a sustainable choice for shopping and campaigns.",
+    image: "/images/product-canvas-tote.jpg",
+  },
+  {
     title: "Marble Thank You Bags",
     category: "Bags",
     description: "Ready-made grey marble-print bags with an elegant Thank You motif, perfect off-the-shelf for boutiques and gifting.",
@@ -107,9 +131,39 @@ const products = [
     image: "/images/product-takeout-box.jpg",
   },
   {
-    title: "Custom Food Boxes",
+    title: "Slide Drawer Boxes",
     category: "Boxes",
-    description: "Custom-printed hexagonal food boxes with vivid branding, perfect for burgers, snacks, and fast-casual dining.",
+    description: "Rigid slide-out drawer boxes with ribbon handles and pull tabs, ideal for wigs, hair bundles, and premium retail.",
+    image: "/images/product-drawer-box.jpg",
+  },
+  {
+    title: "Kraft Lid & Base Boxes",
+    category: "Boxes",
+    description: "Sturdy two-piece kraft boxes with fitted lids for gifting, apparel, and everyday retail packaging.",
+    image: "/images/product-kraft-lid-box.jpg",
+  },
+  {
+    title: "Fruit Window Boxes",
+    category: "Boxes",
+    description: "Corrugated produce boxes with clear display windows and vibrant print, perfect for fruits and fresh goods.",
+    image: "/images/product-fruit-window-box.jpg",
+  },
+  {
+    title: "Corrugated Burger Boxes",
+    category: "Boxes",
+    description: "Vibrant corrugated clamshell boxes with insulating fluted walls, ideal for burgers and hot sandwiches.",
+    image: "/images/product-corrugated-burger-box.jpg",
+  },
+  {
+    title: "Window Pastry Boxes",
+    category: "Boxes",
+    description: "Kraft snack boxes with clear display windows and food-safe lining, perfect for pastries, cookies, and treats on the go.",
+    image: "/images/product-window-pastry-box.jpg",
+  },
+  {
+    title: "Printed Burger Boxes",
+    category: "Boxes",
+    description: "Custom-printed clamshell burger boxes with vivid all-over branding for burgers, snacks, and fast-casual dining.",
     image: "/images/product-burger-box.jpg",
   },
   {
@@ -125,9 +179,9 @@ const products = [
     image: "/images/product-gift-box.jpg",
   },
   {
-    title: "Retail Stand-Up Pouches",
+    title: "Custom Printed Pouches",
     category: "Pouches",
-    description: "Durable stand-up pouches with resealable zips for retail products like charcoal, snacks, and dry goods.",
+    description: "Fully printed block-bottom pouches for retail products like charcoal briquettes, coffee, and dry goods.",
     image: "/images/product-briquette-pouch.jpg",
   },
 ]
