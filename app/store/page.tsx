@@ -35,12 +35,6 @@ const products = [
     image: "/images/product-pouch-standup.jpg",
   },
   {
-    title: "Custom Packaging",
-    category: "Custom",
-    description: "Bespoke structural design with premium finishes, brand integration, and prototype testing.",
-    image: "/images/custom-packaging.png",
-  },
-  {
     title: "Kraft Bowls",
     category: "Boxes",
     description: "Stackable kraft paper bowls with matching lids in standard sizes, ready for soups, salads, and hot food.",
